@@ -7,6 +7,62 @@ DIRECTORY STRUCTURE: .
 +f	README.md
 +f	requirements.txt
 +f	screens.py
++d	.git
+++d		fsmonitor--daemon
++++d			cookies
+++d		hooks
+++d		info
+++d		objects
++++d			01
++++d			07
++++d			09
++++d			0a
++++d			16
++++d			1c
++++d			20
++++d			2f
++++d			30
++++d			3d
++++d			46
++++d			4f
++++d			55
++++d			58
++++d			59
++++d			5c
++++d			71
++++d			72
++++d			73
++++d			79
++++d			86
++++d			8e
++++d			97
++++d			9a
++++d			9e
++++d			a0
++++d			a7
++++d			ae
++++d			b2
++++d			b6
++++d			bd
++++d			c1
++++d			c3
++++d			c8
++++d			cd
++++d			cf
++++d			d3
++++d			d4
++++d			df
++++d			e5
++++d			e6
++++d			fa
++++d			fe
++++d			info
++++d			pack
+++d		refs
++++d			heads
++++d			remotes
+++++d				origin
++++d			tags
 +d	annotater
 ++f		anno.py
 ++f		controller.py
@@ -49,7 +105,7 @@ exe = EXE(
     upx=True,
     upx_exclude=[],
     runtime_tmpdir=None,
-    console=False,
+    console=True,
     disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,
@@ -1114,7 +1170,7 @@ This command packages the application into a single executable file named `Annot
 Use the following command to build the application with required non-py files (images, yaml, etc.):
 
 ```bash
-pyinstaller main.msc
+pyinstaller Annotater.spec
 ```
 
 ## License
@@ -1386,11 +1442,11 @@ annotating videos, and watching annotated videos in the video annotation tool ap
 
 # General Imports
 import threading, logging
-import customtkinter as ctk
+import customtkinter as ctk, os
 from tkinter import filedialog
 
 # Local Imports
-from annotater.setup import align_window
+from annotater.setup import align_window, resource_path
 from annotater.player import VideoPlayer, AnnotatedPlayer
 from config import config
 
@@ -1477,7 +1533,16 @@ def create_annotater(app):
     """
     logger.info("Creating annotater")
     try:
-        app.iconbitmap("./imgs/tool.ico")
+        # check if file exists
+        if os.path.exists("./imgs/tool.ico"):
+            app.iconbitmap("./imgs/tool.ico")
+            logger.debug("Icon set from local file")
+        elif os.path.exists(resource_path("./imgs/tool.ico")):
+            app.iconbitmap(resource_path("./imgs/tool.ico"))
+            logger.debug("Icon set from resource path")
+        elif os.path.exists(os.path.join(os.path.expanduser('~'), 'Dektop', 'App', 'imgs', 'tool.ico')):
+            app.iconbitmap(os.path.join(os.path.expanduser('~'), 'Dektop', 'App', 'imgs', 'tool.ico'))
+            logger.debug("Icon set from desktop path")
 
         # add default styling options
         ctk.set_default_color_theme("dark-blue")  # Set the default color theme
@@ -1611,9 +1676,9 @@ class ControlWindow(ctk.CTkToplevel):
 
     def toggle_pause(self):
         """Toggle the pause state of the video."""
-        self.play_pause_button.configure(text="▶" if self.video_player.paused else "▐▐")
-        self.add_to_queue('pause')
+        self.play_pause_button.configure(text="▐▐" if self.video_player.paused else "▶")
         logger.info(f"Toggled pause state to {not self.video_player.paused}")
+        self.add_to_queue('pause')
 
     def seek(self, value):
         """
@@ -2076,7 +2141,7 @@ based on the screen dimensions.
 """
 
 # General Imports
-import logging
+import logging, sys, os
 
 # Set up logging
 logger = logging.getLogger('app')
@@ -2153,4 +2218,8 @@ def align_window(app, window_width: float = DEFAULT_WINDOW_WIDTH, window_height:
 
     return (mid_x, mid_y), (int(window_width), int(window_height)), (int(screen_width), int(screen_height))
 
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
+    return os.path.join(base_path, relative_path)
 
