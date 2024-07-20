@@ -1,0 +1,2156 @@
+DIRECTORY STRUCTURE: .
++f	Annotater.spec
++f	config.py
++f	data.py
++f	logging_config.yaml
++f	main.py
++f	README.md
++f	requirements.txt
++f	screens.py
++d	annotater
+++f		anno.py
+++f		controller.py
+++f		player.py
+++f		setup.py
+
+d: directory, f: file
+
+FILE CONTENTS:
+
+|||||||||||||		File: Annotater.spec		|||||||||||||
+# -*- mode: python ; coding: utf-8 -*-
+
+
+a = Analysis(
+    ['main.py'],
+    pathex=['.', 'annotater'],
+    binaries=[],
+    datas=[('logging_config.yaml', '.'), ('./imgs/*.png', 'imgs')],
+    hiddenimports=[],
+    hookspath=[],
+    hooksconfig={},
+    runtime_hooks=[],
+    excludes=[],
+    noarchive=False,
+    optimize=0,
+)
+pyz = PYZ(a.pure)
+
+exe = EXE(
+    pyz,
+    a.scripts,
+    a.binaries,
+    a.datas,
+    [],
+    name='Annotater',
+    debug=False,
+    bootloader_ignore_signals=False,
+    strip=False,
+    upx=True,
+    upx_exclude=[],
+    runtime_tmpdir=None,
+    console=False,
+    disable_windowed_traceback=False,
+    argv_emulation=False,
+    target_arch=None,
+    codesign_identity=None,
+    entitlements_file=None,
+    icon=['imgs\\tool.ico'],
+)
+
+
+|||||||||||||		File: config.py		|||||||||||||
+"""
+config.py
+
+This module manages the configuration settings for the video annotation tool application.
+"""
+
+# General Imports
+import os, time, logging
+from tkinter import messagebox
+from customtkinter import filedialog
+from pathlib import Path
+
+# Set up logging
+logger = logging.getLogger('app')
+
+class Config:
+    """
+    The Config class manages the configuration settings for the video annotation tool application.
+
+    Args:
+        cwd (str): The current working directory.
+        in_path (str): The input video directory.
+        out_path (str): The output video directory.
+        files (list): The list of video files in the input directory.
+        extension (str): The file extension for the video files
+    """
+    def __init__(self, cwd=None, in_path=None, out_path=None, files=[], extension=".mp4"):
+        self._cwd = cwd
+        self._in_path = in_path
+        self._out_path = out_path
+        self._files = files
+        self._last_update = time.time()
+        self.extension = extension
+        logger.info(f"Config initialized with cwd={self._cwd}, in_path={self._in_path}, out_path={self._out_path}")
+
+    # Getters and Setters
+
+    @property
+    def cwd(self) -> str:
+        return self._cwd
+
+    @cwd.setter
+    def cwd(self, value: str):
+        logger.debug(f"Setting Current Working Directory: {value}")
+        self._cwd = self.convert_to_unix_style(value)
+
+    @property
+    def in_path(self) -> str:
+        return self._in_path
+
+    @in_path.setter
+    def in_path(self, value: str):
+        logger.debug(f"Setting input folder path to: {value}")
+        self._in_path = self.convert_to_unix_style(value)
+
+    @property
+    def out_path(self) -> str:
+        return self._out_path
+
+    @out_path.setter
+    def out_path(self, value: str):
+        logger.debug(f"Setting output folder path to: {value}")
+        self._out_path = self.convert_to_unix_style(value)
+
+    @property
+    def files(self) -> list:
+        return self._files
+
+    @files.setter
+    def files(self, value: list):
+        logger.debug(f"Setting Files: {value}")
+        self._files = value
+
+    @property
+    def last_update(self) -> float:
+        return self._last_update
+
+    @last_update.setter
+    def last_update(self, value: float):
+        logger.debug(f"Setting last_update: {time.time()}")
+        self._last_update = time.time()
+
+    # METHODS TO GET DATA
+    
+    def __str__(self):
+        """Returns a string representation of the Config object."""
+        return f"Config: cwd={self.cwd}, in_path={self.in_path}, out_path={self.out_path}, files={self.files}, last_update={self.last_update}"
+    
+    def __repr__(self):
+        """Returns a string representation of the Config object for debugging."""
+        return self.__str__()
+    
+    @property
+    def fetch_top_file(self):
+        """Fetches the top file from the file list."""
+        return self.files[0] if self.files else None
+
+    # METHODS TO UPDATE
+
+    def update(self, in_path=None, out_path=None, files=[]):
+        """
+        Updates the configuration paths and file list.
+        
+        Args:
+            in_path (str): Input directory path.
+            out_path (str): Output directory path.
+            files (list): List of files.
+        """
+        self._cwd = self.convert_to_unix_style(os.getcwd())
+        self._in_path = self.convert_to_unix_style(in_path)
+        self._out_path = self.convert_to_unix_style(out_path)
+        self._files = files
+        self._last_update = time.time()
+        logger.info(f"Config updated with in_path={self.in_path}, out_path={self.out_path}")
+
+    def change_directory(self):
+        """Choose the current working directory and change to it."""
+        logger.info("Starting directory change")
+
+        try:
+            new_dir = ""
+            while not new_dir: new_dir = filedialog.askdirectory(title="Select New Directory")
+            if new_dir:
+                os.chdir(new_dir)
+                logger.info(f"Current working directory changed to: {new_dir}")
+                self.cwd = new_dir      # Update the config
+                in_path, out_path, files = self.file_setup()
+                return in_path, out_path, files, new_dir
+            else:
+                logger.warning("No directory selected for change")
+        except Exception as e:
+            logger.error(f"An error occurred during directory change: {e}", exc_info=True)
+
+    def file_setup(self):
+        """Sets up input and output directories and fetches files."""
+        logger.info("Starting file setup")
+
+        try:
+            if not self.cwd: self.cwd = filedialog.askdirectory(title="Select Root Directory", initialdir=self.convert_to_unix_style(os.path.join(os.path.expanduser('~'), 'Videos')))
+            logger.debug(f"Current working directory: {self.cwd}")
+            
+            # Select Input Video Directory
+            if not os.path.exists(f"{self.cwd}/data"):
+                self.in_path = "."
+                while len(self.in_path) == 1: self.in_path = filedialog.askdirectory(title="Select Input Directory", initialdir=self.cwd)
+                logger.info(f"Input directory selected: {self.in_path}")
+            else: 
+                self.in_path = f"{self.cwd}/data"
+                logger.debug(f"Default input directory used: {self.in_path}")
+
+            # Select Output Directory
+            if not os.path.exists(f"{self.cwd}/out"): 
+                self.out_path = "."
+                while len(self.out_path) == 1: self.out_path = filedialog.askdirectory(title="Select Output Directory", initialdir=self.cwd)
+                logger.info(f"Output directory selected: {self.out_path}")
+            else: 
+                self.out_path = f"{self.cwd}/out"
+                logger.debug(f"Default output directory used: {self.out_path}")
+
+            # get list of names all mp4 files in self.file_path
+            in_files = [f for f in os.listdir(self.in_path) if f.endswith(".mp4")]
+            logger.info(f"Found {len(in_files)} MP4 files in the input directory")
+
+            if not in_files:
+                logger.warning("No MP4 files found in the input directory")
+                messagebox.showerror("Error", "No MP4 files found in the input directory.")
+            
+            _ = config.refetch_files()
+
+            return self.in_path, self.out_path, self.files
+        except Exception as e:
+            logger.error(f"An error occurred during file setup: {e}", exc_info=True)
+
+    # METHODS TO EQUATE
+    
+    def __eq__(self, other):
+        """Checks if two Config objects are equal."""
+        if not isinstance(other, Config):
+            return NotImplemented
+        return (self.cwd == other.cwd and self.in_path == other.in_path and 
+                self.out_path == other.out_path and self.files == other.files and 
+                self.last_update == other.last_update)
+
+    # HELPER FUBNCTIONS
+    
+    def remove_extension(self, file_name, extensions=[".mp4"]):
+        """
+        Removes the extension from a file name.
+        
+        Args:
+            file_name (str): Name of the file.
+            extensions (list): List of extensions to remove.
+        
+        Returns:
+            (str): File name without extension.
+        """
+        for ext in extensions:
+            if file_name.endswith(ext):
+                return file_name[:-len(ext)]
+        logger.debug(f"No extension removed from file '{file_name}'")
+        return file_name
+    
+    def refetch_files(self, inp=None, out=None, extensions=[".mp4"]):
+        """
+        Refetches the list of files from the input and output directories.
+        
+        Args:
+            inp (str): Input directory path.
+            out (str): Output directory path.
+            extensions (list): List of file extensions.
+        
+        Returns:
+            (list): List of files to be processed.
+        """
+        try:
+            # Check if input and output directories exist
+            if inp is not None: 
+                if not os.path.exists(inp): 
+                    logger.error(f"Input directory '{inp}' does not exist")
+                    return []
+                else: self.in_path = inp
+
+            # Check if output directory exists
+            if out is not None:
+                if not os.path.exists(out): 
+                    logger.error(f"Output directory '{out}' does not exist")
+                    return []
+                else: self.out_path = out
+
+            logger.debug(f"Removing extensions from files and filtering")
+            in_files = [self.remove_extension(f, extensions) for f in os.listdir(self.in_path) if f.endswith(tuple(extensions))]
+            out_files = [self.remove_extension(f, extensions) for f in os.listdir(self.out_path) if f.endswith(tuple(extensions))]
+            
+            files = [f"{f}{self.extension}" for f in in_files if f"{f}_annotated" not in out_files]
+
+            self.update(self.in_path, self.out_path, files)
+            logger.info(f"Refetched files: {files}")
+            return files
+        except Exception as e:
+            logger.error(f"Error refetching files: {e}")
+            raise e
+
+    def convert_to_unix_style(self, path):
+        """
+        Converts a file path to Unix style.
+        
+        Args:
+            path (str): File path.
+        
+        Returns:
+            (str): Unix style file path.
+        """
+        return Path(path).as_posix()
+
+    # METHODS TO SAVE
+
+    def save_config(self, file_path):
+        """
+        Saves the configuration settings to a file.
+        
+        Args:
+            file_path (str): Path to the configuration file.
+        """
+        try:
+            with open(file_path, "w") as f:
+                f.write(f"CWD: {self.cwd}\n")
+                f.write(f"IN_PATH: {self.in_path}\n")
+                f.write(f"OUT_PATH: {self.out_path}\n")
+                f.write(f"FILES: {self.files}\n")
+                f.write(f"LAST_UPDATE: {self.last_update}\n")
+            logger.info(f"Configuration saved to file: {file_path}")
+        except Exception as e:
+            logger.error(f"Error saving configuration to file: {e}")
+
+# Create a global Config object
+config = Config()
+
+
+|||||||||||||		File: data.py		|||||||||||||
+"""
+data.py
+
+This module defines the Data class used for storing and processing video, audio data, and annotations.
+"""
+
+# General Imports
+import subprocess, cv2, json, os, logging
+import numpy as np
+from typing import List, Tuple, Dict, Union
+from functools import lru_cache, cached_property
+from customtkinter import filedialog
+from tkinter import messagebox
+from scipy.io.wavfile import write
+
+# Custom Imports
+from screens import SaveProgress
+
+# Set up logging
+logger = logging.getLogger('app')
+
+class Data:
+    """
+    Class to store video and audio data, and annotations.
+
+    Args:
+        in_path (str): Path to the input video file.
+        out_path (str): Path to save the processed video and audio files.
+        name (str): Name of the video file.
+        frame_rate (float): Frames per second of the video.
+        frame_count (int): Total number of frames in the video.
+        frame_width (int): Width of each frame in pixels.
+        frame_height (int): Height of each frame in pixels.
+        sample_rate (int): Audio sample rate.
+        channels (int): Number of audio channels.
+    """
+    def __init__(self, in_path, out_path, name, frame_width, frame_height, fps=30, fc=10225, sample_rate=44100, channels=2):
+        self.in_path = in_path      # Path to the video file selected
+        self.out_path = out_path    # Path where the video file will be saved
+        self.name = name            # Default name of the file (same name as selected file)
+
+        # Full path to the selected video file
+        self.in_file_path = os.path.join(in_path, name)
+        self.out_file_path = os.path.join(out_path, name)
+        # self.out_file_path = os.path.join(out_path, name.replace(".mp4", "_annotated.mp4"))
+
+        # Video properties
+        self.frame_rate = fps               # Frames per second of the selected video
+        self.frame_count = fc               # Frame count of the selected video
+        self.frame_width = frame_width      # Width of the frame
+        self.frame_height = frame_height    # Height of the frame
+
+        # Data storage
+        self.frames: List[Tuple[float, int]] = []                               # List of (timestamp, frame) tuples
+        self.audio_data: List[Tuple[float, np.ndarray]] = []                    # List of (timestamp, audio_chunk) tuples
+        self.annotations: Dict[int, List[Union[str, Tuple[int, int]]]] = {}     # Dictionary of annotations with frame index as key
+
+        # Frame and audio data
+        self.curr_frame = 0     # Current frame index
+        self.max_frames = fc    # Maximum frame index
+
+        self.sample_rate = sample_rate
+        self.channels = channels
+        self.audio_name = self.name.replace(".mp4", ".wav")
+        self.audio_path = os.path.join(self.out_path, self.audio_name)
+
+        # Log data object initialization
+        self.print_data_object_info(log=True)
+        logger.info(f"Data object for {name} initialized")
+
+    # METHODS TO PRINT DATA
+
+    def print_data_object_info(self, log=False):
+        table_data = [
+            ["Description", "Value"],
+            ["Data Object Created for", self.name],
+            ["Input Path", self.in_path],
+            ["Output Path", self.out_path],
+            ["Name", self.name],
+            ["FPS", self.frame_rate],
+            ["Frame Count", self.frame_count],
+            ["Frame Width", self.frame_width],
+            ["Frame Height", self.frame_height],
+            ["Sample Rate", self.sample_rate],
+            ["Channels", self.channels]
+        ]
+        
+        if log:
+            _str = "| "
+            for row in range(1, len(table_data)): _str +=  str(table_data[row][0]) + " ==> " + str(table_data[row][1]) + " | "
+            logger.debug(_str.rstrip())
+        else:
+            column_width = max(len(str(item)) for row in table_data for item in row) + 2
+            separator = "+" + "-" * (column_width * 2 + 1) + "+"
+
+            print(separator)
+            for row in table_data:
+                print("|" + "|".join(str(item).center(column_width) for item in row) + "|")
+                print(separator)
+
+    # METHODS TO GET DATA
+
+    @lru_cache(maxsize=128)
+    def get_audio_data(self, index: int) -> Tuple[float, np.ndarray]:
+        """
+        Returns the audio data at the specified index.
+        
+        Args:
+            index (int): Index of the audio data.
+
+        Returns:
+            (Tuple[float, np.ndarray]): Timestamp and audio data at the specified index.
+        """
+        return self.audio_data[index]
+    
+    @lru_cache(maxsize=128)
+    def get_audio_data(self, index):
+        """
+        Returns the audio data at the specified index.
+
+        Args:
+            index (int): Index of the audio data.
+
+        Returns:
+            (Tuple[float, np.ndarray]): Timestamp and audio data at the specified index.
+        """
+        return self.audio_data[index]
+    
+    def get_annotation(self, frame_idx: int) -> Union[None, List[Union[str, Tuple[int, int]]]]:
+        """
+        Returns the annotation for the specified frame index.
+        
+        Args:
+            frame_idx (int): Frame index to get the annotation for.
+            
+        Returns:
+            (Union[None, List[Union[str, Tuple[int, int]]]]): Annotation data for the specified frame index.
+        """
+        return self.annotations.get(frame_idx)
+    
+    @cached_property
+    def get_curr_frame(self) -> int:
+        """
+        Returns the current frame index.
+
+        Returns:
+            (int): Current frame index
+        """
+        return self.curr_frame
+    
+    def get_last_annotation(self) -> Union[None, List[Union[str, Tuple[int, int]]]]:
+        """
+        Returns the last annotation if available.
+
+        Returns:
+            (Union[None, List[Union[str, Tuple[int, int]]]]): Last annotation data if available.
+        """
+        if self.get_frames_length == 0 or self.get_annotations_length == 0:
+            return None
+        return self.get_annotation(max(self.annotations.keys()))
+    
+    @property
+    def get_max_frames(self) -> int:
+        """
+        Returns the maximum number of frames.
+
+        Returns:
+            (int): Maximum number of frames.
+        """
+        return self.max_frames
+    
+    # MOTHODS TO GET DATA LENGTH
+
+    @property
+    def get_frames_length(self) -> int:
+        """
+        Returns the number of frames stored.
+
+        Returns:
+            (int): Number of frames stored.
+        """
+        return len(self.frames)
+
+    @property
+    def get_audio_data_length(self) -> int:
+        """
+        Returns the length of audio data stored.
+
+        Returns:
+            (int): Length of audio data stored.
+        """
+        return len(self.audio_data)
+
+    @property
+    def get_annotations_length(self) -> int:
+        """
+        Returns the number of annotations stored.
+        
+        Returns:
+            (int): Number of annotations stored.
+        """
+        return len(self.annotations)
+
+    # METHODS TO ADD DATA
+
+    def add_curr_frame(self, timestamp: float, frame: int) -> None:
+        """
+        Adds the current frame to the frames list.
+
+        Args:
+            timestamp (float): Timestamp of the frame.
+            frame (int): Frame index
+        """
+        if frame >= self.frame_count:
+            logger.warning(f"Frame index {frame} is out of range.")
+        self.frames.append((timestamp, frame))
+
+    def add_audio_data(self, timestamp: float, audio: np.ndarray) -> None:
+        """
+        Adds audio data to the audio data list.
+        
+        Args:
+            timestamp (float): Timestamp of the audio data.
+            audio (np.ndarray): Audio data.
+        """
+        self.audio_data.append((timestamp, audio))
+
+    def add_annotation(self, command: str, annotation: Tuple[int, int]) -> None:
+        """
+        Adds annotations with timestamp.
+
+        Args:
+            command (str): Command for the annotation (start, move, end).
+            annotation (Tuple[int, int]): The annotation data.
+        """
+        if self.get_frames_length == 0:
+            logger.error("No frames to annotate.")
+            return
+
+        frame_idx = self.get_frames_length - 1
+        if frame_idx in self.annotations and self.annotations[frame_idx][0] == "start":
+            self.annotations[frame_idx] = ["start", list(annotation)]
+        else:
+            self.annotations[frame_idx] = [command, list(annotation)]
+
+        logger.debug(f"Added annotation at frame {frame_idx} with command {command}")
+
+    # METHODS TO UPDATE DATA
+
+    def update(self, in_path: str, out_path: str, name: str, frame_width: int, frame_height: int,
+               fps: float, fc: int, sample_rate: int, channels: int) -> None:
+        """
+        Updates the data attributes with new values.
+
+        Args:
+            in_path (str): Path to the input video file.
+            out_path (str): Path to save the processed video and audio files.
+            name (str): Name of the video file.
+            frame_width (int): Width of each frame in pixels.
+            frame_height (int): Height of each frame in pixels.
+            fps (float): Frames per second of the video.
+            fc (int): Total number of frames in the video.
+            sample_rate (int): Audio sample rate.
+            channels (int): Number of audio channels.
+        """
+        self.in_path = in_path
+        self.out_path = out_path
+        self.name = name
+
+        self.in_file_path = os.path.join(in_path, name)
+        self.out_file_path = os.path.join(out_path, name)
+
+        self.frame_rate = fps
+        self.frame_count = fc
+        self.frame_width = frame_width
+        self.frame_height = frame_height
+
+        self.sample_rate = sample_rate
+        self.channels = channels
+
+        logger.info(f"Data() updated for {name}: in_path={in_path}, out_path={out_path}, "
+                    f"frame_width={frame_width}, frame_height={frame_height}")
+
+    def update_curr_frame(self, frame: int) -> None:
+        """
+        Updates the current frame index.
+
+        Args:
+            frame (int): Frame index to update to.
+        """
+        self.curr_frame = frame
+
+    def update_max_frames(self, frame: int) -> None:
+        """
+        Updates the maximum number of frames.
+
+        Args:
+            frame (int): Maximum number of frames.
+        """
+        self.max_frames = frame
+
+    def increment_max_frame(self) -> None:
+        """Increments the maximum frame count by one."""
+        self.max_frames += 1
+
+    # METHODS TO COMBINE DATA
+
+    def identify_video_gaps(self, threshold: float = 0.1) -> List[Tuple[float, float]]:
+        """
+        Identifies gaps in video frames where the time difference exceeds the threshold.
+
+        Args:
+            threshold (float): Time threshold to identify gaps.
+
+        Returns:
+            (List[Tuple[float, float]]): List of video gaps identified.
+        """
+        video_gaps = []
+        for i in range(1, len(self.frames)):
+            previous_time, _ = self.frames[i - 1]
+            current_time, _ = self.frames[i]
+            if current_time - previous_time > threshold:
+                video_gaps.append((previous_time, current_time))
+        return video_gaps
+
+    def combined_audio(self) -> np.ndarray:
+        """
+        Combines all audio data into a single array, removing audio during video gaps.
+
+        Returns:
+            (np.ndarray): Combined audio data.
+        """
+        video_gaps = self.identify_video_gaps()
+
+        synced_audio = []
+        current_audio_index = 0
+
+        for gap_start, gap_end in video_gaps:
+            # Add audio before the gap
+            while current_audio_index < len(self.audio_data) and self.audio_data[current_audio_index][0] < gap_start:
+                synced_audio.append(self.audio_data[current_audio_index][1])
+                current_audio_index += 1
+
+            # Skip audio during the gap
+            while current_audio_index < len(self.audio_data) and self.audio_data[current_audio_index][0] < gap_end:
+                current_audio_index += 1
+
+        # Add remaining audio after the last gap
+        while current_audio_index < len(self.audio_data):
+            synced_audio.append(self.audio_data[current_audio_index][1])
+            current_audio_index += 1
+
+        if synced_audio:
+            combined_audio = np.concatenate(synced_audio, axis=0)
+            logger.debug("Combined audio data successfully")
+            return combined_audio
+
+        logger.error("Synced audio is empty or invalid.")
+        return np.array([])
+
+    # METHODS TO SAVE DATA
+
+    def process_video_data(self, progress: SaveProgress = None) -> None:
+        """
+        Process video data and save it to the output file.
+
+        Args:
+            progress (SaveProgress): Progress window to update the progress.
+        """
+        if not self.frames:
+            messagebox.showerror("Error", "No frames to save.")
+            logger.error("No frames to save")
+            return
+
+        # open the video file
+        cap = cv2.VideoCapture(self.in_file_path)
+
+        # check if the video file is opened
+        if not cap.isOpened():
+            messagebox.showerror("Error", "Failed to open video file.")
+            logger.error("Failed to open video file")
+            return
+        
+        # read the video file frame by frame
+        vid = []
+        while True:
+            ret, frame = cap.read()
+            if not ret:
+                break
+            vid.append(frame)
+
+        # Get original video properties
+        original_fps = cap.get(cv2.CAP_PROP_FPS)
+        original_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+        original_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+
+        # Assert that the original properties match the given values
+        assert original_fps == self.frame_rate, f"FPS mismatch: {original_fps} != {self.frame_rate}"
+        assert original_width == self.frame_width, f"Frame width mismatch: {original_width} != {self.frame_width}"
+        assert original_height == self.frame_height, f"Frame height mismatch: {original_height} != {self.frame_height}"
+        assert len(vid) == self.frame_count, "Frame count mismatch"
+
+        cap.release()
+
+        fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+        out = cv2.VideoWriter(self.out_file_path, fourcc, self.frame_rate, (self.frame_width, self.frame_height))
+
+        # Write frames to the output video in the specified order
+        last_index = len(self.frames) - 1
+        for timestamp, index in self.frames:
+            if index < len(vid):
+                out.write(vid[index])
+                if progress: progress.update_video_progress(index / last_index)
+            else:
+                logger.warning(f"Frame index {index} is out of range.")
+
+        logger.info(f"Video data processed and saved to {self.out_file_path}")
+
+    def process_audio_data(self, progress: SaveProgress = None) -> None:
+        """
+        Processes and saves audio data to a file.
+        
+        Args:
+            progress (SaveProgress): Progress window to update the progress.
+        """
+        # Check if audio data and annotations are present
+        if len(self.audio_data) > 0:
+            write(self.audio_path, self.sample_rate, self.combined_audio())
+            logger.info(f"Audio data saved to {self.audio_path}")
+            if progress: progress.update_audio_progress(1.0)
+        else: logger.warning("No audio data to save")
+
+    def save_av_and_clean(self, progress: SaveProgress = None) -> None:
+        """
+        Merges audio and video data using FFmpeg and cleans up temporary files.
+        
+        Args:
+            progress (SaveProgress): Progress window to update the progress.
+        """
+        subprocess.run([
+            'ffmpeg',
+            '-hide_banner',
+            '-y',
+            '-i', self.out_file_path,
+            '-i', self.audio_path,
+            '-c:v', 'copy',
+            '-c:a', 'aac',
+            '-strict', 'experimental',
+            self.out_file_path.replace('.mp4', '_annotated.mp4')
+        ])
+
+        if progress: 
+            progress.update_video_progress(1.0)
+            progress.update_av_progress(1.0)
+        logger.info(f"Audio and video merged and saved to {self.out_file_path.replace('.mp4', '_annotated.mp4')}")
+
+        # delete the audio and video data at self.out_file_path and self.audio_path
+        if os.path.exists(self.out_file_path):
+            os.remove(self.out_file_path)
+            logger.debug(f"Deleted temporary video file {self.out_file_path}")
+        if os.path.exists(self.audio_path):
+            os.remove(self.audio_path) 
+            logger.debug(f"Deleted temporary audio file {self.audio_path}")
+
+    def save_annotations(self, progress: SaveProgress = None) -> None:
+        """
+        Saves annotations to a JSON file.
+        
+        Args:
+            progress (SaveProgress): Progress window to update the progress.
+        """
+        self.annotations["metadata"] = {
+            "video_name": self.name,
+            "frame_rate": self.frame_rate,
+            "frame_count": self.max_frames,
+            "frame_width": self.frame_width,
+            "frame_height": self.frame_height,
+            "sample_rate": self.sample_rate,
+            "channels": self.channels
+        }
+
+        # Save annotations to a JSON file
+        try:
+            with open(self.out_file_path.replace('.mp4', '_annotated.json'), "w") as file:
+                json.dump(self.annotations, file)
+
+            if progress: progress.update_json_progress(1.0)
+            logger.info(f"Annotations saved to {self.out_file_path.replace('.mp4', '_annotated.json')}")
+        except Exception as e: logger.error(f"Error saving annotations: {e}")
+
+    def save_data(self, app) -> None:
+        """
+        Saves video, audio, and annotations data, and merges them using FFmpeg.
+        
+        Args:
+            app (customtkinter.CTk): The main application window.
+        """
+        if not self.out_path:
+            self.out_path = filedialog.askdirectory(filetypes=[("MP4 files", "*.mp4")])
+
+        logger.info(f"Saving data for {self.name} to {self.out_path}")
+
+        # Create progress window
+        progress = SaveProgress(app, self.name)
+        progress.update()
+
+        self.process_video_data(progress=progress)      # Save video data
+        self.process_audio_data(progress=progress)      # Save audio data
+        self.save_av_and_clean(progress=progress)       # Merge audio and video data
+        self.save_annotations(progress=progress)        # Save annotations
+
+        # update progress window title
+        progress.update_title_on_save()
+        logger.info(f"Data for {self.name} saved successfully")
+
+    # METHODS TO DELETE DATA
+
+    def clean(self) -> None:
+        """Function to clean the data object"""
+        self.frames = []
+        self.audio_data = []
+        self.annotations = {}
+        self.curr_frame = 0
+        self.max_frame = 0
+        logger.debug("Data object cleaned")
+
+|||||||||||||		File: logging_config.yaml		|||||||||||||
+version: 1
+
+disable_existing_loggers: False
+
+formatters:
+  detailed:
+    format: '[%(asctime)s]-(Line %(lineno)d at %(pathname)s)-{%(name)s:%(levelname)s} : %(message)s'
+  simple:
+    format: '%(name)s - %(levelname)s - %(message)s'
+
+handlers:
+  debug_console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: simple
+    stream: ext://sys.stdout
+
+  debug_file:
+    class: logging.FileHandler
+    level: DEBUG
+    formatter: detailed
+    filename: logs/app.log
+    mode: 'a'
+
+  info_file:
+    class: logging.FileHandler
+    level: INFO
+    formatter: simple
+    filename: logs/info.log
+
+  error_file:
+    class: logging.FileHandler
+    formatter: detailed
+    level: ERROR
+    filename: logs/errors.log
+
+  critical_file:
+    class: logging.FileHandler
+    formatter: detailed
+    level: CRITICAL
+    filename: logs/critical.log
+
+  # email:
+  #   class: logging.handlers.SMTPHandler
+  #   mailhost: 'localhost'
+  #   fromaddr: 'app@example.com'
+  #   toaddrs: ['admin@example.com']
+  #   subject: 'Critical Error in Application'
+  #   credentials: [username, password]
+  #   level: CRITICAL
+
+loggers:
+  app:
+    level: DEBUG
+    handlers: [debug_console, debug_file, info_file, error_file, critical_file]
+    propagate: no
+root:
+  level: WARNING
+  handlers: [debug_console]
+
+
+|||||||||||||		File: main.py		|||||||||||||
+"""
+main.py
+
+Entry point for the video annotation tool. This script sets up the logging,
+initializes the main application window, and starts the annotation tool.
+"""
+
+# General Imports
+import logging, logging.config, yaml, ctypes
+import customtkinter as ctk
+
+# Custom Imports
+from screens import Splash
+from annotater.anno import create_annotater
+
+# TODO : create documentation
+# TODO : test annotations recorded 240p and recoreded in 1080p, scaled down to 240p
+
+# Set DPI Awareness for Windows 10
+ctypes.windll.shcore.SetProcessDpiAwareness(2)
+
+# Set up logging
+def setup_logging(config_path="logging_config.yaml"):
+    """
+    Sets up logging configuration from the provided YAML file.
+
+    Args:
+        config_path (str): Path to the logging configuration YAML file.
+
+    Returns:
+        (logging.Logger): Configured logger object
+    """
+    with open(config_path, "r") as f:
+        config = yaml.safe_load(f.read())
+    logging.config.dictConfig(config=config)
+    logger = logging.getLogger('main')
+    return logger
+
+logger = setup_logging()
+
+def close(app):
+    """
+    Closes the application and logs the closure.
+
+    Args:
+        app (customtkinter.CTk): The main application window.
+    """
+    logger.info("### Closing the Annotation Tool ###")
+    app.destroy()
+
+def main():
+    """Main function to initialize and run the annotation tool application."""
+    logger.info("### Starting the Annotation Tool ###")
+
+    try:
+        # Set the theme (optional)
+        ctk.set_appearance_mode("Dark")  # Can be "Dark" or "Light"
+        logger.debug("Appearance mode set to Dark")
+
+        # Create the main application window
+        app = ctk.CTk()
+        app.title("Annotater") # Set the title of the window
+        app.protocol("WM_DELETE_WINDOW", lambda: close(app))
+        logger.debug("Main application window created and configured")
+
+        # # add calback for mouse position
+        # app.bind("<Motion>", lambda e: logger.debug(f"Mouse position: {e.x}, {e.y}"))
+
+        # Hide the main application window initially
+        app.withdraw()
+        logger.debug("Main application window hidden")
+
+        # Show splash screen
+        Splash(app)
+        logger.info("Splash screen displayed")
+
+        create_annotater(app)
+        logger.info("Annotater created and started")
+
+    except Exception as e: logger.exception("An error occurred in the main loop: %s", e)
+    finally: logger.info("Application terminated")
+
+# run main loop
+if __name__ == "__main__":
+    main()
+
+
+|||||||||||||		File: README.md		|||||||||||||
+# Annotater: Advanced Video Annotation Tool
+
+Annotater is a sophisticated video annotation tool designed for detailed and precise marking of video content. It integrates robust video and audio processing capabilities to provide a seamless annotation experience. Based on Python, the tool uses libraries like CustomTkinter for its UI, OpenCV for video processing, and PyAudio for audio manipulation, ensuring a comprehensive environment for users to work with video data.
+
+## Prerequisites
+
+1. Python 3.8+
+2. Knowledge of video formats and codecs
+3. Basic understanding of threading and concurrent programming in Python
+
+## Key Features
+
+- **Video Playback Controls**: Play, pause, seek, and stop functionalities for thorough video review.
+- **Audio Processing**: Integrated audio playback synchronized with video.
+- **Dynamic Annotation**: Users can draw and save annotations directly on the video frame.
+- **Multi-threading**: Utilizes threading for non-blocking video processing.
+- **Comprehensive Logging**: Detailed logs for debugging and tracking application processes.
+
+## Important Links
+
+- [CustomTkinter Repository](https://github.com/TomSchimansky/CustomTkinter)
+- [OpenCV Documentation](https://docs.opencv.org/4.x/)
+- [PyAudio Official Page](http://people.csail.mit.edu/hubert/pyaudio/)
+
+## Metadata
+
+| Attribute         | Value                                          |
+|-------------------|------------------------------------------------|
+| Name              | Annotater                                      |
+| Version           | 1.0.0                                          |
+| Compatibility     | Windows 10, Ubuntu 20.04                       |
+| License           | MIT License                                    |
+| Release Date      | 2024-01-24                                     |
+| Last Updated      | 2024-07-18                                     |
+
+## Documentation
+
+### Overview
+
+Annotater is built to facilitate detailed annotations of video files, offering tools to mark and comment on video content for educational, research, or editing purposes. The application supports various video formats and provides an interface to manage video playback, audio synchronization, and annotation storage.
+
+### Modules and Code Structure
+
+**`main.py`**:
+
+- This is the entry point of the application. It sets up the main application window, initializes logging based on a configuration file, and handles the application's closing event.
+
+**`config.py`**:
+
+- Manages the application configuration, including paths and logging settings. It dynamically updates these settings during runtime based on user interactions.
+
+**`data.py`**:
+
+- Handles data storage for videos, audio, and annotations. It implements methods to add, update, and retrieve data elements tied to specific video frames.
+
+**`screens.py`**:
+
+- Contains the UI elements for the splash screen and the save progress screen. These screens inform the user of ongoing processes and ensure the application remains responsive during lengthy operations.
+
+**`logging_config.yaml`**:
+
+- Configures different logging handlers and formats, including file and console outputs tailored to different logging levels (DEBUG, INFO, ERROR).
+
+### Advanced Features
+
+- **Multi-threaded Processing**: Ensures video playback and annotation processes run smoothly without interrupting the user interface.
+- **Customizable UI**: Thanks to CustomTkinter, the UI can be easily modified to match user preferences or specific requirements.
+
+## Directions of Use
+
+1. **Starting the Application**:
+   - Run `main.py` to open the application. A splash screen appears initially, followed by the main annotation interface.
+
+2. **Opening a Video**:
+   - Use the file dialog to select a video file for annotation. The video will load, and playback controls will appear.
+
+3. **Annotating a Video**:
+   - Play the video and pause at the frame you want to annotate. Use the mouse to draw annotations directly on the video frame. Annotations can be saved and will be associated with the specific frame.
+
+4. **Saving Annotations**:
+   - Once annotation is complete, use the save option to store annotations. The application supports exporting annotations in JSON format, which includes metadata about the video and the annotations.
+
+5. **Reviewing and Editing Annotations**:
+   - Load an annotated video file to review annotations. Annotations can be edited by navigating to the specific frames and modifying the existing marks.
+
+## Building the Application
+
+To build the application, use the following command:
+
+```bash
+pyinstaller --onefile --windowed --name Annotater --icon=imgs/tool.ico main.py
+```
+
+This command packages the application into a single executable file named `Annotater` with a custom icon. The resulting executable can be distributed and run on compatible systems.
+
+Use the following command to build the application with required non-py files (images, yaml, etc.):
+
+```bash
+pyinstaller main.msc
+```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+
+|||||||||||||		File: requirements.txt		|||||||||||||
+PyYAML=6.0.1
+customtkinter=5.2.2
+pillow=10.4.0
+opencv-python=4.10.0.84
+sounddevice=0.4.7
+tqdm=4.66.4
+pygame=2.6.0
+moviepy=1.0.3
+scipy=1.14.0
+pyinstaller=6.9.0
+
+|||||||||||||		File: screens.py		|||||||||||||
+"""
+screens.py
+
+This module contains the classes for the splash screen and save progress screen
+used in the Annotater application.
+"""
+
+# General Imports
+import logging
+import os, customtkinter as ctk
+from PIL import Image
+
+# Custom Imports
+from annotater.setup import align_window
+
+# Set up logging
+logger = logging.getLogger('app')
+
+class Splash(ctk.CTkToplevel):
+    """
+    The Splash class creates a splash screen that displays a loading message and an image.
+
+    Args:
+        root (ctk.Ctk): The root window of the application.
+        counter (int): The countdown timer before closing the splash screen.
+    """
+    def __init__(self, root, counter=4):
+        super().__init__(root)
+        
+        self.root = root
+        self.protocol("WM_DELETE_WINDOW", self.root.deiconify)
+        logger.debug("Initializing Splash screen")
+
+        # Set the size of the splash screen
+        self.base_width, self.base_height = 350, 300
+        
+        self.create_splash()
+        self.update_countdown(counter)
+
+    def create_splash(self):
+        """Creates and configures the splash screen layout."""
+        self.title("Loading...")
+
+        # Center the splash screen
+        (mid_x, mid_y), (self.window_width, self.window_height), _ = align_window(self, self.base_width, self.base_height)
+
+        self.resizable(False, False)
+
+        # show application window
+        self.deiconify()
+
+        # Make the splash screen topmost
+        self.attributes("-topmost", True)
+        logger.debug(f"Splash screen centered at position: {mid_x}, {mid_y}")
+
+        # Load and resize the image
+        self.image_path = "./imgs/jhu.png"
+        img = self.load_and_resize_image(self.image_path)
+
+        # Create widgets
+        self.image_label = ctk.CTkLabel(self, image=img, text="")
+        self.label = ctk.CTkLabel(self, text="Welcome to the Annotater Application", font=("Arial", 16))
+        self.countdown_label = ctk.CTkLabel(self, text="Closing in 3 seconds", font=("Courier", 12))
+
+        # Grid configuration
+        self.grid_columnconfigure(0, weight=1)  # Make the column grow with the window
+        self.grid_rowconfigure(0, weight=1)  # Image label row
+        self.grid_rowconfigure(1, weight=0)  # Text label row
+        self.grid_rowconfigure(2, weight=0)  # Countdown label row
+
+        # Place widgets using grid
+        self.image_label.grid(row=0, column=0, sticky="nsew", pady=20)
+        self.label.grid(row=1, column=0, sticky="ew")
+        self.countdown_label.grid(row=2, column=0, sticky="ew")
+
+        logger.debug("Splash screen layout created with grid")
+
+    def load_and_resize_image(self, image_path):
+        """
+        Loads and resizes an image to fit the application window.
+        
+        Args:
+            image_path (str): Path to the image file.
+        """
+        if os.path.exists(image_path):
+            img = Image.open(image_path)
+            img_width, img_height = img.size
+            logger.debug(f"Original Image Size: {img_width}x{img_height}")
+            scaling_factor = min(self.base_width / img_width, self.base_height / img_height)
+            new_width = int(img_width * scaling_factor)
+            new_height = int(img_height * scaling_factor)
+            img = img.resize((new_width, new_height), Image.Resampling.LANCZOS)
+            logger.debug(f"Resized Image Size: {new_width}x{new_height}")
+            return ctk.CTkImage(img, size=(new_width, new_height))
+        else:
+            logger.error(f"Splash image not found: {image_path}")
+            return None
+
+    def update_countdown(self, count):
+        """
+        Update the countdown timer on the splash screen.
+
+        Args:
+            count (int): Countdown timer in seconds.
+        """
+        if count > 0:
+            self.countdown_label.configure(text=f"Closing in {count} seconds...")
+            logger.debug(f"Countdown updated to {count} seconds")
+            self.after(1000, self.update_countdown, count-1)
+        else:
+            self.destroy_splash()
+
+    def destroy_splash(self):
+        """Destroy the splash screen and show the main window."""
+        self.destroy()
+        self.root.deiconify()    # Show the main window
+        logger.info("Countdown finished, destroying splash screen, showing main window")
+
+class SaveProgress(ctk.CTkToplevel):
+    """
+    Save Progress Window for the Annotater application.
+
+    Args:
+        root (ctk.CTk): The root Tkinter application.
+        name (str): The name of the file being saved.
+    """
+    def __init__(self, root, name):
+        super().__init__(root)
+        self.root = root
+        self.name = name
+        logger.debug(f"Initializing SaveProgress window for {name}")
+        self.create_save_progress()
+        self.protocol("WM_DELETE_WINDOW", self.destroy_save_progress)
+
+    def create_save_progress(self):
+        """Create and display the save progress window."""
+        self.title(f"{self.name}: Saving Progress...")
+        self.geometry("500x200")
+        self.attributes("-topmost", True)
+
+        # Layout Configuration
+        for i in range(5): self.grid_rowconfigure(i, weight=1)
+        self.grid_columnconfigure(0, weight=1)
+        self.grid_columnconfigure(1, weight=6)
+
+        # Add a label to show the current status
+        self.status_label = ctk.CTkLabel(self, text="Saving Annotation Files", font=("Courier", 16))
+        self.status_label.grid(row=0, column=0, columnspan=2, padx=10, pady=10, sticky="ew")
+
+        # video data progress bar
+        self.video_progress_label = ctk.CTkLabel(self, text="Video Progress:")
+        self.video_progress_label.grid(row=1, column=0, padx=10, pady=0, sticky="ew")
+        self.video_progress = ctk.CTkProgressBar(self, mode='determinate', height=20, border_width=1, border_color="black", corner_radius=5, progress_color="green")
+        self.video_progress.grid(row=1, column=1, padx=20, pady=0, sticky="ew")
+
+        # audio data progress bar
+        self.audio_progress_label = ctk.CTkLabel(self, text="Audio Progress:")
+        self.audio_progress_label.grid(row=2, column=0, padx=10, pady=0, sticky="ew")
+        self.audio_progress = ctk.CTkProgressBar(self, mode='determinate', height=20, border_width=1, border_color="black", corner_radius=5, progress_color="green")
+        self.audio_progress.grid(row=2, column=1, padx=20, pady=0, sticky="ew")
+
+        # audio-video data progress bar
+        self.av_progress_label = ctk.CTkLabel(self, text="Audio-Video Progress:")
+        self.av_progress_label.grid(row=3, column=0, padx=10, pady=0, sticky="ew")
+        self.av_progress = ctk.CTkProgressBar(self, mode='determinate', height=20, border_width=1, border_color="black", corner_radius=5, progress_color="green")
+        self.av_progress.grid(row=3, column=1, padx=20, pady=0, sticky="ew")
+
+        # annotations json data progress bar
+        self.json_progress_label = ctk.CTkLabel(self, text="Metadata Progress:")
+        self.json_progress_label.grid(row=4, column=0, padx=10, pady=0, sticky="ew")
+        self.json_progress = ctk.CTkProgressBar(self, mode='determinate', height=20, border_width=1, border_color="black", corner_radius=5, progress_color="green")
+        self.json_progress.grid(row=4, column=1, padx=20, pady=0, sticky="ew")
+
+        # reset progress bars
+        self.reset()
+        logger.debug("SaveProgress window layout created")
+
+    def update_title_on_save(self):
+        """Update the title of the save progress window when save is complete."""
+        self.title(f"{self.name}: Progress Saved!!!")
+        logger.info(f"Annotations saved for {self.name}")
+
+    def update_video_progress(self, value):
+        """
+        Update the video progress bar.
+
+        Args:
+            value (float): Progress value between 0 and 1.
+        """
+        if value == 1.0: self.video_progress_label.configure(text="Video Progress: Done ✅")
+        self.video_progress.set(value)
+
+    def update_audio_progress(self, value):
+        """
+        Update the audio progress bar.
+
+        Args:
+            value (float): Progress value between 0 and 1.
+        """
+        if value == 1.0: self.audio_progress_label.configure(text="Audio Progress: Done ✅")
+        self.audio_progress.set(value)
+
+    def update_av_progress(self, value):
+        """
+        Update the audio-video progress bar.
+
+        Args:
+            value (float): Progress value between 0 and 1.
+        """
+        if value == 1.0: self.av_progress_label.configure(text="Audio-Video Progress: Done ✅")
+        self.av_progress.set(value)
+
+    def update_json_progress(self, value):
+        """
+        Update the metadata (JSON) progress bar.
+
+        Args:
+            value (float): Progress value between 0 and 1.
+        """
+        if value == 1.0: self.json_progress_label.configure(text="Metadata Progress: Done ✅")
+        self.json_progress.set(value)
+
+    def reset(self):
+        """Reset all progress bars and the status label."""
+        self.title(f"{self.name}: Saving Progress...")
+        self.update_video_progress(0.0)
+        self.update_audio_progress(0.0)
+        self.update_av_progress(0.0)
+        self.update_json_progress(0.0)
+        self.status_label.configure(text="Status: Beginning Save Thread")
+        logger.debug(f"Progress bars reset for {self.name}")
+
+    def destroy_save_progress(self):
+        """Destroy the save progress window and show the main window."""
+        logger.info("Destroying SaveProgress window")
+        self.destroy()
+        self.root.deiconify()    # Show the main window
+        logger.debug("Main window deiconified")
+
+
+
+|||||||||||||		File: annotater\anno.py		|||||||||||||
+"""
+anno.py
+
+This module contains functions for managing directory changes, refreshing file lists, 
+annotating videos, and watching annotated videos in the video annotation tool application.
+"""
+
+# General Imports
+import threading, logging
+import customtkinter as ctk
+from tkinter import filedialog
+
+# Local Imports
+from annotater.setup import align_window
+from annotater.player import VideoPlayer, AnnotatedPlayer
+from config import config
+
+# Set up logging
+logger = logging.getLogger('app')
+
+def change(app, labels):
+    """
+    Changes the working directory and updates labels with new paths.
+
+    Args:
+        app (ctk.CTk): The main application window.
+        labels (dict): Dictionary containing label widgets.
+    """
+    try:
+        config.change_directory()
+        labels['in_path'].configure(text=f"Input Dir: {config.in_path}")
+        labels['file'].configure(text=f"Current File to be Annotated: {config.fetch_top_file}")
+        labels['out_path'].configure(text=f"Output Dir: {config.out_path}")
+        logger.info("Directory changed successfully")
+    except Exception as e:
+        logger.exception(f"Error changing directory: {e}")
+
+def refresh(labels):
+    """
+    Refreshes the list of files and updates the corresponding label.
+
+    Args:
+        labels (dict): Dictionary containing label widgets.
+    """
+    try:
+        _ = config.refetch_files()
+        labels['file'].configure(text=f"Current File to be Annotated: {config.fetch_top_file}")
+        logger.info("File list refreshed successfully")
+    except Exception as e:
+        logger.exception(f"Error refreshing file list: {e}")
+
+def annotate(app, labels):
+    """
+    Starts the annotation process for the top file in the list.
+
+    Args:
+        app (ctk.CTk): The main application window.
+        labels (dict): Dictionary containing label widgets.
+    """
+    file_name = config.fetch_top_file
+    if not file_name:
+        labels['file'].configure(text="All files have been annotated.")
+        logger.debug("All files have been annotated.")
+    else:
+        logger.info(f"Starting annotation for file: {file_name}")
+        done_event = threading.Event()
+
+        try:
+            player = VideoPlayer(app, file_name, done_event=done_event)
+            done_event.wait()
+            _ = config.refetch_files()
+            labels['file'].configure(text=f"Current File to be Annotated: {config.fetch_top_file}")
+            logger.info(f"Annotation completed for file: {file_name}")
+        except Exception as e:
+            logger.exception(f"Error during annotation for file: {file_name}: {e}")
+
+def watch():
+    """Starts the video player to watch the annotated video."""
+    try:
+        # get which file to watch
+        watch_file = filedialog.askopenfilename(filetypes=[("MP4 files", "*.mp4")], title="Select a file to watch", initialdir=config.out_path)
+        if watch_file:
+            meta_file = watch_file.replace("_annotated.mp4", "_annotated.json")
+            logger.info(f"Started watching file: {watch_file}")
+            AnnotatedPlayer(watch_file, meta_file)
+        else:
+            logger.warning("No file selected for watching")
+    except Exception as e:
+        logger.exception(f"Error during watching: {e}")
+
+# Functions
+def create_annotater(app):
+    """
+    Sets up the annotation tool user interface and starts the main application loop.
+
+    Args:
+        app (ctk.CTk): The main application window.
+    """
+    logger.info("Creating annotater")
+    try:
+        app.iconbitmap("./imgs/tool.ico")
+
+        # add default styling options
+        ctk.set_default_color_theme("dark-blue")  # Set the default color theme
+        app.option_add("*Font", "Courier 12")  # Set the default font and size
+        logger.debug("Default styling options set")
+
+        # Set geometry 
+        _, _, _= align_window(app, 700, 200)
+        app.minsize(700, 200)
+        app.resizable(True, False)
+
+        # Setup Files
+        config.file_setup()
+        logger.info("File setup completed")
+
+        # Layout Configuration
+        app.grid_rowconfigure(0, weight=1)
+        app.grid_columnconfigure(0, weight=1)
+        app.grid_columnconfigure(1, weight=1)
+
+        # dict to store labels to send as arguements
+        labels = {}
+        
+        # Add a label to the window
+        change_dir_button = ctk.CTkButton(app, text="Change Directory", command=lambda: change(app, labels))
+        change_dir_button.grid(row=0, column=0, padx=10, pady=5, sticky="ew")
+
+        # Button to refresh files
+        refresh_button = ctk.CTkButton(app, text="Refresh Files", command=lambda: refresh(labels))
+        refresh_button.grid(row=0, column=1, padx=10, pady=5, sticky="ew")
+
+        # Add a label current input path
+        current_in_path_label = ctk.CTkLabel(app, text=f"Input Dir: {config.in_path}")
+        current_in_path_label.grid(row=1, column=0, columnspan=2, padx=10, pady=5, sticky="ew")
+        labels["in_path"] = current_in_path_label
+
+        # Add label for the current file name
+        current_file_label = ctk.CTkLabel(app, text=f"Current File to be Annotated: {config.fetch_top_file}")
+        current_file_label.grid(row=2, column=0, columnspan=2, padx=10, pady=5, sticky="ew")
+        labels["file"] = current_file_label
+
+        # Add a label current output path
+        current_out_path_label = ctk.CTkLabel(app, text=f"Output Dir: {config.out_path}")
+        current_out_path_label.grid(row=3, column=0, columnspan=2, padx=10, pady=5, sticky="ew")
+        labels["out_path"] = current_out_path_label
+
+        # Open Video Player Button
+        video_button = ctk.CTkButton(app, text="Begin Annotating", command=lambda: annotate(app, labels))
+        video_button.grid(row=4, column=0, padx=10, pady=10, sticky="ew")
+
+        watch_button = ctk.CTkButton(app, text="Watch Annotated Video", command=lambda: watch())
+        watch_button.grid(row=4, column=1, padx=10, pady=10, sticky="ew")
+
+        logger.info("Annotater UI setup completed")
+
+        # Start the main application loop
+        app.mainloop()
+        logger.info("Main application loop started")
+    except Exception as e:
+        logger.exception(f"An error occurred during annotater creation: {e}")
+
+|||||||||||||		File: annotater\controller.py		|||||||||||||
+
+"""
+controller.py
+
+This module provides controls for the VideoPlayer, including play, pause,
+seek, restart, and stop functionalities.
+"""
+
+# General imports
+import cv2, logging
+import customtkinter as ctk
+from tkinter import DoubleVar
+
+# Custom imports
+from annotater.setup import align_window
+
+# Set up logging
+logger = logging.getLogger('app')
+
+class ControlWindow(ctk.CTkToplevel):
+    """
+    ControlWindow class for providing video controls.
+
+    Args:
+        app (customtkinter.CTk): The main application window.
+        file_name (str): Name of the video file being controlled.
+        video_player (VideoPlayer): The VideoPlayer instance to control.
+    """
+    def __init__(self, app, file_name, video_player, *args, **kwargs):
+        super().__init__(app, *args, **kwargs)
+        self.video_player = video_player
+        self.title(f"Video Controls: {file_name}")
+
+        self.control_frame = ctk.CTkFrame(self)
+        self.control_frame.pack(pady=10)
+        
+        self.play_pause_button = ctk.CTkButton(self.control_frame, text="▐▐", command=self.toggle_pause)
+        self.play_pause_button.grid(row=0, column=0, padx=5)
+        
+        self.seek_var = DoubleVar()
+        self.seeker = ctk.CTkSlider(self.control_frame, variable=self.seek_var, from_=0, to=int(self.video_player.cap.get(cv2.CAP_PROP_FRAME_COUNT)), width=500, command=self.seek)
+        self.seeker.grid(row=0, column=1, padx=5, sticky="ew")
+
+        self.restart_button = ctk.CTkButton(self.control_frame, text="⟳", command=self.restart)
+        self.restart_button.grid(row=0, column=2, padx=5)
+
+        self.stop_button = ctk.CTkButton(self.control_frame, text="⏹", command=lambda: self.close(save=True))
+        self.stop_button.grid(row=0, column=3, padx=5)
+
+        self.columnconfigure(1, weight=1)
+        self.protocol("WM_DELETE_WINDOW", lambda: self.close())
+
+        # align the control window
+        (self.mid_x, self.mid_y), (self.window_width, self.window_height), _ = align_window(self, 970, 50, horizontal="left", vertical="bottom")
+        
+        # Make the control window screen topmost
+        self.attributes("-topmost", True)
+        logger.info(f"Control window configuration completed for file: {file_name}")
+
+    def add_to_queue(self, command):
+        """
+        Add a command to the video player's command queue.
+        
+        Args:
+            command (tuple): The command to add to the queue
+        """
+        self.video_player.command_queue.put(command)
+        logger.debug("Added command to queue: %s", command)
+
+    def toggle_pause(self):
+        """Toggle the pause state of the video."""
+        self.play_pause_button.configure(text="▶" if self.video_player.paused else "▐▐")
+        self.add_to_queue('pause')
+        logger.info(f"Toggled pause state to {not self.video_player.paused}")
+
+    def seek(self, value):
+        """
+        Seek to the specified frame number.
+        
+        Args:
+            value (int): The frame number to seek to.
+        """
+        frame_number = int(value)
+        self.add_to_queue(('seek', frame_number))
+        self.seek_var.set(frame_number)
+        logger.info(f"Seeked to frame number: {frame_number}")
+
+    def restart(self):
+        """Restart the video from the beginning."""
+        self.add_to_queue('restart')
+        self.play_pause_button.configure(text="▐▐")
+        self.seek_var.set(0)
+        logger.info("Restarted video")
+
+    def close(self, save=False):
+        """Save and close the video player."""
+        self.video_player.close(save=save)
+        self.video_player.done_event.set()
+        logger.info("Saved and closed the video player")
+
+|||||||||||||		File: annotater\player.py		|||||||||||||
+"""
+player.py
+
+This module handles video playback, annotation, and audio synchronization
+for both annotating and watching annotated videos.
+"""
+
+# General Imports
+import cv2, os, threading, queue, json, logging
+import sounddevice as sd, time as t
+from tqdm import tqdm
+from tkinter import messagebox
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'  # Hide pygame support prompt
+from pygame import mixer
+from moviepy.editor import VideoFileClip
+
+# Local Imports
+from data import Data
+from config import config
+from annotater.controller import ControlWindow
+
+# Set up logging
+logger = logging.getLogger('app')
+
+class VideoPlayer:
+    """
+    VideoPlayer class for playing and annotating videos.
+
+    Args:
+        app (customtkinter.CTk): The main application window.
+        file_name (str): Name of the video file to be played.
+        done_event (threading.Event): Event to signal completion.
+    """
+    def __init__(self, app, file_name, done_event):
+        # Class Variables
+        self.app, self.file_name, self.done_event = app, file_name, done_event
+
+        # Position and Dimention Variables
+        self.frame_width, self.frame_height, self.screen_width, self.screen_height = None, None, None, None
+
+        # VideoCapture Variables
+        self.cap, self.frame, self.ret = None, None, None
+        self.last_frame, self.last_frame_idx, self.curr_frame_idx = None, None, None
+        self.start_counter, self.pause_frame = None, None
+
+        # Data Object
+        self._data = None
+
+        # Control Variables
+        self.control_window, self.paused = None, False
+
+        # Annotation Variables
+        self.drawing, self.last_point = False, None
+
+        # Audio Variables
+        self.samplerate, self.channels, self.frame_delay = 44100, 2, None
+
+        # Command Queue
+        self.command_queue = queue.Queue()
+
+        # start the video player
+        self.start()
+
+    def start(self):
+        """Start the video player."""
+        # Check if the file exists
+        if not os.path.exists(f"{config.in_path}/{self.file_name}"):
+            logger.error(f"File not found: {self.file_name}")
+            messagebox.showerror("Error", "File not found.")
+            return
+
+        # Create video capture object for the file
+        self.cap = cv2.VideoCapture(f"{config.in_path}/{self.file_name}")
+        if not self.cap.isOpened():
+            logger.error(f"Failed to open video file: {self.file_name}")
+            messagebox.showerror("Error", "Failed to open video file.")
+            return
+
+        # Get the last frame index and set the cpature to the last frame
+        self.last_frame_idx = int(self.cap.get(cv2.CAP_PROP_FRAME_COUNT)) - 1
+        self.cap.set(cv2.CAP_PROP_POS_FRAMES, self.last_frame_idx)
+
+        # Get the last frame and its dimensions
+        _, self.last_frame = self.cap.read()
+        self.frame_height, self.frame_width = self.last_frame.shape[:2]
+        self.screen_width, self.screen_height = self.app.winfo_screenwidth(), self.app.winfo_screenheight()
+
+        # Set the capture back to the first frame
+        self.cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
+
+        # Initialize the Data object
+        self._data = Data(
+            in_path=config.in_path, out_path=config.out_path,
+            name=self.file_name,
+            frame_width=int(self.cap.get(cv2.CAP_PROP_FRAME_WIDTH)),
+            frame_height=int(self.cap.get(cv2.CAP_PROP_FRAME_HEIGHT)),
+            fps=int(self.cap.get(cv2.CAP_PROP_FPS)),
+            fc=int(self.cap.get(cv2.CAP_PROP_FRAME_COUNT)),
+            sample_rate=self.samplerate, channels=self.channels
+        )
+
+        # Initialize the frame delay
+        self.frame_delay = int((1 / self._data.frame_rate) * 1000)
+
+        # Initialize the video thread and control window
+        self.video_thread = threading.Thread(target=self.main_loop, daemon=True)
+        self.control_window = ControlWindow(self.app, self.file_name, self)
+        self.video_thread.start()
+
+        # Begin the main loop
+        logger.info(f"VideoPlayer initialized with frame delay: {self.frame_delay} ms")
+        self.control_window.mainloop()
+
+    def audio_callback(self, indata, frames, time, status) -> None:
+        """
+        Callback for recording audio.
+        
+        Args:
+            indata (numpy.ndarray): The audio data.
+            frames (int): The number of frames.
+            time (sounddevice.CallbackTimeInfo): The time information.
+            status (sounddevice.CallbackFlags): The callback flags.
+        """
+        if self.start_counter is None:
+            self.start_counter = t.perf_counter()
+        timestamp = t.perf_counter() - self.start_counter
+        self._data.add_audio_data(timestamp, indata.copy())
+
+    def mouse_callback(self, event, x, y, flags, param) -> None:
+        """
+        Callback for handling mouse events.
+        
+        Args:
+            event (int): The event type.
+            x (int): The x-coordinate.
+            y (int): The y-coordinate.
+            flags (int): The flags.
+            param (Any): Additional parameters.
+        """
+        if event == cv2.EVENT_LBUTTONDOWN and not self.drawing:
+            self.drawing = True
+            self._data.add_annotation("start", (x, y))
+            logger.debug("Started drawing annotation at: (%d, %d)", x, y)
+        elif event == cv2.EVENT_MOUSEMOVE and self.drawing:
+            self._data.add_annotation("move", (x, y))
+        elif event == cv2.EVENT_LBUTTONUP and self.drawing:
+            self.drawing = False
+            self._data.add_annotation("end", (x, y))
+            logger.debug("Ended drawing annotation at: (%d, %d)", x, y)
+
+    def draw_annotations(self) -> None:
+        """
+        Draw annotations on the given frame based on the frame index."""
+        # Get the last annotation
+        _annotation = self._data.get_last_annotation()
+        largest_key = max(self._data.annotations.keys())
+
+        # Sync the annotation with the last frame
+        if _annotation is not None and abs(largest_key - self._data.get_frames_length) <= 5:
+            command, (x, y) = _annotation
+
+            # Draw the annotation based on the command
+            if command == "start":
+                self.start_point = (x, y)
+            elif command == "move":
+                cv2.line(self.frame, self.start_point, (x, y), (0, 0, 255), 3)
+                self.start_point = (x, y)
+            elif command == "end":
+                cv2.line(self.frame, self.start_point, (x, y), (0, 0, 255), 3)
+                self.start_point = None
+                self.drawing = False
+            logger.debug("Annotations drawn on frame")
+
+    def main_loop(self):
+        """Main loop for video playback and annotation."""
+        cv2.namedWindow("Video Player")
+        cv2.setMouseCallback("Video Player", self.mouse_callback)
+
+        total_frames = self._data.get_max_frames
+        self.start_counter = t.perf_counter()  # Start high-resolution timer
+
+        # Calculate the coordinates to center the frame
+        mid_x = (self.screen_width - self.frame_width) // 2
+        mid_y = (self.screen_height - self.frame_height) // 2
+
+        # move window to the center
+        cv2.moveWindow("Video Player", mid_x, mid_y)
+
+        # start audio stream
+        with sd.InputStream(samplerate=self.samplerate, channels=self.channels, callback=self.audio_callback):
+            with tqdm(total=total_frames, desc="Processing Frames") as self.pbar:
+                while self.cap.isOpened():
+                    start_time = t.time()
+                    current_counter = t.perf_counter() - self.start_counter
+
+                    self.curr_frame_idx = curr_frame = int(self.cap.get(cv2.CAP_PROP_POS_FRAMES))
+                    if curr_frame >= total_frames: curr_frame = total_frames - 1
+                    
+                    # update seeker
+                    self.control_window.seek_var.set(curr_frame)
+
+                    # Check for commands
+                    try:
+                        command = self.command_queue.get_nowait()
+
+                        # Execute the command if available
+                        if command == 'pause': self.toggle_pause()
+                        elif isinstance(command, tuple) and command[0] == 'seek': self.seek(command[1])
+                        elif command == 'restart': self.restart()
+
+                    except queue.Empty:
+                        pass
+                    
+                    # Check for pause
+                    if not self.paused:
+                        self.ret, self.frame = self.cap.read()
+                        if not self.ret: 
+                            self.pbar.total += 1
+                            self.frame = self.last_frame.copy()
+                        self.pause_frame = self.frame.copy()
+                    else:
+                        self.frame = self.pause_frame.copy()
+                        self.pbar.total += 1
+                        self._data.increment_max_frame()
+
+                    if self.drawing: self.draw_annotations()
+
+                    # Display the frame
+                    cv2.imshow("Video Player", self.frame)
+
+                    # add current frame to data
+                    self._data.add_curr_frame(current_counter, curr_frame)
+
+                    # Check for key press
+                    key = cv2.waitKey(1) & 0xFF
+
+                    # Update progress bar
+                    self.pbar.update(1)
+
+                    # Update frame delay
+                    elapsed_time = t.time() - start_time
+                    remaining_time = max(0, self.frame_delay / 1000 - elapsed_time)  # Convert frame_delay to seconds
+                    if remaining_time > 0:
+                        t.sleep(remaining_time)
+
+                logger.info("Video processing completed")
+
+    def toggle_pause(self):
+        """Toggle the pause state of the video."""
+        self.paused = not self.paused
+
+    def seek(self, frame_number) -> None:
+        """Seek to a specific frame.
+        
+        Args:
+            frame_number (int): The frame number to seek to.
+        """
+        self.cap.set(cv2.CAP_PROP_POS_FRAMES, frame_number)
+        self._data.update_curr_frame(frame_number)
+        self.curr_frame_idx = frame_number
+
+    def restart(self) -> None:
+        """Restart the video."""
+        # Reset the video player
+        self.paused, self.drawing = False, False
+
+        # reset cap to the first frame
+        self.cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
+
+        # clean data
+        self._data.clean()
+        self._data.update_max_frames(int(self.cap.get(cv2.CAP_PROP_FRAME_COUNT)))
+        self._data.update(
+            in_path=config.in_path, out_path=config.out_path,
+            name=self.file_name, 
+            frame_width=int(self.cap.get(cv2.CAP_PROP_FRAME_WIDTH)), 
+            frame_height=int(self.cap.get(cv2.CAP_PROP_FRAME_HEIGHT)), 
+            fps=int(self.cap.get(cv2.CAP_PROP_FPS)), 
+            fc=int(self.cap.get(cv2.CAP_PROP_FRAME_COUNT)),
+            sample_rate=self.samplerate, channels=self.channels)
+        
+        # clear command queue
+        while not self.command_queue.empty():
+            _ = self.command_queue.get()
+        logger.info("Command queue cleared and video restarted")
+
+        # Reset tqdm progress bar
+        self.pbar.reset(total=int(self.cap.get(cv2.CAP_PROP_FRAME_COUNT)))
+        self.pbar.refresh()
+
+    def close(self, save=False):
+        """Close the video player.
+        
+        Args:
+            save (bool): Whether to save the data. Defaults to False.
+        """
+        # relese video capture and stop audio stream
+        self.cap.release()
+        sd.stop()
+
+        # save data if required
+        if save: self._data.save_data(self.app)
+
+        # close windows and threads
+        cv2.destroyAllWindows()
+        self.done_event.set()
+        self.video_thread.join(1)
+        self.control_window.quit()
+        self.control_window.destroy()
+        self.app.deiconify()
+        logger.info("VideoPlayer closed")
+
+class AnnotatedPlayer:
+    """
+    AnnotatedPlayer class for watching annotated videos.
+
+    Args:
+        watch_file (str): Path to the annotated video file.
+        meta_file (str): Path to the metadata file for annotations.
+    """
+    def __init__(self, watch_file, meta_file):
+        logger.info(f"Initializing AnnotatedPlayer for file: {watch_file}")
+
+        # Update class variables
+        self.watch_file = watch_file
+        self.meta_file = meta_file
+
+        # Check if the files exist
+        if not os.path.exists(watch_file):
+            logger.error(f"File not found: {watch_file}")
+            messagebox.showerror("Error", "File not found.")
+            return
+        
+        # Create video capture object for the file
+        self.cap = cv2.VideoCapture(watch_file)
+        if not self.cap.isOpened():
+            logger.error(f"Failed to open watch file: {watch_file}")
+            messagebox.showerror("Error", "Failed to open video file.")
+            return
+
+        if not os.path.exists(meta_file):
+            logger.error(f"File metadata not found: {meta_file}")
+            messagebox.showerror("Error", "File metadata not found.")
+            return
+        
+        with open(meta_file, "r") as file:
+            self.meta = json.load(file)
+
+        # Extract and save audio using moviepy
+        self.extract_audio(watch_file)
+
+        # Initialize pygame mixer for audio playback
+        mixer.init()
+        mixer.music.load("tmp.mp3")
+        mixer.music.play()
+
+        # Annotation variables
+        self.start_time = None
+        self.last_point = None
+
+        # Get video properties
+        self.total_frames = int(self.cap.get(cv2.CAP_PROP_FRAME_COUNT))
+        self.frame_rate = self.meta['metadata']['frame_rate']
+        self.frame_delay = int((1 / self.frame_rate) * 1000)
+
+        # Start the video player
+        self.show()
+
+    def extract_audio(self, video_file):
+        """
+        Extract audio from the video file.
+        
+        Args:
+            video_file (str): The path to the video file.
+        """
+        video = VideoFileClip(video_file)
+        audio = video.audio
+        audio.write_audiofile('tmp.mp3', logger=None, verbose=False)
+        audio.close()
+        video.close()
+
+    def show(self):
+        """Show the annotated video with annotations."""
+        # open video player and display annotations
+        cv2.namedWindow("Annotater Player")
+        logger.info(f"Started Annotated Player for file: {self.watch_file}")
+
+        # play the video
+        while self.cap.isOpened():
+            ret, frame = self.cap.read()
+            
+            # check if frame is available and get the frame number
+            if ret:
+                frame_number = int(self.cap.get(cv2.CAP_PROP_POS_FRAMES))
+                
+                # check if the frame has annotations
+                if str(frame_number) in self.meta:
+                    command, point = self.meta[str(frame_number)]
+
+                    # check the command and draw the annotation
+                    if command == "start":
+                        self.last_point = tuple(point)
+                    elif command == "move":
+                        cv2.line(frame, self.last_point, tuple(point), (0, 0, 255), 3)
+                        self.last_point = tuple(point)
+                    elif command == "end":
+                        cv2.line(frame, self.last_point, tuple(point), (0, 0, 255), 3)
+                        self.last_point = None
+
+                cv2.imshow("Annotater Player", frame)
+                if cv2.waitKey(self.frame_delay) & 0xFF == ord('q'): break
+            else: break
+
+        self.close()
+        logger.info("Annotater Player closed")
+
+    def close(self):
+        """Close the AnnotatedPlayer."""
+        self.cap.release()
+        mixer.music.stop()
+        mixer.quit()
+        os.remove("tmp.mp3")
+        cv2.destroyAllWindows()
+        messagebox.showinfo("Done", "File is done playing")
+        logger.info("AnnotatedPlayer resources released and windows closed")
+
+|||||||||||||		File: annotater\setup.py		|||||||||||||
+"""
+setup.py
+
+This module contains the function to align the application window at the specified position and size 
+based on the screen dimensions.
+"""
+
+# General Imports
+import logging
+
+# Set up logging
+logger = logging.getLogger('app')
+
+# Constants
+DEFAULT_OFFSET = -9
+DEFAULT_TOP_BAR = 29
+DEFAULT_WINDOW_WIDTH = 0.5
+DEFAULT_WINDOW_HEIGHT = 0.5
+
+def align_window(app, window_width: float = DEFAULT_WINDOW_WIDTH, window_height: float = DEFAULT_WINDOW_HEIGHT, 
+                 horizontal: str = "center", vertical: str = "center", offset: int = DEFAULT_OFFSET, 
+                 top_bar: int = DEFAULT_TOP_BAR) -> tuple:
+    """
+    Aligns the application window at the specified position and size based on the screen dimensions.
+
+    Args:
+        app (ctk.CTk): The application window.
+        window_width (float): The desired width of the window as a fraction of the screen width. Defaults to 0.5.
+        window_height (float): The desired height of the window as a fraction of the screen height. Defaults to 0.5.
+        horizontal (str): The horizontal alignment of the window ("center", "left", "right"). Defaults to "center".
+        vertical (str): The vertical alignment of the window ("center", "top", "bottom"). Defaults to "center".
+        offset (int): The offset for positioning the window. Defaults to -9.
+        top_bar (int): The height of the top bar for adjusting the vertical position. Defaults to 29.
+
+    Returns:
+        tuple: Coordinates (mid_x, mid_y) for the window, window dimensions (window_width, window_height), 
+               and screen dimensions (screen_width, screen_height).
+    """
+    # Get screen dimensions
+    screen_width = app.winfo_screenwidth()
+    screen_height = app.winfo_screenheight()
+
+    # Check if window width and height are valid
+    if window_width == 0 or window_height == 0:
+        logger.error("Window width and height cannot be 0, setting to default values")
+        window_width, window_height = DEFAULT_WINDOW_WIDTH, DEFAULT_WINDOW_HEIGHT
+
+    # Calculate window width and height
+    if window_width <= 1: window_width *= screen_width
+    if window_height <= 1: window_height *= screen_height
+
+    # Set window size
+    app.geometry(f"{window_width}x{window_height}")
+
+    # Wait for window to update
+    while app.winfo_width() == 200 or app.winfo_height() == 200:
+        app.update()
+        app.after(100)
+
+    # Get window dimensions
+    window_width, window_height = app.winfo_width(), app.winfo_height()
+
+    # Calculate window position
+    position_right = (screen_width / 2) - (window_width / 2)
+    position_top = (screen_height / 2) - (window_height / 2)
+
+    # Adjust horizontal window position based on alignment
+    if horizontal == "left": position_right = 0
+    elif horizontal == "right": position_right = screen_width - window_width
+
+    # Adjust vertical window position based on alignment
+    if vertical == "top": position_top = 0
+    elif vertical == "bottom": position_top = screen_height - window_height
+
+    # calculate the mid point of the window
+    mid_x, mid_y = int(position_right+offset), int(position_top-top_bar+offset)
+    
+    # Set window position and update
+    app.geometry(f"+{mid_x}+{mid_y}")
+    app.update()
+
+    logger.info(f"'{app.title()}' App Dimentions ==> Screen (Width, Height) : ({screen_width}, {screen_height}) | Window (Width, Height) : ({window_width}, {window_height}) | position (right, top) : ({position_right}, {position_top})")
+
+    return (mid_x, mid_y), (int(window_width), int(window_height)), (int(screen_width), int(screen_height))
+
+

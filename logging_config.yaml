@@ -1,0 +1,59 @@
+version: 1
+
+disable_existing_loggers: False
+
+formatters:
+  detailed:
+    format: '[%(asctime)s]-(Line %(lineno)d at %(pathname)s)-{%(name)s:%(levelname)s} : %(message)s'
+  simple:
+    format: '%(name)s - %(levelname)s - %(message)s'
+
+handlers:
+  debug_console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: simple
+    stream: ext://sys.stdout
+
+  debug_file:
+    class: logging.FileHandler
+    level: DEBUG
+    formatter: detailed
+    filename: logs/app.log
+    mode: 'a'
+
+  info_file:
+    class: logging.FileHandler
+    level: INFO
+    formatter: simple
+    filename: logs/info.log
+
+  error_file:
+    class: logging.FileHandler
+    formatter: detailed
+    level: ERROR
+    filename: logs/errors.log
+
+  critical_file:
+    class: logging.FileHandler
+    formatter: detailed
+    level: CRITICAL
+    filename: logs/critical.log
+
+  # email:
+  #   class: logging.handlers.SMTPHandler
+  #   mailhost: 'localhost'
+  #   fromaddr: 'app@example.com'
+  #   toaddrs: ['admin@example.com']
+  #   subject: 'Critical Error in Application'
+  #   credentials: [username, password]
+  #   level: CRITICAL
+
+loggers:
+  app:
+    level: DEBUG
+    handlers: [debug_console, debug_file, info_file, error_file, critical_file]
+    propagate: no
+root:
+  level: WARNING
+  handlers: [debug_console]

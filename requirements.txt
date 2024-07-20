@@ -1,0 +1,10 @@
+PyYAML=6.0.1
+customtkinter=5.2.2
+pillow=10.4.0
+opencv-python=4.10.0.84
+sounddevice=0.4.7
+tqdm=4.66.4
+pygame=2.6.0
+moviepy=1.0.3
+scipy=1.14.0
+pyinstaller=6.9.0

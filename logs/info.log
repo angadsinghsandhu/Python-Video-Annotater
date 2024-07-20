@@ -1,0 +1,67 @@
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 250) | position (right, top) : (522.5, 415.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['zhusky.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Starting annotation for file: zhusky.mp4
+app - INFO - Data object for zhusky.mp4 initialized
+app - INFO - 'Video Controls: zhusky.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: zhusky.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - Video processing completed
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['zhusky.mp4']
+app - INFO - Annotation completed for file: zhusky.mp4
+app - INFO - Main application loop started
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 250) | position (right, top) : (522.5, 415.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=data, out_path=out
+app - INFO - Refetched files: []
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 250) | position (right, top) : (522.5, 415.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Starting annotation for file: timer.mp4
+app - INFO - Data object for timer.mp4 initialized
+app - INFO - 'Video Controls: timer.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: timer.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - Toggled pause state to True
+app - INFO - Toggled pause state to False
+app - INFO - Toggled pause state to True
+app - INFO - Toggled pause state to False
+app - INFO - Toggled pause state to True
+app - INFO - Toggled pause state to False
+app - INFO - Toggled pause state to True
+app - INFO - Toggled pause state to False
+app - INFO - Toggled pause state to True
+app - INFO - Toggled pause state to False
+app - INFO - Toggled pause state to True
+app - INFO - Toggled pause state to False
+app - INFO - Toggled pause state to True
+app - INFO - Video processing completed
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4']
+app - INFO - Annotation completed for file: timer.mp4
+app - INFO - Main application loop started
