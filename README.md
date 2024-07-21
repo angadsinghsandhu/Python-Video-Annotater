@@ -33,6 +33,10 @@ Annotater is a sophisticated video annotation tool designed for detailed and pre
 | Release Date      | 2024-01-24                                     |
 | Last Updated      | 2024-07-18                                     |
 
+## HOW TO USE
+
+link to file : [HOW_TO_USE](https://github.com/angadsinghsandhu/Python-Video-Annotater/blob/main/HOW_TO_USE.pdf)
+
 ## Documentation
 
 ### Overview
