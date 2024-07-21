@@ -18,9 +18,8 @@ Annotater is a sophisticated video annotation tool designed for detailed and pre
 
 ## Important Links
 
-- [CustomTkinter Repository](https://github.com/TomSchimansky/CustomTkinter)
-- [OpenCV Documentation](https://docs.opencv.org/4.x/)
-- [PyAudio Official Page](http://people.csail.mit.edu/hubert/pyaudio/)
+- [Tutorial](https://livejohnshopkins-my.sharepoint.com/:f:/g/personal/asandhu9_jh_edu/EqDDvLH7cRdLtwuIQk6TABwB9nD0e7UoKNdjALV_RTnEtg?e=Nq0M4p)
+- [Application](https://livejohnshopkins-my.sharepoint.com/:f:/g/personal/asandhu9_jh_edu/Eh60kxJUMFZAgpDcLsQO2l0BQiqQNZ7frvEp0rdNiEJvBA?e=7hmr37)
 
 ## Metadata
 
@@ -36,6 +35,12 @@ Annotater is a sophisticated video annotation tool designed for detailed and pre
 ## HOW TO USE
 
 link to file : [HOW_TO_USE](https://github.com/angadsinghsandhu/Python-Video-Annotater/blob/main/HOW_TO_USE.pdf)
+
+Run application on command line using following command:
+
+```bash
+python -m main
+```
 
 ## Documentation
 
