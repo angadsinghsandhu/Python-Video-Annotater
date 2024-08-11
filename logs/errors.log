@@ -1,0 +1,72 @@
+[2024-08-11 12:25:59,338]-(Line 103 at D:\Code\Annotater App\annotater\anno.py)-{app:ERROR} : Error during watching: 'charmap' codec can't decode byte 0x81 in position 151: character maps to <undefined>
+Traceback (most recent call last):
+  File "D:\Code\Annotater App\annotater\anno.py", line 99, in watch
+    AnnotatedPlayer(watch_file, meta_file)
+  File "D:\Code\Annotater App\annotater\player.py", line 383, in __init__
+    self.meta = json.load(file)
+                ^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\json\__init__.py", line 293, in load
+    return loads(fp.read(),
+                 ^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x81 in position 151: character maps to <undefined>
+[2024-08-11 13:00:09,100]-(Line 103 at D:\Code\Annotater App\annotater\anno.py)-{app:ERROR} : Error during watching: 'charmap' codec can't decode byte 0x81 in position 151: character maps to <undefined>
+Traceback (most recent call last):
+  File "D:\Code\Annotater App\annotater\anno.py", line 99, in watch
+    AnnotatedPlayer(watch_file, meta_file)
+  File "D:\Code\Annotater App\annotater\player.py", line 384, in __init__
+    self.meta = json.load(file)
+                ^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\json\__init__.py", line 293, in load
+    return loads(fp.read(),
+                 ^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x81 in position 151: character maps to <undefined>
+[2024-08-11 14:00:41,036]-(Line 103 at D:\Code\Annotater App\annotater\anno.py)-{app:ERROR} : Error during watching: not enough values to unpack (expected 2, got 0)
+Traceback (most recent call last):
+  File "D:\Code\Annotater App\annotater\anno.py", line 99, in watch
+    AnnotatedPlayer(watch_file, meta_file, long_annotations=long_annotations)
+  File "D:\Code\Annotater App\annotater\player.py", line 411, in __init__
+    self.show()
+  File "D:\Code\Annotater App\annotater\player.py", line 446, in show
+    command, point = frame_data["anno"]
+    ^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 2, got 0)
+[2024-08-11 15:09:26,541]-(Line 116 at D:\Code\Annotater App\annotater\anno.py)-{app:ERROR} : Error during watching: 'AnnotatedPlayer' object has no attribute 'meta'
+Traceback (most recent call last):
+  File "D:\Code\Annotater App\annotater\anno.py", line 112, in watch
+    AnnotatedPlayer(watch_file, meta_file, long_annotations=long_annotations)
+  File "D:\Code\Annotater App\annotater\player.py", line 378, in __init__
+    self._initialize_video_capture()
+  File "D:\Code\Annotater App\annotater\player.py", line 419, in _initialize_video_capture
+    self.frame_rate = self.meta['metadata']['frame_rate']
+                      ^^^^^^^^^
+AttributeError: 'AnnotatedPlayer' object has no attribute 'meta'
+[2024-08-11 15:11:01,701]-(Line 116 at D:\Code\Annotater App\annotater\anno.py)-{app:ERROR} : Error during watching: 'AnnotatedPlayer' object has no attribute 'meta'
+Traceback (most recent call last):
+  File "D:\Code\Annotater App\annotater\anno.py", line 112, in watch
+    AnnotatedPlayer(watch_file, meta_file, long_annotations=long_annotations)
+  File "D:\Code\Annotater App\annotater\player.py", line 378, in __init__
+    self._initialize_video_capture()
+  File "D:\Code\Annotater App\annotater\player.py", line 421, in _initialize_video_capture
+    self.frame_rate = self.meta['metadata']['frame_rate']
+                      ^^^^^^^^^
+AttributeError: 'AnnotatedPlayer' object has no attribute 'meta'
+[2024-08-11 15:11:59,699]-(Line 116 at D:\Code\Annotater App\annotater\anno.py)-{app:ERROR} : Error during watching: not enough values to unpack (expected 2, got 0)
+Traceback (most recent call last):
+  File "D:\Code\Annotater App\annotater\anno.py", line 112, in watch
+    AnnotatedPlayer(watch_file, meta_file, long_annotations=long_annotations)
+  File "D:\Code\Annotater App\annotater\player.py", line 390, in __init__
+    self.show()
+  File "D:\Code\Annotater App\annotater\player.py", line 474, in show
+    self._process_frame(frame, frame_number)
+  File "D:\Code\Annotater App\annotater\player.py", line 487, in _process_frame
+    self._draw_annotations(frame, frame_data["anno"])
+  File "D:\Code\Annotater App\annotater\player.py", line 492, in _draw_annotations
+    command, point = anno
+    ^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 2, got 0)

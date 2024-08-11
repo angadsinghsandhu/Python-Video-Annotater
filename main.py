@@ -10,11 +10,11 @@ import logging, logging.config, yaml, ctypes
 import customtkinter as ctk
 
 # Custom Imports
-from screens import Splash
-from annotater.anno import create_annotater
+from src.screens import Splash
+from src.anno import create_annotater
 
-# TODO : create documentation
-# TODO : test annotations recorded 240p and recoreded in 1080p, scaled down to 240p
+# TODO : update create documentation
+# TODO : rebuild the annotater and update the surface
 
 # Set DPI Awareness for Windows 10
 ctypes.windll.shcore.SetProcessDpiAwareness(2)

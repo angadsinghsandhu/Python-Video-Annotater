@@ -65,3 +65,1241 @@ app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:
 app - INFO - Refetched files: ['timer.mp4']
 app - INFO - Annotation completed for file: timer.mp4
 app - INFO - Main application loop started
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 250) | position (right, top) : (522.5, 415.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: []
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4', 'zhusky.mp4']
+app - INFO - File list refreshed successfully
+app - INFO - Starting annotation for file: timer.mp4
+app - INFO - Data object for timer.mp4 initialized
+app - INFO - 'Video Controls: timer.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: timer.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - Video processing completed
+app - INFO - Saving data for timer.mp4 to C:/Users/angad/Videos/out
+app - INFO - Video data processed and saved to C:/Users/angad/Videos/out\timer.mp4
+app - INFO - Audio data saved to C:/Users/angad/Videos/out\timer.wav
+app - INFO - Audio and video merged and saved to C:/Users/angad/Videos/out\timer_annotated.mp4
+app - INFO - Annotations saved to C:/Users/angad/Videos/out\timer_annotated.json
+app - INFO - Annotations saved for timer.mp4
+app - INFO - Data for timer.mp4 saved successfully
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['zhusky.mp4']
+app - INFO - Annotation completed for file: timer.mp4
+app - INFO - Destroying SaveProgress window
+app - INFO - Main application loop started
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 250) | position (right, top) : (522.5, 415.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['zhusky.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Starting annotation for file: zhusky.mp4
+app - INFO - Data object for zhusky.mp4 initialized
+app - INFO - 'Video Controls: zhusky.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: zhusky.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - Saving data for zhusky.mp4 to C:/Users/angad/Videos/out
+app - INFO - Video processing completed
+app - INFO - Video data processed and saved to C:/Users/angad/Videos/out\zhusky.mp4
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 250) | position (right, top) : (522.5, 415.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4', 'zhusky.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Starting annotation for file: timer.mp4
+app - INFO - Data object for timer.mp4 initialized
+app - INFO - 'Video Controls: timer.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: timer.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - Saving data for timer.mp4 to C:/Users/angad/Videos/out
+app - INFO - Video processing completed
+app - INFO - Video data processed and saved to C:/Users/angad/Videos/out\timer.mp4
+app - INFO - Audio data saved to C:/Users/angad/Videos/out\timer.wav
+app - INFO - Audio and video merged and saved to C:/Users/angad/Videos/out\timer_annotated.mp4
+app - INFO - Annotations saved to C:/Users/angad/Videos/out\timer_annotated.json
+app - INFO - Annotations saved for timer.mp4
+app - INFO - Data for timer.mp4 saved successfully
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['zhusky.mp4']
+app - INFO - Annotation completed for file: timer.mp4
+app - INFO - Started watching file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Initializing AnnotatedPlayer for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Started Annotated Player for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 250) | position (right, top) : (522.5, 415.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['zhusky.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Started watching file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Initializing AnnotatedPlayer for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Started Annotated Player for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - AnnotatedPlayer resources released and windows closed
+app - INFO - Annotater Player closed
+app - INFO - Started watching file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Initializing AnnotatedPlayer for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Started Annotated Player for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - AnnotatedPlayer resources released and windows closed
+app - INFO - Annotater Player closed
+app - INFO - Started watching file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Initializing AnnotatedPlayer for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Started Annotated Player for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - AnnotatedPlayer resources released and windows closed
+app - INFO - Annotater Player closed
+app - INFO - Started watching file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Initializing AnnotatedPlayer for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Started Annotated Player for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - AnnotatedPlayer resources released and windows closed
+app - INFO - Annotater Player closed
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 250) | position (right, top) : (522.5, 415.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4', 'zhusky.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (938, 250) | position (right, top) : (491.0, 415.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4', 'zhusky.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Starting annotation for file: timer.mp4
+app - INFO - Data object for timer.mp4 initialized
+app - INFO - 'Video Controls: timer.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: timer.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - Video processing completed
+app - INFO - Saving data for timer.mp4 to C:/Users/angad/Videos/out
+app - INFO - Video data processed and saved to C:/Users/angad/Videos/out\timer.mp4
+app - INFO - Audio data saved to C:/Users/angad/Videos/out\timer.wav
+app - INFO - Audio and video merged and saved to C:/Users/angad/Videos/out\timer_annotated.mp4
+app - INFO - Annotations saved to C:/Users/angad/Videos/out\timer_annotated.json
+app - INFO - Annotations saved for timer.mp4
+app - INFO - Data for timer.mp4 saved successfully
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['zhusky.mp4']
+app - INFO - Annotation completed for file: timer.mp4
+app - INFO - Started watching file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Initializing AnnotatedPlayer for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Started Annotated Player for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - AnnotatedPlayer resources released and windows closed
+app - INFO - Annotater Player closed
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (938, 250) | position (right, top) : (491.0, 415.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['zhusky.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Started watching file: C:/Users/angad/Videos/data/timer.mp4
+app - INFO - Initializing AnnotatedPlayer for file: C:/Users/angad/Videos/data/timer.mp4
+app - ERROR - Error during watching: 'charmap' codec can't decode byte 0x81 in position 151: character maps to <undefined>
+Traceback (most recent call last):
+  File "D:\Code\Annotater App\annotater\anno.py", line 99, in watch
+    AnnotatedPlayer(watch_file, meta_file)
+  File "D:\Code\Annotater App\annotater\player.py", line 383, in __init__
+    self.meta = json.load(file)
+                ^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\json\__init__.py", line 293, in load
+    return loads(fp.read(),
+                 ^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x81 in position 151: character maps to <undefined>
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1125, 250) | position (right, top) : (397.5, 415.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4', 'zhusky.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4', 'zhusky.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - WARNING - No file selected for watching
+app - INFO - Starting annotation for file: timer.mp4, with long annotations: False
+app - INFO - Data object for timer.mp4 initialized
+app - INFO - 'Video Controls: timer.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: timer.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4', 'zhusky.mp4']
+app - INFO - Annotation completed for file: timer.mp4
+app - INFO - Starting annotation for file: timer.mp4, with long annotations: False
+app - INFO - Data object for timer.mp4 initialized
+app - INFO - 'Video Controls: timer.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: timer.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4', 'zhusky.mp4']
+app - INFO - Annotation completed for file: timer.mp4
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4', 'zhusky.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Starting annotation for file: timer.mp4, with long annotations: False
+app - INFO - Data object for timer.mp4 initialized
+app - INFO - 'Video Controls: timer.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: timer.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - Starting directory change
+app - INFO - Current working directory changed to: C:/Users/angad/Videos
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4', 'zhusky.mp4']
+app - INFO - Directory changed successfully
+app - INFO - Main application loop started
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4', 'zhusky.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Starting annotation for file: timer.mp4, with long annotations: False
+app - INFO - Data object for timer.mp4 initialized
+app - INFO - 'Video Controls: timer.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: timer.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - Starting directory change
+app - INFO - Current working directory changed to: C:/Users/angad/Videos
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4', 'zhusky.mp4']
+app - INFO - Directory changed successfully
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4', 'zhusky.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Started watching file: C:/Users/angad/Videos/data/timer.mp4
+app - INFO - Initializing AnnotatedPlayer for file: C:/Users/angad/Videos/data/timer.mp4
+app - ERROR - Error during watching: 'charmap' codec can't decode byte 0x81 in position 151: character maps to <undefined>
+Traceback (most recent call last):
+  File "D:\Code\Annotater App\annotater\anno.py", line 99, in watch
+    AnnotatedPlayer(watch_file, meta_file)
+  File "D:\Code\Annotater App\annotater\player.py", line 384, in __init__
+    self.meta = json.load(file)
+                ^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\json\__init__.py", line 293, in load
+    return loads(fp.read(),
+                 ^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x81 in position 151: character maps to <undefined>
+app - INFO - Starting annotation for file: timer.mp4, with long annotations: False
+app - INFO - Data object for timer.mp4 initialized
+app - INFO - 'Video Controls: timer.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: timer.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4', 'zhusky.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Starting annotation for file: timer.mp4, with long annotations: False
+app - INFO - Data object for timer.mp4 initialized
+app - INFO - 'Video Controls: timer.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: timer.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4', 'zhusky.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Starting annotation for file: timer.mp4, with long annotations: False
+app - INFO - Data object for timer.mp4 initialized
+app - INFO - 'Video Controls: timer.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: timer.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4', 'zhusky.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Starting annotation for file: timer.mp4, with long annotations: False
+app - INFO - Data object for timer.mp4 initialized
+app - INFO - 'Video Controls: timer.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: timer.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4', 'zhusky.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Starting annotation for file: timer.mp4, with long annotations: False
+app - INFO - Data object for timer.mp4 initialized
+app - INFO - 'Video Controls: timer.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: timer.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4', 'zhusky.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Starting annotation for file: timer.mp4, with long annotations: False
+app - INFO - Data object for timer.mp4 initialized
+app - INFO - 'Video Controls: timer.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: timer.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - Video processing completed
+app - INFO - Saving data for timer.mp4 to C:/Users/angad/Videos/out
+app - INFO - Video data processed and saved to C:/Users/angad/Videos/out\timer.mp4
+app - INFO - Audio data saved to C:/Users/angad/Videos/out\timer.wav
+app - INFO - Audio and video merged and saved to C:/Users/angad/Videos/out\timer_annotated.mp4
+app - INFO - Annotations saved to C:/Users/angad/Videos/out\timer_annotated.json
+app - INFO - Annotations saved for timer.mp4
+app - INFO - Data for timer.mp4 saved successfully
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['zhusky.mp4']
+app - INFO - Annotation completed for file: timer.mp4
+app - INFO - Destroying SaveProgress window
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4', 'zhusky.mp4']
+app - INFO - File list refreshed successfully
+app - INFO - Starting annotation for file: timer.mp4, with long annotations: False
+app - INFO - Data object for timer.mp4 initialized
+app - INFO - 'Video Controls: timer.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: timer.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - Seeked to frame number: 594
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - INFO - Seeked to frame number: 484
+app - INFO - Seeked to frame number: 485
+app - WARNING - Frame index 630 is out of range.
+app - INFO - Video processing completed
+app - INFO - Saving data for timer.mp4 to C:/Users/angad/Videos/out
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 630 is out of range.
+app - INFO - Video data processed and saved to C:/Users/angad/Videos/out\timer.mp4
+app - INFO - Audio data saved to C:/Users/angad/Videos/out\timer.wav
+app - INFO - Audio and video merged and saved to C:/Users/angad/Videos/out\timer_annotated.mp4
+app - INFO - Annotations saved to C:/Users/angad/Videos/out\timer_annotated.json
+app - INFO - Annotations saved for timer.mp4
+app - INFO - Data for timer.mp4 saved successfully
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['zhusky.mp4']
+app - INFO - Annotation completed for file: timer.mp4
+app - INFO - Destroying SaveProgress window
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4', 'zhusky.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Starting annotation for file: timer.mp4, with long annotations: False
+app - INFO - Data object for timer.mp4 initialized
+app - INFO - 'Video Controls: timer.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: timer.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - Seeked to frame number: 474
+app - INFO - Seeked to frame number: 477
+app - INFO - Seeked to frame number: 478
+app - INFO - Seeked to frame number: 600
+app - INFO - Seeked to frame number: 601
+app - INFO - Seeked to frame number: 603
+app - INFO - Seeked to frame number: 604
+app - INFO - Seeked to frame number: 319
+app - INFO - Toggled pause state to True
+app - INFO - Saving data for timer.mp4 to C:/Users/angad/Videos/out
+app - INFO - Video processing completed
+app - INFO - Video data processed and saved to C:/Users/angad/Videos/out\timer.mp4
+app - INFO - Audio data saved to C:/Users/angad/Videos/out\timer.wav
+app - INFO - Audio and video merged and saved to C:/Users/angad/Videos/out\timer_annotated.mp4
+app - INFO - Annotations saved to C:/Users/angad/Videos/out\timer_annotated.json
+app - INFO - Annotations saved for timer.mp4
+app - INFO - Data for timer.mp4 saved successfully
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['zhusky.mp4']
+app - INFO - Annotation completed for file: timer.mp4
+app - INFO - Destroying SaveProgress window
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['zhusky.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Starting annotation for file: zhusky.mp4, with long annotations: False
+app - INFO - Data object for zhusky.mp4 initialized
+app - INFO - 'Video Controls: zhusky.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: zhusky.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - Saving data for zhusky.mp4 to C:/Users/angad/Videos/out
+app - INFO - Video processing completed
+app - INFO - Video data processed and saved to C:/Users/angad/Videos/out\zhusky.mp4
+app - INFO - Audio data saved to C:/Users/angad/Videos/out\zhusky.wav
+app - INFO - Audio and video merged and saved to C:/Users/angad/Videos/out\zhusky_annotated.mp4
+app - INFO - Annotations saved to C:/Users/angad/Videos/out\zhusky_annotated.json
+app - INFO - Annotations saved for zhusky.mp4
+app - INFO - Data for zhusky.mp4 saved successfully
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4']
+app - INFO - Annotation completed for file: zhusky.mp4
+app - INFO - Starting annotation for file: timer.mp4, with long annotations: False
+app - INFO - Data object for timer.mp4 initialized
+app - INFO - 'Video Controls: timer.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: timer.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - Video processing completed
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4']
+app - INFO - Annotation completed for file: timer.mp4
+app - INFO - Main application loop started
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Starting annotation for file: timer.mp4, with long annotations: False
+app - INFO - Data object for timer.mp4 initialized
+app - INFO - 'Video Controls: timer.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: timer.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - Video processing completed
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4']
+app - INFO - Annotation completed for file: timer.mp4
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4', 'zhusky.mp4']
+app - INFO - File list refreshed successfully
+app - INFO - Starting annotation for file: timer.mp4, with long annotations: False
+app - INFO - Data object for timer.mp4 initialized
+app - INFO - 'Video Controls: timer.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: timer.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - Saving data for timer.mp4 to C:/Users/angad/Videos/out
+app - INFO - Video processing completed
+app - INFO - Video data processed and saved to C:/Users/angad/Videos/out\timer.mp4
+app - INFO - Audio data saved to C:/Users/angad/Videos/out\timer.wav
+app - INFO - Audio and video merged and saved to C:/Users/angad/Videos/out\timer_annotated.mp4
+app - INFO - Annotations saved to C:/Users/angad/Videos/out\timer_annotated.json
+app - INFO - Annotations saved for timer.mp4
+app - INFO - Data for timer.mp4 saved successfully
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['zhusky.mp4']
+app - INFO - Annotation completed for file: timer.mp4
+app - INFO - Destroying SaveProgress window
+app - INFO - Starting annotation for file: zhusky.mp4, with long annotations: False
+app - INFO - Data object for zhusky.mp4 initialized
+app - INFO - 'Video Controls: zhusky.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: zhusky.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - Saving data for zhusky.mp4 to C:/Users/angad/Videos/out
+app - INFO - Video processing completed
+app - INFO - Video data processed and saved to C:/Users/angad/Videos/out\zhusky.mp4
+app - INFO - Audio data saved to C:/Users/angad/Videos/out\zhusky.wav
+app - INFO - Audio and video merged and saved to C:/Users/angad/Videos/out\zhusky_annotated.mp4
+app - INFO - Annotations saved to C:/Users/angad/Videos/out\zhusky_annotated.json
+app - INFO - Annotations saved for zhusky.mp4
+app - INFO - Data for zhusky.mp4 saved successfully
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: []
+app - INFO - Annotation completed for file: zhusky.mp4
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: []
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Started watching file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Initializing AnnotatedPlayer for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Started Annotated Player for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - ERROR - Error during watching: not enough values to unpack (expected 2, got 0)
+Traceback (most recent call last):
+  File "D:\Code\Annotater App\annotater\anno.py", line 99, in watch
+    AnnotatedPlayer(watch_file, meta_file, long_annotations=long_annotations)
+  File "D:\Code\Annotater App\annotater\player.py", line 411, in __init__
+    self.show()
+  File "D:\Code\Annotater App\annotater\player.py", line 446, in show
+    command, point = frame_data["anno"]
+    ^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 2, got 0)
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: []
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Started watching file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Initializing AnnotatedPlayer for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Started Annotated Player for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - AnnotatedPlayer resources released and windows closed
+app - INFO - Annotater Player closed
+app - INFO - Started watching file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Initializing AnnotatedPlayer for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Started Annotated Player for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - AnnotatedPlayer resources released and windows closed
+app - INFO - Annotater Player closed
+app - INFO - Started watching file: C:/Users/angad/Videos/out/zhusky_annotated.mp4
+app - INFO - Initializing AnnotatedPlayer for file: C:/Users/angad/Videos/out/zhusky_annotated.mp4
+app - INFO - Started Annotated Player for file: C:/Users/angad/Videos/out/zhusky_annotated.mp4
+app - INFO - AnnotatedPlayer resources released and windows closed
+app - INFO - Annotater Player closed
+app - INFO - Started watching file: C:/Users/angad/Videos/out/zhusky_annotated.mp4
+app - INFO - Initializing AnnotatedPlayer for file: C:/Users/angad/Videos/out/zhusky_annotated.mp4
+app - INFO - Started Annotated Player for file: C:/Users/angad/Videos/out/zhusky_annotated.mp4
+app - INFO - AnnotatedPlayer resources released and windows closed
+app - INFO - Annotater Player closed
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: []
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: []
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: []
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: []
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: []
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: []
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: []
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: []
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: []
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Started watching file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Initializing AnnotatedPlayer for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Started Annotated Player for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - AnnotatedPlayer resources released and windows closed
+app - INFO - Annotater Player closed
+app - INFO - Started watching file: C:/Users/angad/Videos/out/zhusky_annotated.mp4
+app - INFO - Initializing AnnotatedPlayer for file: C:/Users/angad/Videos/out/zhusky_annotated.mp4
+app - INFO - Started Annotated Player for file: C:/Users/angad/Videos/out/zhusky_annotated.mp4
+app - INFO - AnnotatedPlayer resources released and windows closed
+app - INFO - Annotater Player closed
+app - INFO - Started watching file: C:/Users/angad/Videos/out/zhusky_annotated.mp4
+app - INFO - Initializing AnnotatedPlayer for file: C:/Users/angad/Videos/out/zhusky_annotated.mp4
+app - INFO - Started Annotated Player for file: C:/Users/angad/Videos/out/zhusky_annotated.mp4
+app - INFO - AnnotatedPlayer resources released and windows closed
+app - INFO - Annotater Player closed
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4', 'zhusky.mp4']
+app - INFO - File list refreshed successfully
+app - INFO - Starting annotation for file: timer.mp4, with long annotations: False
+app - INFO - Data object for timer.mp4 initialized
+app - INFO - 'Video Controls: timer.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: timer.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - Seeked to frame number: 591
+app - INFO - Seeked to frame number: 617
+app - INFO - Seeked to frame number: 610
+app - INFO - Seeked to frame number: 581
+app - INFO - Seeked to frame number: 527
+app - INFO - Seeked to frame number: 449
+app - INFO - Seeked to frame number: 384
+app - INFO - Seeked to frame number: 336
+app - INFO - Seeked to frame number: 301
+app - INFO - Seeked to frame number: 288
+app - INFO - Seeked to frame number: 282
+app - INFO - Video processing completed
+app - INFO - Saving data for timer.mp4 to C:/Users/angad/Videos/out
+app - INFO - Video data processed and saved to C:/Users/angad/Videos/out\timer.mp4
+app - INFO - Audio data saved to C:/Users/angad/Videos/out\timer.wav
+app - INFO - Audio and video merged and saved to C:/Users/angad/Videos/out\timer_annotated.mp4
+app - INFO - Annotations saved to C:/Users/angad/Videos/out\timer_annotated.json
+app - INFO - Annotations saved for timer.mp4
+app - INFO - Data for timer.mp4 saved successfully
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['zhusky.mp4']
+app - INFO - Annotation completed for file: timer.mp4
+app - INFO - Destroying SaveProgress window
+app - INFO - Starting annotation for file: zhusky.mp4, with long annotations: True
+app - INFO - Data object for zhusky.mp4 initialized
+app - INFO - 'Video Controls: zhusky.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: zhusky.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - Video processing completed
+app - INFO - Saving data for zhusky.mp4 to C:/Users/angad/Videos/out
+app - INFO - Video data processed and saved to C:/Users/angad/Videos/out\zhusky.mp4
+app - INFO - Audio data saved to C:/Users/angad/Videos/out\zhusky.wav
+app - INFO - Audio and video merged and saved to C:/Users/angad/Videos/out\zhusky_annotated.mp4
+app - INFO - Annotations saved to C:/Users/angad/Videos/out\zhusky_annotated.json
+app - INFO - Annotations saved for zhusky.mp4
+app - INFO - Data for zhusky.mp4 saved successfully
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: []
+app - INFO - Annotation completed for file: zhusky.mp4
+app - INFO - Started watching file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Initializing AnnotatedPlayer for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Started Annotated Player for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - AnnotatedPlayer resources released and windows closed
+app - INFO - Annotater Player closed
+app - INFO - Destroying SaveProgress window
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: []
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Started watching file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Initializing AnnotatedPlayer for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - ERROR - Error during watching: 'AnnotatedPlayer' object has no attribute 'meta'
+Traceback (most recent call last):
+  File "D:\Code\Annotater App\annotater\anno.py", line 112, in watch
+    AnnotatedPlayer(watch_file, meta_file, long_annotations=long_annotations)
+  File "D:\Code\Annotater App\annotater\player.py", line 378, in __init__
+    self._initialize_video_capture()
+  File "D:\Code\Annotater App\annotater\player.py", line 419, in _initialize_video_capture
+    self.frame_rate = self.meta['metadata']['frame_rate']
+                      ^^^^^^^^^
+AttributeError: 'AnnotatedPlayer' object has no attribute 'meta'
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: []
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Started watching file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Initializing AnnotatedPlayer for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - ERROR - Error during watching: 'AnnotatedPlayer' object has no attribute 'meta'
+Traceback (most recent call last):
+  File "D:\Code\Annotater App\annotater\anno.py", line 112, in watch
+    AnnotatedPlayer(watch_file, meta_file, long_annotations=long_annotations)
+  File "D:\Code\Annotater App\annotater\player.py", line 378, in __init__
+    self._initialize_video_capture()
+  File "D:\Code\Annotater App\annotater\player.py", line 421, in _initialize_video_capture
+    self.frame_rate = self.meta['metadata']['frame_rate']
+                      ^^^^^^^^^
+AttributeError: 'AnnotatedPlayer' object has no attribute 'meta'
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: []
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Started watching file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Initializing AnnotatedPlayer for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Started Annotated Player for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - ERROR - Error during watching: not enough values to unpack (expected 2, got 0)
+Traceback (most recent call last):
+  File "D:\Code\Annotater App\annotater\anno.py", line 112, in watch
+    AnnotatedPlayer(watch_file, meta_file, long_annotations=long_annotations)
+  File "D:\Code\Annotater App\annotater\player.py", line 390, in __init__
+    self.show()
+  File "D:\Code\Annotater App\annotater\player.py", line 474, in show
+    self._process_frame(frame, frame_number)
+  File "D:\Code\Annotater App\annotater\player.py", line 487, in _process_frame
+    self._draw_annotations(frame, frame_data["anno"])
+  File "D:\Code\Annotater App\annotater\player.py", line 492, in _draw_annotations
+    command, point = anno
+    ^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 2, got 0)
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: []
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Started watching file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Initializing AnnotatedPlayer for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Started Annotated Player for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - AnnotatedPlayer resources released and windows closed
+app - INFO - Annotater Player closed
+app - WARNING - No file selected for watching
+app - INFO - Started watching file: C:/Users/angad/Videos/out/zhusky_annotated.mp4
+app - INFO - Initializing AnnotatedPlayer for file: C:/Users/angad/Videos/out/zhusky_annotated.mp4
+app - INFO - Started Annotated Player for file: C:/Users/angad/Videos/out/zhusky_annotated.mp4
+app - INFO - AnnotatedPlayer resources released and windows closed
+app - INFO - Annotater Player closed
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4', 'zhusky.mp4']
+app - INFO - File list refreshed successfully
+app - WARNING - No file selected for watching
+app - INFO - Starting annotation for file: timer.mp4, with long annotations: True
+app - INFO - Data object for timer.mp4 initialized
+app - INFO - 'Video Controls: timer.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: timer.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - Seeked to frame number: 524
+app - INFO - Seeked to frame number: 598
+app - INFO - Restarted video
+app - INFO - Data() updated for timer.mp4: in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out, frame_width=1280, frame_height=720
+app - INFO - Command queue cleared and video restarted
+app - INFO - Saving data for timer.mp4 to C:/Users/angad/Videos/out
+app - INFO - Video processing completed
+app - INFO - Video data processed and saved to C:/Users/angad/Videos/out\timer.mp4
+app - INFO - Audio data saved to C:/Users/angad/Videos/out\timer.wav
+app - INFO - Audio and video merged and saved to C:/Users/angad/Videos/out\timer_annotated.mp4
+app - INFO - Annotations saved to C:/Users/angad/Videos/out\timer_annotated.json
+app - INFO - Annotations saved for timer.mp4
+app - INFO - Data for timer.mp4 saved successfully
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['zhusky.mp4']
+app - INFO - Annotation completed for file: timer.mp4
+app - INFO - Destroying SaveProgress window
+app - INFO - Started watching file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Initializing AnnotatedPlayer for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Started Annotated Player for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - AnnotatedPlayer resources released and windows closed
+app - INFO - Annotater Player closed
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['zhusky.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Starting annotation for file: zhusky.mp4, with long annotations: True
+app - INFO - Data object for zhusky.mp4 initialized
+app - INFO - 'Video Controls: zhusky.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: zhusky.mp4
+app - INFO - Data object for zhusky.mp4 initialized
+app - INFO - 'Video Controls: zhusky.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: zhusky.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['zhusky.mp4']
+app - INFO - Annotation completed for file: zhusky.mp4
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Main application loop started
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['zhusky.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Starting annotation for file: zhusky.mp4, with long annotations: True
+app - INFO - Data object for zhusky.mp4 initialized
+app - INFO - 'Video Controls: zhusky.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: zhusky.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['zhusky.mp4']
+app - INFO - Annotation completed for file: zhusky.mp4
+app - INFO - Main application loop started
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['zhusky.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Starting annotation for file: zhusky.mp4, with long annotations: False
+app - INFO - Data object for zhusky.mp4 initialized
+app - INFO - 'Video Controls: zhusky.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: zhusky.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['zhusky.mp4']
+app - INFO - Annotation completed for file: zhusky.mp4
+app - INFO - Starting annotation for file: zhusky.mp4, with long annotations: True
+app - INFO - Data object for zhusky.mp4 initialized
+app - INFO - 'Video Controls: zhusky.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: zhusky.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - Saving data for zhusky.mp4 to C:/Users/angad/Videos/out
+app - INFO - Video data processed and saved to C:/Users/angad/Videos/out\zhusky.mp4
+app - INFO - Audio data saved to C:/Users/angad/Videos/out\zhusky.wav
+app - INFO - Audio and video merged and saved to C:/Users/angad/Videos/out\zhusky_annotated.mp4
+app - INFO - Annotations saved to C:/Users/angad/Videos/out\zhusky_annotated.json
+app - INFO - Annotations saved for zhusky.mp4
+app - INFO - Data for zhusky.mp4 saved successfully
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: []
+app - INFO - Annotation completed for file: zhusky.mp4
+app - INFO - Started watching file: C:/Users/angad/Videos/out/zhusky_annotated.mp4
+app - INFO - Initializing AnnotatedPlayer for file: C:/Users/angad/Videos/out/zhusky_annotated.mp4
+app - INFO - Started Annotated Player for file: C:/Users/angad/Videos/out/zhusky_annotated.mp4
+app - INFO - AnnotatedPlayer resources released and windows closed
+app - INFO - Annotater Player closed
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: []
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Started watching file: C:/Users/angad/Videos/out/zhusky_annotated.mp4
+app - INFO - Initializing AnnotatedPlayer for file: C:/Users/angad/Videos/out/zhusky_annotated.mp4
+app - INFO - Started Annotated Player for file: C:/Users/angad/Videos/out/zhusky_annotated.mp4
+app - INFO - AnnotatedPlayer resources released and windows closed
+app - INFO - Annotater Player closed
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 2 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: []
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: []
+app - INFO - File list refreshed successfully
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: []
+app - INFO - File list refreshed successfully
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: []
+app - INFO - File list refreshed successfully
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: []
+app - INFO - File list refreshed successfully
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: []
+app - INFO - File list refreshed successfully
+app - INFO - Started watching file: C:/Users/angad/Videos/out/zhusky_annotated.mp4
+app - INFO - Initializing AnnotatedPlayer for file: C:/Users/angad/Videos/out/zhusky_annotated.mp4
+app - INFO - Started Annotated Player for file: C:/Users/angad/Videos/out/zhusky_annotated.mp4
+app - INFO - AnnotatedPlayer resources released and windows closed
+app - INFO - Annotater Player closed
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4']
+app - INFO - File list refreshed successfully
+app - INFO - Starting annotation for file: timer.mp4, with long annotations: False
+app - INFO - Data object for timer.mp4 initialized
+app - INFO - 'Video Controls: timer.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: timer.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - Saving data for timer.mp4 to C:/Users/angad/Videos/out
+app - INFO - Video data processed and saved to C:/Users/angad/Videos/out\timer.mp4
+app - INFO - Audio data saved to C:/Users/angad/Videos/out\timer.wav
+app - INFO - Audio and video merged and saved to C:/Users/angad/Videos/out\timer_annotated.mp4
+app - INFO - Annotations saved to C:/Users/angad/Videos/out\timer_annotated.json
+app - INFO - Annotations saved for timer.mp4
+app - INFO - Data for timer.mp4 saved successfully
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: []
+app - INFO - Annotation completed for file: timer.mp4
+app - INFO - Destroying SaveProgress window
+app - INFO - Started watching file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Initializing AnnotatedPlayer for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - Started Annotated Player for file: C:/Users/angad/Videos/out/timer_annotated.mp4
+app - INFO - AnnotatedPlayer resources released and windows closed
+app - INFO - Annotater Player closed
+app - INFO - Main application loop started

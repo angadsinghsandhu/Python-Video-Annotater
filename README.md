@@ -33,6 +33,26 @@ Annotater is a sophisticated video annotation tool designed for detailed and pre
 | Release Date      | 2024-01-24                                     |
 | Last Updated      | 2024-07-18                                     |
 
+## How to Install
+
+1. Clone the repository to your local machine using the following command:
+
+```bash
+git clone git
+```
+
+1. Install the required dependencies using the following command:
+
+```bash
+pip install -r requirements.txt
+```
+
+1. Run the application using the following command:
+
+```bash
+python -m main
+```
+
 ## Documentation
 
 ### Overview

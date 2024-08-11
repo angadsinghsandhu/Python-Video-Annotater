@@ -8,3 +8,12 @@ pygame=2.6.0
 moviepy=1.0.3
 scipy=1.14.0
 pyinstaller=6.9.0
+
+
+# to add
+logging
+logging.config
+ctypes
+tkinter 
+pathlib
+numpy
