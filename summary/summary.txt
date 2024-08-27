@@ -1,73 +1,18 @@
 DIRECTORY STRUCTURE: .
 +f	Annotater.spec
-+f	config.py
-+f	data.py
 +f	logging_config.yaml
 +f	main.py
 +f	README.md
 +f	requirements.txt
-+f	screens.py
-+d	.git
-++d		fsmonitor--daemon
-+++d			cookies
-++d		hooks
-++d		info
-++d		objects
-+++d			01
-+++d			07
-+++d			09
-+++d			0a
-+++d			16
-+++d			1c
-+++d			20
-+++d			2f
-+++d			30
-+++d			3d
-+++d			46
-+++d			4f
-+++d			55
-+++d			58
-+++d			59
-+++d			5c
-+++d			71
-+++d			72
-+++d			73
-+++d			79
-+++d			86
-+++d			8e
-+++d			97
-+++d			9a
-+++d			9e
-+++d			a0
-+++d			a7
-+++d			ae
-+++d			b2
-+++d			b6
-+++d			bd
-+++d			c1
-+++d			c3
-+++d			c8
-+++d			cd
-+++d			cf
-+++d			d3
-+++d			d4
-+++d			df
-+++d			e5
-+++d			e6
-+++d			fa
-+++d			fe
-+++d			info
-+++d			pack
-++d		refs
-+++d			heads
-+++d			remotes
-++++d				origin
-+++d			tags
-+d	annotater
++d	src
 ++f		anno.py
+++f		config.py
 ++f		controller.py
+++f		data.py
 ++f		player.py
+++f		screens.py
 ++f		setup.py
+++f		__init__.py
 
 d: directory, f: file
 
@@ -115,7 +60,525 @@ exe = EXE(
 )
 
 
-|||||||||||||		File: config.py		|||||||||||||
+|||||||||||||		File: logging_config.yaml		|||||||||||||
+version: 1.1.0
+
+disable_existing_loggers: False
+
+formatters:
+  detailed:
+    format: '[%(asctime)s]-(Line %(lineno)d at %(pathname)s)-{%(name)s:%(levelname)s} : %(message)s'
+  simple:
+    format: '%(name)s - %(levelname)s - %(message)s'
+
+handlers:
+  debug_console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: simple
+    stream: ext://sys.stdout
+
+  debug_file:
+    class: logging.FileHandler
+    level: DEBUG
+    formatter: detailed
+    filename: logs/app.log
+    mode: 'a'
+
+  info_file:
+    class: logging.FileHandler
+    level: INFO
+    formatter: simple
+    filename: logs/info.log
+
+  error_file:
+    class: logging.FileHandler
+    formatter: detailed
+    level: ERROR
+    filename: logs/errors.log
+
+  critical_file:
+    class: logging.FileHandler
+    formatter: detailed
+    level: CRITICAL
+    filename: logs/critical.log
+
+  # email:
+  #   class: logging.handlers.SMTPHandler
+  #   mailhost: 'localhost'
+  #   fromaddr: 'app@example.com'
+  #   toaddrs: ['admin@example.com']
+  #   subject: 'Critical Error in Application'
+  #   credentials: [username, password]
+  #   level: CRITICAL
+
+loggers:
+  app:
+    level: DEBUG
+    handlers: [debug_console, debug_file, info_file, error_file, critical_file]
+    propagate: no
+root:
+  level: WARNING
+  handlers: [debug_console]
+
+
+|||||||||||||		File: main.py		|||||||||||||
+"""
+main.py
+
+Entry point for the video annotation tool. This script sets up the logging,
+initializes the main application window, and starts the annotation tool.
+"""
+
+# General Imports
+import logging, logging.config, yaml, ctypes
+import customtkinter as ctk
+
+# Custom Imports
+from src.screens import Splash
+from src.anno import create_annotater
+
+# v1.2.0
+# TODO : update create documentation
+# TODO : rebuild the annotater and update the surface
+
+# TODO : add version label
+# FIXME: Seeker broken in player
+
+# Set DPI Awareness for Windows 10
+ctypes.windll.shcore.SetProcessDpiAwareness(2)
+
+# Set up logging
+def setup_logging(config_path="logging_config.yaml"):
+    """
+    Sets up logging configuration from the provided YAML file.
+
+    Args:
+        config_path (str): Path to the logging configuration YAML file.
+
+    Returns:
+        (logging.Logger): Configured logger object
+    """
+    with open(config_path, "r") as f:
+        config = yaml.safe_load(f.read())
+    logging.config.dictConfig(config=config)
+    logger = logging.getLogger('main')
+    return logger, str(config['version'])
+
+logger, version = setup_logging()
+
+def close(app):
+    """
+    Closes the application and logs the closure.
+
+    Args:
+        app (customtkinter.CTk): The main application window.
+    """
+    logger.info("### Closing the Annotation Tool ###")
+    app.destroy()
+
+def main():
+    """Main function to initialize and run the annotation tool application."""
+    logger.info("### Starting the Annotation Tool ###")
+
+    try:
+        # Set the theme (optional)
+        ctk.set_appearance_mode("Dark")  # Can be "Dark" or "Light"
+        logger.debug("Appearance mode set to Dark")
+
+        # Create the main application window
+        app = ctk.CTk()
+        app.title("Annotater") # Set the title of the window
+        app.protocol("WM_DELETE_WINDOW", lambda: close(app))
+        logger.debug("Main application window created and configured")
+
+        # # add calback for mouse position
+        # app.bind("<Motion>", lambda e: logger.debug(f"Mouse position: {e.x}, {e.y}"))
+
+        # Hide the main application window initially
+        app.withdraw()
+        logger.debug("Main application window hidden")
+
+        # Show splash screen
+        Splash(app, version=version)
+        logger.info("Splash screen displayed")
+
+        create_annotater(app)
+        logger.info("Annotater created and started")
+
+    except Exception as e: logger.exception("An error occurred in the main loop: %s", e)
+    finally: logger.info("Application terminated")
+
+# run main loop
+if __name__ == "__main__":
+    main()
+
+
+|||||||||||||		File: README.md		|||||||||||||
+# Annotater: Advanced Video Annotation Tool
+
+Annotater is a sophisticated video annotation tool designed for detailed and precise marking of video content. It integrates robust video and audio processing capabilities to provide a seamless annotation experience. Based on Python, the tool uses libraries like CustomTkinter for its UI, OpenCV for video processing, and PyAudio for audio manipulation, ensuring a comprehensive environment for users to work with video data.
+
+## Prerequisites
+
+1. Python 3.8+
+2. Knowledge of video formats and codecs
+3. Basic understanding of threading and concurrent programming in Python
+
+## Key Features
+
+- **Video Playback Controls**: Play, pause, seek, and stop functionalities for thorough video review.
+- **Audio Processing**: Integrated audio playback synchronized with video.
+- **Dynamic Annotation**: Users can draw and save annotations directly on the video frame.
+- **Multi-threading**: Utilizes threading for non-blocking video processing.
+- **Comprehensive Logging**: Detailed logs for debugging and tracking application processes.
+
+## Important Links
+
+- [Tutorial](https://livejohnshopkins-my.sharepoint.com/:f:/g/personal/asandhu9_jh_edu/EqDDvLH7cRdLtwuIQk6TABwB9nD0e7UoKNdjALV_RTnEtg?e=Nq0M4p)
+- [Application](https://livejohnshopkins-my.sharepoint.com/:f:/g/personal/asandhu9_jh_edu/Eh60kxJUMFZAgpDcLsQO2l0BQiqQNZ7frvEp0rdNiEJvBA?e=7hmr37)
+
+## Metadata
+
+| Attribute         | Value                                          |
+|-------------------|------------------------------------------------|
+| Name              | Annotater                                      |
+| Version           | 1.1.0                                          |
+| Compatibility     | Windows 10, Ubuntu 20.04                       |
+| License           | MIT License                                    |
+| Release Date      | 2024-01-24                                     |
+| Last Updated      | 2024-07-18                                     |
+
+## How to Install
+
+1. Clone the repository to your local machine using the following command:
+
+```bash
+git clone git
+```
+
+1. Install the required dependencies using the following command:
+
+```bash
+pip install -r requirements.txt
+```
+
+## HOW TO USE
+
+link to file : [HOW_TO_USE](https://github.com/angadsinghsandhu/Python-Video-Annotater/blob/main/HOW_TO_USE.pdf)
+
+Run application on command line using following command:
+
+```bash
+python -m main
+```
+
+## Documentation
+
+### Overview
+
+Annotater is built to facilitate detailed annotations of video files, offering tools to mark and comment on video content for educational, research, or editing purposes. The application supports various video formats and provides an interface to manage video playback, audio synchronization, and annotation storage.
+
+### Modules and Code Structure
+
+**`main.py`**:
+
+- This is the entry point of the application. It sets up the main application window, initializes logging based on a configuration file, and handles the application's closing event.
+
+**`config.py`**:
+
+- Manages the application configuration, including paths and logging settings. It dynamically updates these settings during runtime based on user interactions.
+
+**`data.py`**:
+
+- Handles data storage for videos, audio, and annotations. It implements methods to add, update, and retrieve data elements tied to specific video frames.
+
+**`screens.py`**:
+
+- Contains the UI elements for the splash screen and the save progress screen. These screens inform the user of ongoing processes and ensure the application remains responsive during lengthy operations.
+
+**`logging_config.yaml`**:
+
+- Configures different logging handlers and formats, including file and console outputs tailored to different logging levels (DEBUG, INFO, ERROR).
+
+### Advanced Features
+
+- **Multi-threaded Processing**: Ensures video playback and annotation processes run smoothly without interrupting the user interface.
+- **Customizable UI**: Thanks to CustomTkinter, the UI can be easily modified to match user preferences or specific requirements.
+
+## Directions of Use
+
+1. **Starting the Application**:
+   - Run `main.py` to open the application. A splash screen appears initially, followed by the main annotation interface.
+
+2. **Opening a Video**:
+   - Use the file dialog to select a video file for annotation. The video will load, and playback controls will appear.
+
+3. **Annotating a Video**:
+   - Play the video and pause at the frame you want to annotate. Use the mouse to draw annotations directly on the video frame. Annotations can be saved and will be associated with the specific frame.
+
+4. **Saving Annotations**:
+   - Once annotation is complete, use the save option to store annotations. The application supports exporting annotations in JSON format, which includes metadata about the video and the annotations.
+
+5. **Reviewing and Editing Annotations**:
+   - Load an annotated video file to review annotations. Annotations can be edited by navigating to the specific frames and modifying the existing marks.
+
+## Building the Application
+
+To build the application, use the following command:
+
+```bash
+pyinstaller --onefile --windowed --name Annotater --icon=imgs/tool.ico main.py
+```
+
+This command packages the application into a single executable file named `Annotater` with a custom icon. The resulting executable can be distributed and run on compatible systems.
+
+Use the following command to build the application with required non-py files (images, yaml, etc.):
+
+```bash
+pyinstaller Annotater.spec
+```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+
+|||||||||||||		File: requirements.txt		|||||||||||||
+PyYAML=6.0.1
+customtkinter=5.2.2
+pillow=10.4.0
+opencv-python=4.10.0.84
+sounddevice=0.4.7
+tqdm=4.66.4
+pygame=2.6.0
+moviepy=1.0.3
+scipy=1.14.0
+pyinstaller=6.9.0
+
+
+# to add
+logging
+logging.config
+ctypes
+tkinter 
+pathlib
+numpy
+
+|||||||||||||		File: src\anno.py		|||||||||||||
+"""
+anno.py
+
+This module contains functions for managing directory changes, refreshing file lists, 
+annotating videos, and watching annotated videos in the video annotation tool application.
+"""
+
+# General Imports
+import threading, logging
+import customtkinter as ctk, os
+from tkinter import filedialog
+
+# Local Imports
+from src.setup import align_window, resource_path
+from src.player import VideoPlayer, AnnotatedPlayer
+from src.config import config
+
+# Set up logging
+logger = logging.getLogger('app')
+
+def change(app, labels):
+    """
+    Changes the working directory and updates labels with new paths.
+
+    Args:
+        app (ctk.CTk): The main application window.
+        labels (dict): Dictionary containing label widgets.
+    """
+    try:
+        config.change_directory()
+        labels['in_path'].configure(text=f"Input Dir: {config.in_path}")
+        labels['file'].configure(text=f"Current File to be Annotated: {config.fetch_top_file}")
+        labels['out_path'].configure(text=f"Output Dir: {config.out_path}")
+        logger.info("Directory changed successfully")
+    except Exception as e:
+        logger.exception(f"Error changing directory: {e}")
+
+def refresh(labels):
+    """
+    Refreshes the list of files and updates the corresponding label.
+
+    Args:
+        labels (dict): Dictionary containing label widgets.
+    """
+    try:
+        _ = config.refetch_files()
+        labels['file'].configure(text=f"Current File to be Annotated: {config.fetch_top_file}")
+        logger.info("File list refreshed successfully")
+    except Exception as e:
+        logger.exception(f"Error refreshing file list: {e}")
+
+def update_annotation_text(var, checkbox):
+    """
+    Updates the annotation mode text based on the checkbox selection.
+
+    Args:
+        var (ctk.BooleanVar): The variable linked to the checkbox.
+        checkbox (ctk.CTkCheckBox): The checkbox to update based on the checkbox value.
+    """
+    if var.get(): # if checkbox is checked text is long annotations
+        checkbox.configure(text="Mode: Long Annotations")
+    else: # if checkbox is unchecked text is short annotations
+        checkbox.configure(text="Mode: Short Annotations")
+
+def update_annotation_label(var, label):
+    """
+    Updates the annotation mode label based on the checkbox selection.
+
+    Args:
+        var (ctk.BooleanVar): The variable linked to the checkbox.
+        label (ctk.CTkLabel): The label to update based on the checkbox value.
+    """
+    if var.get():
+        label.configure(text="Mode: Long Annotations")
+    else:
+        label.configure(text="Mode: Short Annotations")
+
+def annotate(app, labels, long_annotations=False):
+    """
+    Starts the annotation process for the top file in the list.
+
+    Args:
+        app (ctk.CTk): The main application window.
+        labels (dict): Dictionary containing label widgets.
+        long_annotations (ctk.BooleanVar): The variable linked to the annotation mode checkbox.
+    """
+    file_name = config.fetch_top_file
+    if not file_name:
+        labels['file'].configure(text="All files have been annotated.")
+        logger.debug("All files have been annotated.")
+    else:
+        logger.info(f"Starting annotation for file: {file_name}, with long annotations: {long_annotations}")
+        done_event = threading.Event()
+
+        try:
+            player = VideoPlayer(app, file_name, done_event=done_event, long_annotations=long_annotations)
+            done_event.wait()
+            _ = config.refetch_files()
+            labels['file'].configure(text=f"Current File to be Annotated: {config.fetch_top_file}")
+            logger.info(f"Annotation completed for file: {file_name}")
+        except Exception as e:
+            logger.exception(f"Error during annotation for file: {file_name}: {e}")
+
+def watch(long_annotations=False):
+    """Starts the video player to watch the annotated video."""
+    try:
+        # get which file to watch
+        watch_file = filedialog.askopenfilename(filetypes=[("MP4 files", "*.mp4")], title="Select a file to watch", initialdir=config.out_path)
+        if watch_file:
+            meta_file = watch_file.replace("_annotated.mp4", "_annotated.json")
+            logger.info(f"Started watching file: {watch_file}")
+            AnnotatedPlayer(watch_file, meta_file, long_annotations=long_annotations)
+        else:
+            logger.warning("No file selected for watching")
+    except Exception as e:
+        logger.exception(f"Error during watching: {e}")
+
+# Functions
+def create_annotater(app):
+    """
+    Sets up the annotation tool user interface and starts the main application loop.
+
+    Args:
+        app (ctk.CTk): The main application window.
+    """
+    logger.info("Creating annotater")
+    try:
+        # check if file exists
+        if os.path.exists("./imgs/tool.ico"):
+            app.iconbitmap("./imgs/tool.ico")
+            logger.debug("Icon set from local file")
+        elif os.path.exists(resource_path("./imgs/tool.ico")):
+            app.iconbitmap(resource_path("./imgs/tool.ico"))
+            logger.debug("Icon set from resource path")
+        elif os.path.exists(os.path.join(os.path.expanduser('~'), 'Dektop', 'App', 'imgs', 'tool.ico')):
+            app.iconbitmap(os.path.join(os.path.expanduser('~'), 'Dektop', 'App', 'imgs', 'tool.ico'))
+            logger.debug("Icon set from desktop path")
+
+        # add default styling options
+        ctk.set_default_color_theme("dark-blue")  # Set the default color theme
+        app.option_add("*Font", "Courier 12")  # Set the default font and size
+        logger.debug("Default styling options set")
+
+        # Set geometry 
+        _, _, _= align_window(app, 700, 250)
+        app.minsize(700, 250)
+        app.resizable(True, False)
+
+        # Setup Files
+        config.file_setup()
+        logger.info("File setup completed")
+
+        # Layout Configuration
+        app.grid_rowconfigure(0, weight=1)
+        app.grid_rowconfigure(4, weight=1)  # Add weight to the checkbox row
+        app.grid_columnconfigure(0, weight=1)
+        app.grid_columnconfigure(1, weight=1)
+        app.grid_columnconfigure(2, weight=1)
+        app.grid_columnconfigure(3, weight=1)
+        app.grid_columnconfigure(4, weight=1)
+        app.grid_columnconfigure(5, weight=1)
+
+        # dict to store labels to send as arguements
+        labels = {}
+        
+        # Add a label to the window
+        change_dir_button = ctk.CTkButton(app, text="Change Directory", command=lambda: change(app, labels))
+        change_dir_button.grid(row=0, column=0, columnspan=3, padx=10, pady=5, sticky="ew")
+
+        # Button to refresh files
+        refresh_button = ctk.CTkButton(app, text="Refresh Files", command=lambda: refresh(labels))
+        refresh_button.grid(row=0, column=3, columnspan=3, padx=10, pady=5, sticky="ew")
+
+        # Add a label current input path
+        current_in_path_label = ctk.CTkLabel(app, text=f"Input Dir: {config.in_path}")
+        current_in_path_label.grid(row=1, column=0, columnspan=6, padx=10, pady=5, sticky="ew")
+        labels["in_path"] = current_in_path_label
+
+        # Add label for the current file name
+        current_file_label = ctk.CTkLabel(app, text=f"Current File to be Annotated: {config.fetch_top_file}")
+        current_file_label.grid(row=2, column=0, columnspan=6, padx=10, pady=5, sticky="ew")
+        labels["file"] = current_file_label
+
+        # Add a label current output path
+        current_out_path_label = ctk.CTkLabel(app, text=f"Output Dir: {config.out_path}")
+        current_out_path_label.grid(row=3, column=0, columnspan=6, padx=10, pady=5, sticky="ew")
+        labels["out_path"] = current_out_path_label
+
+        # Create a BooleanVar for the checkbox
+        long_annotations_var = ctk.BooleanVar(value=False)
+
+        # Add a checkbox for selecting annotation mode
+        annotation_checkbox = ctk.CTkCheckBox(app, text="Mode: Short Annotations", variable=long_annotations_var,
+                                              command=lambda: update_annotation_text(long_annotations_var, annotation_checkbox))
+        # annotation_checkbox.grid(row=4, column=0, columnspan=4, padx=10, pady=5, sticky="ew")
+        annotation_checkbox.grid(row=4, column=0, columnspan=6)
+
+        # Open Video Player Button
+        video_button = ctk.CTkButton(app, text="Begin Annotating", command=lambda: annotate(app, labels, long_annotations_var.get()))
+        video_button.grid(row=5, column=0, columnspan=3, padx=10, pady=10, sticky="ew")
+
+        watch_button = ctk.CTkButton(app, text="Watch Annotated Video", command=lambda: watch(long_annotations_var.get()))
+        watch_button.grid(row=5, column=3, columnspan=3, padx=10, pady=10, sticky="ew")
+
+        logger.info("Annotater UI setup completed")
+
+        # Start the main application loop
+        app.mainloop()
+        logger.info("Main application loop started")
+    except Exception as e:
+        logger.exception(f"An error occurred during annotater creation: {e}")
+
+|||||||||||||		File: src\config.py		|||||||||||||
 """
 config.py
 
@@ -394,7 +857,108 @@ class Config:
 config = Config()
 
 
-|||||||||||||		File: data.py		|||||||||||||
+|||||||||||||		File: src\controller.py		|||||||||||||
+
+"""
+controller.py
+
+This module provides controls for the VideoPlayer, including play, pause,
+seek, restart, and stop functionalities.
+"""
+
+# General imports
+import cv2, logging
+import customtkinter as ctk
+from tkinter import DoubleVar
+
+# Custom imports
+from src.setup import align_window
+
+# Set up logging
+logger = logging.getLogger('app')
+
+class ControlWindow(ctk.CTkToplevel):
+    """
+    ControlWindow class for providing video controls.
+
+    Args:
+        app (customtkinter.CTk): The main application window.
+        file_name (str): Name of the video file being controlled.
+        video_player (VideoPlayer): The VideoPlayer instance to control.
+    """
+    def __init__(self, app, file_name, video_player, *args, **kwargs):
+        super().__init__(app, *args, **kwargs)
+        self.video_player = video_player
+        self.title(f"Video Controls: {file_name}")
+
+        self.control_frame = ctk.CTkFrame(self)
+        self.control_frame.pack(pady=10)
+        
+        self.play_pause_button = ctk.CTkButton(self.control_frame, text="▐▐", command=self.toggle_pause)
+        self.play_pause_button.grid(row=0, column=0, padx=5)
+        
+        self.seek_var = DoubleVar()
+        self.seeker = ctk.CTkSlider(self.control_frame, variable=self.seek_var, from_=0, to=int(self.video_player.cap.get(cv2.CAP_PROP_FRAME_COUNT)), width=500, command=self.seek)
+        self.seeker.grid(row=0, column=1, padx=5, sticky="ew")
+
+        self.restart_button = ctk.CTkButton(self.control_frame, text="⟳", command=self.restart)
+        self.restart_button.grid(row=0, column=2, padx=5)
+
+        self.stop_button = ctk.CTkButton(self.control_frame, text="⏹", command=lambda: self.close(save=True))
+        self.stop_button.grid(row=0, column=3, padx=5)
+
+        self.columnconfigure(1, weight=1)
+        self.protocol("WM_DELETE_WINDOW", lambda: self.close())
+
+        # align the control window
+        (self.mid_x, self.mid_y), (self.window_width, self.window_height), _ = align_window(self, 970, 50, horizontal="left", vertical="bottom")
+        
+        # Make the control window screen topmost
+        self.attributes("-topmost", True)
+        logger.info(f"Control window configuration completed for file: {file_name}")
+
+    def add_to_queue(self, command):
+        """
+        Add a command to the video player's command queue.
+        
+        Args:
+            command (tuple): The command to add to the queue
+        """
+        self.video_player.command_queue.put(command)
+        logger.debug("Added command to queue: %s", command)
+
+    def toggle_pause(self):
+        """Toggle the pause state of the video."""
+        self.play_pause_button.configure(text="▐▐" if self.video_player.paused else "▶")
+        logger.info(f"Toggled pause state to {not self.video_player.paused}")
+        self.add_to_queue('pause')
+
+    def seek(self, value):
+        """
+        Seek to the specified frame number.
+        
+        Args:
+            value (int): The frame number to seek to.
+        """
+        frame_number = int(value)
+        self.add_to_queue(('seek', frame_number))
+        self.seek_var.set(frame_number)
+        logger.info(f"Seeked to frame number: {frame_number}")
+
+    def restart(self):
+        """Restart the video from the beginning."""
+        self.add_to_queue('restart')
+        self.play_pause_button.configure(text="▐▐")
+        self.seek_var.set(0)
+        logger.info("Restarted video")
+
+    def close(self, save=False):
+        """Save and close the video player."""
+        self.video_player.close(save=save)
+        self.video_player.done_event.set()
+        logger.info("Saved and closed the video player")
+
+|||||||||||||		File: src\data.py		|||||||||||||
 """
 data.py
 
@@ -411,7 +975,7 @@ from tkinter import messagebox
 from scipy.io.wavfile import write
 
 # Custom Imports
-from screens import SaveProgress
+from src.screens import SaveProgress
 
 # Set up logging
 logger = logging.getLogger('app')
@@ -920,852 +1484,7 @@ class Data:
         self.max_frame = 0
         logger.debug("Data object cleaned")
 
-|||||||||||||		File: logging_config.yaml		|||||||||||||
-version: 1
-
-disable_existing_loggers: False
-
-formatters:
-  detailed:
-    format: '[%(asctime)s]-(Line %(lineno)d at %(pathname)s)-{%(name)s:%(levelname)s} : %(message)s'
-  simple:
-    format: '%(name)s - %(levelname)s - %(message)s'
-
-handlers:
-  debug_console:
-    class: logging.StreamHandler
-    level: DEBUG
-    formatter: simple
-    stream: ext://sys.stdout
-
-  debug_file:
-    class: logging.FileHandler
-    level: DEBUG
-    formatter: detailed
-    filename: logs/app.log
-    mode: 'a'
-
-  info_file:
-    class: logging.FileHandler
-    level: INFO
-    formatter: simple
-    filename: logs/info.log
-
-  error_file:
-    class: logging.FileHandler
-    formatter: detailed
-    level: ERROR
-    filename: logs/errors.log
-
-  critical_file:
-    class: logging.FileHandler
-    formatter: detailed
-    level: CRITICAL
-    filename: logs/critical.log
-
-  # email:
-  #   class: logging.handlers.SMTPHandler
-  #   mailhost: 'localhost'
-  #   fromaddr: 'app@example.com'
-  #   toaddrs: ['admin@example.com']
-  #   subject: 'Critical Error in Application'
-  #   credentials: [username, password]
-  #   level: CRITICAL
-
-loggers:
-  app:
-    level: DEBUG
-    handlers: [debug_console, debug_file, info_file, error_file, critical_file]
-    propagate: no
-root:
-  level: WARNING
-  handlers: [debug_console]
-
-
-|||||||||||||		File: main.py		|||||||||||||
-"""
-main.py
-
-Entry point for the video annotation tool. This script sets up the logging,
-initializes the main application window, and starts the annotation tool.
-"""
-
-# General Imports
-import logging, logging.config, yaml, ctypes
-import customtkinter as ctk
-
-# Custom Imports
-from screens import Splash
-from annotater.anno import create_annotater
-
-# TODO : update create documentation
-# TODO : rebuild the annotater and update the surface
-
-# Set DPI Awareness for Windows 10
-ctypes.windll.shcore.SetProcessDpiAwareness(2)
-
-# Set up logging
-def setup_logging(config_path="logging_config.yaml"):
-    """
-    Sets up logging configuration from the provided YAML file.
-
-    Args:
-        config_path (str): Path to the logging configuration YAML file.
-
-    Returns:
-        (logging.Logger): Configured logger object
-    """
-    with open(config_path, "r") as f:
-        config = yaml.safe_load(f.read())
-    logging.config.dictConfig(config=config)
-    logger = logging.getLogger('main')
-    return logger
-
-logger = setup_logging()
-
-def close(app):
-    """
-    Closes the application and logs the closure.
-
-    Args:
-        app (customtkinter.CTk): The main application window.
-    """
-    logger.info("### Closing the Annotation Tool ###")
-    app.destroy()
-
-def main():
-    """Main function to initialize and run the annotation tool application."""
-    logger.info("### Starting the Annotation Tool ###")
-
-    try:
-        # Set the theme (optional)
-        ctk.set_appearance_mode("Dark")  # Can be "Dark" or "Light"
-        logger.debug("Appearance mode set to Dark")
-
-        # Create the main application window
-        app = ctk.CTk()
-        app.title("Annotater") # Set the title of the window
-        app.protocol("WM_DELETE_WINDOW", lambda: close(app))
-        logger.debug("Main application window created and configured")
-
-        # # add calback for mouse position
-        # app.bind("<Motion>", lambda e: logger.debug(f"Mouse position: {e.x}, {e.y}"))
-
-        # Hide the main application window initially
-        app.withdraw()
-        logger.debug("Main application window hidden")
-
-        # Show splash screen
-        Splash(app)
-        logger.info("Splash screen displayed")
-
-        create_annotater(app)
-        logger.info("Annotater created and started")
-
-    except Exception as e: logger.exception("An error occurred in the main loop: %s", e)
-    finally: logger.info("Application terminated")
-
-# run main loop
-if __name__ == "__main__":
-    main()
-
-
-|||||||||||||		File: README.md		|||||||||||||
-# Annotater: Advanced Video Annotation Tool
-
-Annotater is a sophisticated video annotation tool designed for detailed and precise marking of video content. It integrates robust video and audio processing capabilities to provide a seamless annotation experience. Based on Python, the tool uses libraries like CustomTkinter for its UI, OpenCV for video processing, and PyAudio for audio manipulation, ensuring a comprehensive environment for users to work with video data.
-
-## Prerequisites
-
-1. Python 3.8+
-2. Knowledge of video formats and codecs
-3. Basic understanding of threading and concurrent programming in Python
-
-## Key Features
-
-- **Video Playback Controls**: Play, pause, seek, and stop functionalities for thorough video review.
-- **Audio Processing**: Integrated audio playback synchronized with video.
-- **Dynamic Annotation**: Users can draw and save annotations directly on the video frame.
-- **Multi-threading**: Utilizes threading for non-blocking video processing.
-- **Comprehensive Logging**: Detailed logs for debugging and tracking application processes.
-
-## Important Links
-
-- [CustomTkinter Repository](https://github.com/TomSchimansky/CustomTkinter)
-- [OpenCV Documentation](https://docs.opencv.org/4.x/)
-- [PyAudio Official Page](http://people.csail.mit.edu/hubert/pyaudio/)
-
-## Metadata
-
-| Attribute         | Value                                          |
-|-------------------|------------------------------------------------|
-| Name              | Annotater                                      |
-| Version           | 1.0.0                                          |
-| Compatibility     | Windows 10, Ubuntu 20.04                       |
-| License           | MIT License                                    |
-| Release Date      | 2024-01-24                                     |
-| Last Updated      | 2024-07-18                                     |
-
-## How to Install
-
-1. Clone the repository to your local machine using the following command:
-
-```bash
-git clone git
-```
-
-1. Install the required dependencies using the following command:
-
-```bash
-pip install -r requirements.txt
-```
-
-1. Run the application using the following command:
-
-```bash
-python -m main
-```
-
-## Documentation
-
-### Overview
-
-Annotater is built to facilitate detailed annotations of video files, offering tools to mark and comment on video content for educational, research, or editing purposes. The application supports various video formats and provides an interface to manage video playback, audio synchronization, and annotation storage.
-
-### Modules and Code Structure
-
-**`main.py`**:
-
-- This is the entry point of the application. It sets up the main application window, initializes logging based on a configuration file, and handles the application's closing event.
-
-**`config.py`**:
-
-- Manages the application configuration, including paths and logging settings. It dynamically updates these settings during runtime based on user interactions.
-
-**`data.py`**:
-
-- Handles data storage for videos, audio, and annotations. It implements methods to add, update, and retrieve data elements tied to specific video frames.
-
-**`screens.py`**:
-
-- Contains the UI elements for the splash screen and the save progress screen. These screens inform the user of ongoing processes and ensure the application remains responsive during lengthy operations.
-
-**`logging_config.yaml`**:
-
-- Configures different logging handlers and formats, including file and console outputs tailored to different logging levels (DEBUG, INFO, ERROR).
-
-### Advanced Features
-
-- **Multi-threaded Processing**: Ensures video playback and annotation processes run smoothly without interrupting the user interface.
-- **Customizable UI**: Thanks to CustomTkinter, the UI can be easily modified to match user preferences or specific requirements.
-
-## Directions of Use
-
-1. **Starting the Application**:
-   - Run `main.py` to open the application. A splash screen appears initially, followed by the main annotation interface.
-
-2. **Opening a Video**:
-   - Use the file dialog to select a video file for annotation. The video will load, and playback controls will appear.
-
-3. **Annotating a Video**:
-   - Play the video and pause at the frame you want to annotate. Use the mouse to draw annotations directly on the video frame. Annotations can be saved and will be associated with the specific frame.
-
-4. **Saving Annotations**:
-   - Once annotation is complete, use the save option to store annotations. The application supports exporting annotations in JSON format, which includes metadata about the video and the annotations.
-
-5. **Reviewing and Editing Annotations**:
-   - Load an annotated video file to review annotations. Annotations can be edited by navigating to the specific frames and modifying the existing marks.
-
-## Building the Application
-
-To build the application, use the following command:
-
-```bash
-pyinstaller --onefile --windowed --name Annotater --icon=imgs/tool.ico main.py
-```
-
-This command packages the application into a single executable file named `Annotater` with a custom icon. The resulting executable can be distributed and run on compatible systems.
-
-Use the following command to build the application with required non-py files (images, yaml, etc.):
-
-```bash
-pyinstaller Annotater.spec
-```
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-
-|||||||||||||		File: requirements.txt		|||||||||||||
-PyYAML=6.0.1
-customtkinter=5.2.2
-pillow=10.4.0
-opencv-python=4.10.0.84
-sounddevice=0.4.7
-tqdm=4.66.4
-pygame=2.6.0
-moviepy=1.0.3
-scipy=1.14.0
-pyinstaller=6.9.0
-
-|||||||||||||		File: screens.py		|||||||||||||
-"""
-screens.py
-
-This module contains the classes for the splash screen and save progress screen
-used in the Annotater application.
-"""
-
-# General Imports
-import logging
-import os, customtkinter as ctk
-from PIL import Image
-
-# Custom Imports
-from annotater.setup import align_window
-
-# Set up logging
-logger = logging.getLogger('app')
-
-class Splash(ctk.CTkToplevel):
-    """
-    The Splash class creates a splash screen that displays a loading message and an image.
-
-    Args:
-        root (ctk.Ctk): The root window of the application.
-        counter (int): The countdown timer before closing the splash screen.
-    """
-    def __init__(self, root, counter=4):
-        super().__init__(root)
-        
-        self.root = root
-        self.protocol("WM_DELETE_WINDOW", self.root.deiconify)
-        logger.debug("Initializing Splash screen")
-
-        # Set the size of the splash screen
-        self.base_width, self.base_height = 350, 300
-        
-        self.create_splash()
-        self.update_countdown(counter)
-
-    def create_splash(self):
-        """Creates and configures the splash screen layout."""
-        self.title("Loading...")
-
-        # Center the splash screen
-        (mid_x, mid_y), (self.window_width, self.window_height), _ = align_window(self, self.base_width, self.base_height)
-
-        self.resizable(False, False)
-
-        # show application window
-        self.deiconify()
-
-        # Make the splash screen topmost
-        self.attributes("-topmost", True)
-        logger.debug(f"Splash screen centered at position: {mid_x}, {mid_y}")
-
-        # Load and resize the image
-        self.image_path = "./imgs/jhu.png"
-        img = self.load_and_resize_image(self.image_path)
-
-        # Create widgets
-        self.image_label = ctk.CTkLabel(self, image=img, text="")
-        self.label = ctk.CTkLabel(self, text="Welcome to the Annotater Application", font=("Arial", 16))
-        self.countdown_label = ctk.CTkLabel(self, text="Closing in 3 seconds", font=("Courier", 12))
-
-        # Grid configuration
-        self.grid_columnconfigure(0, weight=1)  # Make the column grow with the window
-        self.grid_rowconfigure(0, weight=1)  # Image label row
-        self.grid_rowconfigure(1, weight=0)  # Text label row
-        self.grid_rowconfigure(2, weight=0)  # Countdown label row
-
-        # Place widgets using grid
-        self.image_label.grid(row=0, column=0, sticky="nsew", pady=20)
-        self.label.grid(row=1, column=0, sticky="ew")
-        self.countdown_label.grid(row=2, column=0, sticky="ew")
-
-        logger.debug("Splash screen layout created with grid")
-
-    def load_and_resize_image(self, image_path):
-        """
-        Loads and resizes an image to fit the application window.
-        
-        Args:
-            image_path (str): Path to the image file.
-        """
-        if os.path.exists(image_path):
-            img = Image.open(image_path)
-            img_width, img_height = img.size
-            logger.debug(f"Original Image Size: {img_width}x{img_height}")
-            scaling_factor = min(self.base_width / img_width, self.base_height / img_height)
-            new_width = int(img_width * scaling_factor)
-            new_height = int(img_height * scaling_factor)
-            img = img.resize((new_width, new_height), Image.Resampling.LANCZOS)
-            logger.debug(f"Resized Image Size: {new_width}x{new_height}")
-            return ctk.CTkImage(img, size=(new_width, new_height))
-        else:
-            logger.error(f"Splash image not found: {image_path}")
-            return None
-
-    def update_countdown(self, count):
-        """
-        Update the countdown timer on the splash screen.
-
-        Args:
-            count (int): Countdown timer in seconds.
-        """
-        if count > 0:
-            self.countdown_label.configure(text=f"Closing in {count} seconds...")
-            logger.debug(f"Countdown updated to {count} seconds")
-            self.after(1000, self.update_countdown, count-1)
-        else:
-            self.destroy_splash()
-
-    def destroy_splash(self):
-        """Destroy the splash screen and show the main window."""
-        self.destroy()
-        self.root.deiconify()    # Show the main window
-        logger.info("Countdown finished, destroying splash screen, showing main window")
-
-class SaveProgress(ctk.CTkToplevel):
-    """
-    Save Progress Window for the Annotater application.
-
-    Args:
-        root (ctk.CTk): The root Tkinter application.
-        name (str): The name of the file being saved.
-    """
-    def __init__(self, root, name):
-        super().__init__(root)
-        self.root = root
-        self.name = name
-        logger.debug(f"Initializing SaveProgress window for {name}")
-        self.create_save_progress()
-        self.protocol("WM_DELETE_WINDOW", self.destroy_save_progress)
-
-    def create_save_progress(self):
-        """Create and display the save progress window."""
-        self.title(f"{self.name}: Saving Progress...")
-        self.geometry("500x200")
-        self.attributes("-topmost", True)
-
-        # Layout Configuration
-        for i in range(5): self.grid_rowconfigure(i, weight=1)
-        self.grid_columnconfigure(0, weight=1)
-        self.grid_columnconfigure(1, weight=6)
-
-        # Add a label to show the current status
-        self.status_label = ctk.CTkLabel(self, text="Saving Annotation Files", font=("Courier", 16))
-        self.status_label.grid(row=0, column=0, columnspan=2, padx=10, pady=10, sticky="ew")
-
-        # video data progress bar
-        self.video_progress_label = ctk.CTkLabel(self, text="Video Progress:")
-        self.video_progress_label.grid(row=1, column=0, padx=10, pady=0, sticky="ew")
-        self.video_progress = ctk.CTkProgressBar(self, mode='determinate', height=20, border_width=1, border_color="black", corner_radius=5, progress_color="green")
-        self.video_progress.grid(row=1, column=1, padx=20, pady=0, sticky="ew")
-
-        # audio data progress bar
-        self.audio_progress_label = ctk.CTkLabel(self, text="Audio Progress:")
-        self.audio_progress_label.grid(row=2, column=0, padx=10, pady=0, sticky="ew")
-        self.audio_progress = ctk.CTkProgressBar(self, mode='determinate', height=20, border_width=1, border_color="black", corner_radius=5, progress_color="green")
-        self.audio_progress.grid(row=2, column=1, padx=20, pady=0, sticky="ew")
-
-        # audio-video data progress bar
-        self.av_progress_label = ctk.CTkLabel(self, text="Audio-Video Progress:")
-        self.av_progress_label.grid(row=3, column=0, padx=10, pady=0, sticky="ew")
-        self.av_progress = ctk.CTkProgressBar(self, mode='determinate', height=20, border_width=1, border_color="black", corner_radius=5, progress_color="green")
-        self.av_progress.grid(row=3, column=1, padx=20, pady=0, sticky="ew")
-
-        # annotations json data progress bar
-        self.json_progress_label = ctk.CTkLabel(self, text="Metadata Progress:")
-        self.json_progress_label.grid(row=4, column=0, padx=10, pady=0, sticky="ew")
-        self.json_progress = ctk.CTkProgressBar(self, mode='determinate', height=20, border_width=1, border_color="black", corner_radius=5, progress_color="green")
-        self.json_progress.grid(row=4, column=1, padx=20, pady=0, sticky="ew")
-
-        # reset progress bars
-        self.reset()
-        logger.debug("SaveProgress window layout created")
-
-    def update_title_on_save(self):
-        """Update the title of the save progress window when save is complete."""
-        self.title(f"{self.name}: Progress Saved!!!")
-        logger.info(f"Annotations saved for {self.name}")
-
-    def update_video_progress(self, value):
-        """
-        Update the video progress bar.
-
-        Args:
-            value (float): Progress value between 0 and 1.
-        """
-        if value == 1.0: self.video_progress_label.configure(text="Video Progress: Done ✅")
-        self.video_progress.set(value)
-
-    def update_audio_progress(self, value):
-        """
-        Update the audio progress bar.
-
-        Args:
-            value (float): Progress value between 0 and 1.
-        """
-        if value == 1.0: self.audio_progress_label.configure(text="Audio Progress: Done ✅")
-        self.audio_progress.set(value)
-
-    def update_av_progress(self, value):
-        """
-        Update the audio-video progress bar.
-
-        Args:
-            value (float): Progress value between 0 and 1.
-        """
-        if value == 1.0: self.av_progress_label.configure(text="Audio-Video Progress: Done ✅")
-        self.av_progress.set(value)
-
-    def update_json_progress(self, value):
-        """
-        Update the metadata (JSON) progress bar.
-
-        Args:
-            value (float): Progress value between 0 and 1.
-        """
-        if value == 1.0: self.json_progress_label.configure(text="Metadata Progress: Done ✅")
-        self.json_progress.set(value)
-
-    def reset(self):
-        """Reset all progress bars and the status label."""
-        self.title(f"{self.name}: Saving Progress...")
-        self.update_video_progress(0.0)
-        self.update_audio_progress(0.0)
-        self.update_av_progress(0.0)
-        self.update_json_progress(0.0)
-        self.status_label.configure(text="Status: Beginning Save Thread")
-        logger.debug(f"Progress bars reset for {self.name}")
-
-    def destroy_save_progress(self):
-        """Destroy the save progress window and show the main window."""
-        logger.info("Destroying SaveProgress window")
-        self.destroy()
-        self.root.deiconify()    # Show the main window
-        logger.debug("Main window deiconified")
-
-
-
-|||||||||||||		File: annotater\anno.py		|||||||||||||
-"""
-anno.py
-
-This module contains functions for managing directory changes, refreshing file lists, 
-annotating videos, and watching annotated videos in the video annotation tool application.
-"""
-
-# General Imports
-import threading, logging
-import customtkinter as ctk, os
-from tkinter import filedialog
-
-# Local Imports
-from annotater.setup import align_window, resource_path
-from annotater.player import VideoPlayer, AnnotatedPlayer
-from config import config
-
-# Set up logging
-logger = logging.getLogger('app')
-
-def change(app, labels):
-    """
-    Changes the working directory and updates labels with new paths.
-
-    Args:
-        app (ctk.CTk): The main application window.
-        labels (dict): Dictionary containing label widgets.
-    """
-    try:
-        config.change_directory()
-        labels['in_path'].configure(text=f"Input Dir: {config.in_path}")
-        labels['file'].configure(text=f"Current File to be Annotated: {config.fetch_top_file}")
-        labels['out_path'].configure(text=f"Output Dir: {config.out_path}")
-        logger.info("Directory changed successfully")
-    except Exception as e:
-        logger.exception(f"Error changing directory: {e}")
-
-def refresh(labels):
-    """
-    Refreshes the list of files and updates the corresponding label.
-
-    Args:
-        labels (dict): Dictionary containing label widgets.
-    """
-    try:
-        _ = config.refetch_files()
-        labels['file'].configure(text=f"Current File to be Annotated: {config.fetch_top_file}")
-        logger.info("File list refreshed successfully")
-    except Exception as e:
-        logger.exception(f"Error refreshing file list: {e}")
-
-def update_annotation_text(var, checkbox):
-    """
-    Updates the annotation mode text based on the checkbox selection.
-
-    Args:
-        var (ctk.BooleanVar): The variable linked to the checkbox.
-        checkbox (ctk.CTkCheckBox): The checkbox to update based on the checkbox value.
-    """
-    if var.get(): # if checkbox is checked text is long annotations
-        checkbox.configure(text="Mode: Long Annotations")
-    else: # if checkbox is unchecked text is short annotations
-        checkbox.configure(text="Mode: Short Annotations")
-
-def update_annotation_label(var, label):
-    """
-    Updates the annotation mode label based on the checkbox selection.
-
-    Args:
-        var (ctk.BooleanVar): The variable linked to the checkbox.
-        label (ctk.CTkLabel): The label to update based on the checkbox value.
-    """
-    if var.get():
-        label.configure(text="Mode: Long Annotations")
-    else:
-        label.configure(text="Mode: Short Annotations")
-
-def annotate(app, labels, long_annotations=False):
-    """
-    Starts the annotation process for the top file in the list.
-
-    Args:
-        app (ctk.CTk): The main application window.
-        labels (dict): Dictionary containing label widgets.
-        long_annotations (ctk.BooleanVar): The variable linked to the annotation mode checkbox.
-    """
-    file_name = config.fetch_top_file
-    if not file_name:
-        labels['file'].configure(text="All files have been annotated.")
-        logger.debug("All files have been annotated.")
-    else:
-        logger.info(f"Starting annotation for file: {file_name}, with long annotations: {long_annotations}")
-        done_event = threading.Event()
-
-        try:
-            player = VideoPlayer(app, file_name, done_event=done_event, long_annotations=long_annotations)
-            done_event.wait()
-            _ = config.refetch_files()
-            labels['file'].configure(text=f"Current File to be Annotated: {config.fetch_top_file}")
-            logger.info(f"Annotation completed for file: {file_name}")
-        except Exception as e:
-            logger.exception(f"Error during annotation for file: {file_name}: {e}")
-
-def watch(long_annotations=False):
-    """Starts the video player to watch the annotated video."""
-    try:
-        # get which file to watch
-        watch_file = filedialog.askopenfilename(filetypes=[("MP4 files", "*.mp4")], title="Select a file to watch", initialdir=config.out_path)
-        if watch_file:
-            meta_file = watch_file.replace("_annotated.mp4", "_annotated.json")
-            logger.info(f"Started watching file: {watch_file}")
-            AnnotatedPlayer(watch_file, meta_file, long_annotations=long_annotations)
-        else:
-            logger.warning("No file selected for watching")
-    except Exception as e:
-        logger.exception(f"Error during watching: {e}")
-
-# Functions
-def create_annotater(app):
-    """
-    Sets up the annotation tool user interface and starts the main application loop.
-
-    Args:
-        app (ctk.CTk): The main application window.
-    """
-    logger.info("Creating annotater")
-    try:
-        # check if file exists
-        if os.path.exists("./imgs/tool.ico"):
-            app.iconbitmap("./imgs/tool.ico")
-            logger.debug("Icon set from local file")
-        elif os.path.exists(resource_path("./imgs/tool.ico")):
-            app.iconbitmap(resource_path("./imgs/tool.ico"))
-            logger.debug("Icon set from resource path")
-        elif os.path.exists(os.path.join(os.path.expanduser('~'), 'Dektop', 'App', 'imgs', 'tool.ico')):
-            app.iconbitmap(os.path.join(os.path.expanduser('~'), 'Dektop', 'App', 'imgs', 'tool.ico'))
-            logger.debug("Icon set from desktop path")
-
-        # add default styling options
-        ctk.set_default_color_theme("dark-blue")  # Set the default color theme
-        app.option_add("*Font", "Courier 12")  # Set the default font and size
-        logger.debug("Default styling options set")
-
-        # Set geometry 
-        _, _, _= align_window(app, 700, 250)
-        app.minsize(700, 250)
-        app.resizable(True, False)
-
-        # Setup Files
-        config.file_setup()
-        logger.info("File setup completed")
-
-        # Layout Configuration
-        app.grid_rowconfigure(0, weight=1)
-        app.grid_rowconfigure(4, weight=1)  # Add weight to the checkbox row
-        app.grid_columnconfigure(0, weight=1)
-        app.grid_columnconfigure(1, weight=1)
-        app.grid_columnconfigure(2, weight=1)
-        app.grid_columnconfigure(3, weight=1)
-        app.grid_columnconfigure(4, weight=1)
-        app.grid_columnconfigure(5, weight=1)
-
-        # dict to store labels to send as arguements
-        labels = {}
-        
-        # Add a label to the window
-        change_dir_button = ctk.CTkButton(app, text="Change Directory", command=lambda: change(app, labels))
-        change_dir_button.grid(row=0, column=0, columnspan=3, padx=10, pady=5, sticky="ew")
-
-        # Button to refresh files
-        refresh_button = ctk.CTkButton(app, text="Refresh Files", command=lambda: refresh(labels))
-        refresh_button.grid(row=0, column=3, columnspan=3, padx=10, pady=5, sticky="ew")
-
-        # Add a label current input path
-        current_in_path_label = ctk.CTkLabel(app, text=f"Input Dir: {config.in_path}")
-        current_in_path_label.grid(row=1, column=0, columnspan=6, padx=10, pady=5, sticky="ew")
-        labels["in_path"] = current_in_path_label
-
-        # Add label for the current file name
-        current_file_label = ctk.CTkLabel(app, text=f"Current File to be Annotated: {config.fetch_top_file}")
-        current_file_label.grid(row=2, column=0, columnspan=6, padx=10, pady=5, sticky="ew")
-        labels["file"] = current_file_label
-
-        # Add a label current output path
-        current_out_path_label = ctk.CTkLabel(app, text=f"Output Dir: {config.out_path}")
-        current_out_path_label.grid(row=3, column=0, columnspan=6, padx=10, pady=5, sticky="ew")
-        labels["out_path"] = current_out_path_label
-
-        # Create a BooleanVar for the checkbox
-        long_annotations_var = ctk.BooleanVar(value=False)
-
-        # Add a checkbox for selecting annotation mode
-        annotation_checkbox = ctk.CTkCheckBox(app, text="Mode: Short Annotations", variable=long_annotations_var,
-                                              command=lambda: update_annotation_text(long_annotations_var, annotation_checkbox))
-        # annotation_checkbox.grid(row=4, column=0, columnspan=4, padx=10, pady=5, sticky="ew")
-        annotation_checkbox.grid(row=4, column=0, columnspan=6)
-
-        # Open Video Player Button
-        video_button = ctk.CTkButton(app, text="Begin Annotating", command=lambda: annotate(app, labels, long_annotations_var.get()))
-        video_button.grid(row=5, column=0, columnspan=3, padx=10, pady=10, sticky="ew")
-
-        watch_button = ctk.CTkButton(app, text="Watch Annotated Video", command=lambda: watch(long_annotations_var.get()))
-        watch_button.grid(row=5, column=3, columnspan=3, padx=10, pady=10, sticky="ew")
-
-        logger.info("Annotater UI setup completed")
-
-        # Start the main application loop
-        app.mainloop()
-        logger.info("Main application loop started")
-    except Exception as e:
-        logger.exception(f"An error occurred during annotater creation: {e}")
-
-|||||||||||||		File: annotater\controller.py		|||||||||||||
-
-"""
-controller.py
-
-This module provides controls for the VideoPlayer, including play, pause,
-seek, restart, and stop functionalities.
-"""
-
-# General imports
-import cv2, logging
-import customtkinter as ctk
-from tkinter import DoubleVar
-
-# Custom imports
-from annotater.setup import align_window
-
-# Set up logging
-logger = logging.getLogger('app')
-
-class ControlWindow(ctk.CTkToplevel):
-    """
-    ControlWindow class for providing video controls.
-
-    Args:
-        app (customtkinter.CTk): The main application window.
-        file_name (str): Name of the video file being controlled.
-        video_player (VideoPlayer): The VideoPlayer instance to control.
-    """
-    def __init__(self, app, file_name, video_player, *args, **kwargs):
-        super().__init__(app, *args, **kwargs)
-        self.video_player = video_player
-        self.title(f"Video Controls: {file_name}")
-
-        self.control_frame = ctk.CTkFrame(self)
-        self.control_frame.pack(pady=10)
-        
-        self.play_pause_button = ctk.CTkButton(self.control_frame, text="▐▐", command=self.toggle_pause)
-        self.play_pause_button.grid(row=0, column=0, padx=5)
-        
-        self.seek_var = DoubleVar()
-        self.seeker = ctk.CTkSlider(self.control_frame, variable=self.seek_var, from_=0, to=int(self.video_player.cap.get(cv2.CAP_PROP_FRAME_COUNT)), width=500, command=self.seek)
-        self.seeker.grid(row=0, column=1, padx=5, sticky="ew")
-
-        self.restart_button = ctk.CTkButton(self.control_frame, text="⟳", command=self.restart)
-        self.restart_button.grid(row=0, column=2, padx=5)
-
-        self.stop_button = ctk.CTkButton(self.control_frame, text="⏹", command=lambda: self.close(save=True))
-        self.stop_button.grid(row=0, column=3, padx=5)
-
-        self.columnconfigure(1, weight=1)
-        self.protocol("WM_DELETE_WINDOW", lambda: self.close())
-
-        # align the control window
-        (self.mid_x, self.mid_y), (self.window_width, self.window_height), _ = align_window(self, 970, 50, horizontal="left", vertical="bottom")
-        
-        # Make the control window screen topmost
-        self.attributes("-topmost", True)
-        logger.info(f"Control window configuration completed for file: {file_name}")
-
-    def add_to_queue(self, command):
-        """
-        Add a command to the video player's command queue.
-        
-        Args:
-            command (tuple): The command to add to the queue
-        """
-        self.video_player.command_queue.put(command)
-        logger.debug("Added command to queue: %s", command)
-
-    def toggle_pause(self):
-        """Toggle the pause state of the video."""
-        self.play_pause_button.configure(text="▐▐" if self.video_player.paused else "▶")
-        logger.info(f"Toggled pause state to {not self.video_player.paused}")
-        self.add_to_queue('pause')
-
-    def seek(self, value):
-        """
-        Seek to the specified frame number.
-        
-        Args:
-            value (int): The frame number to seek to.
-        """
-        frame_number = int(value)
-        self.add_to_queue(('seek', frame_number))
-        self.seek_var.set(frame_number)
-        logger.info(f"Seeked to frame number: {frame_number}")
-
-    def restart(self):
-        """Restart the video from the beginning."""
-        self.add_to_queue('restart')
-        self.play_pause_button.configure(text="▐▐")
-        self.seek_var.set(0)
-        logger.info("Restarted video")
-
-    def close(self, save=False):
-        """Save and close the video player."""
-        self.video_player.close(save=save)
-        self.video_player.done_event.set()
-        logger.info("Saved and closed the video player")
-
-|||||||||||||		File: annotater\player.py		|||||||||||||
+|||||||||||||		File: src\player.py		|||||||||||||
 """
 player.py
 
@@ -1783,9 +1502,9 @@ from pygame import mixer
 from moviepy.editor import VideoFileClip
 
 # Local Imports
-from data import Data
-from config import config
-from annotater.controller import ControlWindow
+from src.data import Data
+from src.config import config
+from src.controller import ControlWindow
 
 # Set up logging
 logger = logging.getLogger('app')
@@ -1944,21 +1663,17 @@ class VideoPlayer:
         """Draw move annotations."""
         if self.long_annotations:
             self.annotation_chunk.append(point)
-            for i in range(len(self.annotation_chunk) - 1):
-                cv2.line(self.frame, self.annotation_chunk[i], self.annotation_chunk[i + 1], (0, 0, 255), 3)
+            for i in range(len(self.annotation_chunk) - 1): cv2.line(self.frame, self.annotation_chunk[i], self.annotation_chunk[i + 1], (0, 0, 255), 3)
         else:
-            if self.start_point:
-                cv2.line(self.frame, self.start_point, point, (0, 0, 255), 3)
+            if self.start_point: cv2.line(self.frame, self.start_point, point, (0, 0, 255), 3)
             self.start_point = point
 
     def _finalize_annotation_chunk(self, point):
         """Finalize the annotation chunk."""
         if self.long_annotations:
-            for i in range(len(self.annotation_chunk) - 1):
-                cv2.line(self.frame, self.annotation_chunk[i], self.annotation_chunk[i + 1], (0, 0, 255), 3)
+            for i in range(len(self.annotation_chunk) - 1): cv2.line(self.frame, self.annotation_chunk[i], self.annotation_chunk[i + 1], (0, 0, 255), 3)
         else:
-            if self.start_point:
-                cv2.line(self.frame, self.start_point, point, (0, 0, 255), 3)
+            if self.start_point: cv2.line(self.frame, self.start_point, point, (0, 0, 255), 3)
         self.annotation_chunk = []
         self.start_point = None
 
@@ -2035,8 +1750,7 @@ class VideoPlayer:
         """Manage the delay between frames."""
         elapsed_time = t.time() - start_time
         remaining_time = max(0, self.frame_delay / 1000 - elapsed_time)
-        if remaining_time > 0:
-            t.sleep(remaining_time)
+        if remaining_time > 0: t.sleep(remaining_time)
 
     def toggle_pause(self):
         """Toggle the pause state of the video."""
@@ -2273,7 +1987,255 @@ class AnnotatedPlayer:
         messagebox.showinfo("Done", "File is done playing")
         logger.info("AnnotatedPlayer resources released and windows closed")
 
-|||||||||||||		File: annotater\setup.py		|||||||||||||
+|||||||||||||		File: src\screens.py		|||||||||||||
+"""
+screens.py
+
+This module contains the classes for the splash screen and save progress screen
+used in the Annotater application.
+"""
+
+# General Imports
+import logging
+import os, customtkinter as ctk
+from PIL import Image
+
+# Custom Imports
+from src.setup import align_window
+
+# Set up logging
+logger = logging.getLogger('app')
+
+class Splash(ctk.CTkToplevel):
+    """
+    The Splash class creates a splash screen that displays a loading message and an image.
+
+    Args:
+        root (ctk.Ctk): The root window of the application.
+        counter (int): The countdown timer before closing the splash screen.
+    """
+    def __init__(self, root, counter=4, version="v1.0.0"):
+        super().__init__(root)
+        
+        self.root = root
+        if version.beginwith("v"): self.version = version
+        else: self.version = f"v{version}"
+        self.protocol("WM_DELETE_WINDOW", self.root.deiconify)
+        logger.debug("Initializing Splash screen")
+
+        # Set the size of the splash screen
+        self.base_width, self.base_height = 350, 300
+        
+        self.create_splash()
+        self.update_countdown(counter)
+
+    def create_splash(self):
+        """Creates and configures the splash screen layout."""
+        self.title("Loading...")
+
+        # Center the splash screen
+        (mid_x, mid_y), (self.window_width, self.window_height), _ = align_window(self, self.base_width, self.base_height)
+
+        self.resizable(False, False)
+
+        # show application window
+        self.deiconify()
+
+        # Make the splash screen topmost
+        self.attributes("-topmost", True)
+        logger.debug(f"Splash screen centered at position: {mid_x}, {mid_y}")
+
+        # Load and resize the image
+        self.image_path = "./imgs/jhu.png"
+        img = self.load_and_resize_image(self.image_path)
+
+        # Create widgets
+        self.image_label = ctk.CTkLabel(self, image=img, text="")
+        self.label = ctk.CTkLabel(self, text="Welcome to the Annotater Application", font=("Arial", 16))
+        self.countdown_label = ctk.CTkLabel(self, text="Closing in 3 seconds", font=("Courier", 12))
+
+        # Grid configuration
+        self.grid_columnconfigure(0, weight=1)  # Make the column grow with the window
+        self.grid_rowconfigure(0, weight=1)  # Image label row
+        self.grid_rowconfigure(1, weight=0)  # Text label row
+        self.grid_rowconfigure(2, weight=0)  # Countdown label row
+
+        # Place widgets using grid
+        self.image_label.grid(row=0, column=0, sticky="nsew", pady=20)
+        self.label.grid(row=1, column=0, sticky="ew")
+        self.countdown_label.grid(row=2, column=0, sticky="ew")
+
+        # place version number to the bottom right, make the text small and grey and dynamically get the version number from the app
+        self.version_label = ctk.CTkLabel(self, text=self.version, font=("Arial", 8), fg="grey")
+        self.version_label.grid(row=2, column=0, sticky="se", padx=5, pady=5)
+
+        logger.debug("Splash screen layout created with grid")
+
+    def load_and_resize_image(self, image_path):
+        """
+        Loads and resizes an image to fit the application window.
+        
+        Args:
+            image_path (str): Path to the image file.
+        """
+        if os.path.exists(image_path):
+            img = Image.open(image_path)
+            img_width, img_height = img.size
+            logger.debug(f"Original Image Size: {img_width}x{img_height}")
+            scaling_factor = min(self.base_width / img_width, self.base_height / img_height)
+            new_width = int(img_width * scaling_factor)
+            new_height = int(img_height * scaling_factor)
+            img = img.resize((new_width, new_height), Image.Resampling.LANCZOS)
+            logger.debug(f"Resized Image Size: {new_width}x{new_height}")
+            return ctk.CTkImage(img, size=(new_width, new_height))
+        else:
+            logger.error(f"Splash image not found: {image_path}")
+            return None
+
+    def update_countdown(self, count):
+        """
+        Update the countdown timer on the splash screen.
+
+        Args:
+            count (int): Countdown timer in seconds.
+        """
+        if count > 0:
+            self.countdown_label.configure(text=f"Closing in {count} seconds...")
+            logger.debug(f"Countdown updated to {count} seconds")
+            self.after(1000, self.update_countdown, count-1)
+        else:
+            self.destroy_splash()
+
+    def destroy_splash(self):
+        """Destroy the splash screen and show the main window."""
+        self.destroy()
+        self.root.deiconify()    # Show the main window
+        logger.info("Countdown finished, destroying splash screen, showing main window")
+
+class SaveProgress(ctk.CTkToplevel):
+    """
+    Save Progress Window for the Annotater application.
+
+    Args:
+        root (ctk.CTk): The root Tkinter application.
+        name (str): The name of the file being saved.
+    """
+    def __init__(self, root, name):
+        super().__init__(root)
+        self.root = root
+        self.name = name
+        logger.debug(f"Initializing SaveProgress window for {name}")
+        self.create_save_progress()
+        self.protocol("WM_DELETE_WINDOW", self.destroy_save_progress)
+
+    def create_save_progress(self):
+        """Create and display the save progress window."""
+        self.title(f"{self.name}: Saving Progress...")
+        self.geometry("500x200")
+        self.attributes("-topmost", True)
+
+        # Layout Configuration
+        for i in range(5): self.grid_rowconfigure(i, weight=1)
+        self.grid_columnconfigure(0, weight=1)
+        self.grid_columnconfigure(1, weight=6)
+
+        # Add a label to show the current status
+        self.status_label = ctk.CTkLabel(self, text="Saving Annotation Files", font=("Courier", 16))
+        self.status_label.grid(row=0, column=0, columnspan=2, padx=10, pady=10, sticky="ew")
+
+        # video data progress bar
+        self.video_progress_label = ctk.CTkLabel(self, text="Video Progress:")
+        self.video_progress_label.grid(row=1, column=0, padx=10, pady=0, sticky="ew")
+        self.video_progress = ctk.CTkProgressBar(self, mode='determinate', height=20, border_width=1, border_color="black", corner_radius=5, progress_color="green")
+        self.video_progress.grid(row=1, column=1, padx=20, pady=0, sticky="ew")
+
+        # audio data progress bar
+        self.audio_progress_label = ctk.CTkLabel(self, text="Audio Progress:")
+        self.audio_progress_label.grid(row=2, column=0, padx=10, pady=0, sticky="ew")
+        self.audio_progress = ctk.CTkProgressBar(self, mode='determinate', height=20, border_width=1, border_color="black", corner_radius=5, progress_color="green")
+        self.audio_progress.grid(row=2, column=1, padx=20, pady=0, sticky="ew")
+
+        # audio-video data progress bar
+        self.av_progress_label = ctk.CTkLabel(self, text="Audio-Video Progress:")
+        self.av_progress_label.grid(row=3, column=0, padx=10, pady=0, sticky="ew")
+        self.av_progress = ctk.CTkProgressBar(self, mode='determinate', height=20, border_width=1, border_color="black", corner_radius=5, progress_color="green")
+        self.av_progress.grid(row=3, column=1, padx=20, pady=0, sticky="ew")
+
+        # annotations json data progress bar
+        self.json_progress_label = ctk.CTkLabel(self, text="Metadata Progress:")
+        self.json_progress_label.grid(row=4, column=0, padx=10, pady=0, sticky="ew")
+        self.json_progress = ctk.CTkProgressBar(self, mode='determinate', height=20, border_width=1, border_color="black", corner_radius=5, progress_color="green")
+        self.json_progress.grid(row=4, column=1, padx=20, pady=0, sticky="ew")
+
+        # reset progress bars
+        self.reset()
+        logger.debug("SaveProgress window layout created")
+
+    def update_title_on_save(self):
+        """Update the title of the save progress window when save is complete."""
+        self.title(f"{self.name}: Progress Saved!!!")
+        logger.info(f"Annotations saved for {self.name}")
+
+    def update_video_progress(self, value):
+        """
+        Update the video progress bar.
+
+        Args:
+            value (float): Progress value between 0 and 1.
+        """
+        if value == 1.0: self.video_progress_label.configure(text="Video Progress: Done ✅")
+        self.video_progress.set(value)
+
+    def update_audio_progress(self, value):
+        """
+        Update the audio progress bar.
+
+        Args:
+            value (float): Progress value between 0 and 1.
+        """
+        if value == 1.0: self.audio_progress_label.configure(text="Audio Progress: Done ✅")
+        self.audio_progress.set(value)
+
+    def update_av_progress(self, value):
+        """
+        Update the audio-video progress bar.
+
+        Args:
+            value (float): Progress value between 0 and 1.
+        """
+        if value == 1.0: self.av_progress_label.configure(text="Audio-Video Progress: Done ✅")
+        self.av_progress.set(value)
+
+    def update_json_progress(self, value):
+        """
+        Update the metadata (JSON) progress bar.
+
+        Args:
+            value (float): Progress value between 0 and 1.
+        """
+        if value == 1.0: self.json_progress_label.configure(text="Metadata Progress: Done ✅")
+        self.json_progress.set(value)
+
+    def reset(self):
+        """Reset all progress bars and the status label."""
+        self.title(f"{self.name}: Saving Progress...")
+        self.update_video_progress(0.0)
+        self.update_audio_progress(0.0)
+        self.update_av_progress(0.0)
+        self.update_json_progress(0.0)
+        self.status_label.configure(text="Status: Beginning Save Thread")
+        logger.debug(f"Progress bars reset for {self.name}")
+
+    def destroy_save_progress(self):
+        """Destroy the save progress window and show the main window."""
+        logger.info("Destroying SaveProgress window")
+        self.destroy()
+        self.root.deiconify()    # Show the main window
+        logger.debug("Main window deiconified")
+
+
+
+|||||||||||||		File: src\setup.py		|||||||||||||
 """
 setup.py
 
@@ -2363,4 +2325,7 @@ def resource_path(relative_path):
     """ Get absolute path to resource, works for dev and for PyInstaller """
     base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
     return os.path.join(base_path, relative_path)
+
+|||||||||||||		File: src\__init__.py		|||||||||||||
+
 

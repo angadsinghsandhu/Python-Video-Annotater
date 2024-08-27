@@ -13,8 +13,9 @@ import customtkinter as ctk
 from src.screens import Splash
 from src.anno import create_annotater
 
+# v1.1.1
 # TODO : update create documentation
-# TODO : rebuild the annotater and update the surface
+# TODO : check for errors, annotating after video end is reached "list index out of range"
 
 # Set DPI Awareness for Windows 10
 ctypes.windll.shcore.SetProcessDpiAwareness(2)
@@ -34,9 +35,9 @@ def setup_logging(config_path="logging_config.yaml"):
         config = yaml.safe_load(f.read())
     logging.config.dictConfig(config=config)
     logger = logging.getLogger('main')
-    return logger
+    return logger, str(config.get("app-version"))
 
-logger = setup_logging()
+logger, version = setup_logging()
 
 def close(app):
     """
@@ -71,7 +72,7 @@ def main():
         logger.debug("Main application window hidden")
 
         # Show splash screen
-        Splash(app)
+        Splash(app, version=version)
         logger.info("Splash screen displayed")
 
         create_annotater(app)

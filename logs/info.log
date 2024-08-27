@@ -1303,3 +1303,590 @@ app - INFO - Started Annotated Player for file: C:/Users/angad/Videos/out/timer_
 app - INFO - AnnotatedPlayer resources released and windows closed
 app - INFO - Annotater Player closed
 app - INFO - Main application loop started
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 3 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4']
+app - INFO - File list refreshed successfully
+app - INFO - Starting annotation for file: timer.mp4, with long annotations: False
+app - INFO - Data object for timer.mp4 initialized
+app - INFO - 'Video Controls: timer.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: timer.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - Seeked to frame number: 83
+app - INFO - Seeked to frame number: 280
+app - INFO - Seeked to frame number: 89
+app - INFO - Seeked to frame number: 405
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4']
+app - INFO - Annotation completed for file: timer.mp4
+app - INFO - Started watching file: C:/Users/angad/Videos/out/case_4687_Capsulorhexis_annotated.mp4
+app - INFO - Initializing AnnotatedPlayer for file: C:/Users/angad/Videos/out/case_4687_Capsulorhexis_annotated.mp4
+app - INFO - Started Annotated Player for file: C:/Users/angad/Videos/out/case_4687_Capsulorhexis_annotated.mp4
+app - INFO - AnnotatedPlayer resources released and windows closed
+app - INFO - Annotater Player closed
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 3 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - WARNING - No file selected for watching
+app - INFO - Starting annotation for file: timer.mp4, with long annotations: False
+app - INFO - Data object for timer.mp4 initialized
+app - INFO - 'Video Controls: timer.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: timer.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4']
+app - INFO - Annotation completed for file: timer.mp4
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 3 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Starting annotation for file: timer.mp4, with long annotations: False
+app - INFO - Data object for timer.mp4 initialized
+app - INFO - 'Video Controls: timer.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: timer.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - Seeked to frame number: 331
+app - INFO - Seeked to frame number: 59
+app - INFO - Seeked to frame number: 385
+app - INFO - Seeked to frame number: 79
+app - INFO - Seeked to frame number: 470
+app - INFO - Seeked to frame number: 77
+app - INFO - Seeked to frame number: 480
+app - INFO - Seeked to frame number: 51
+app - WARNING - Frame index 630 is out of range.
+app - WARNING - Frame index 631 is out of range.
+app - WARNING - Frame index 632 is out of range.
+app - WARNING - Frame index 633 is out of range.
+app - WARNING - Frame index 634 is out of range.
+app - WARNING - Frame index 635 is out of range.
+app - WARNING - Frame index 636 is out of range.
+app - WARNING - Frame index 637 is out of range.
+app - WARNING - Frame index 638 is out of range.
+app - WARNING - Frame index 639 is out of range.
+app - WARNING - Frame index 640 is out of range.
+app - WARNING - Frame index 641 is out of range.
+app - WARNING - Frame index 642 is out of range.
+app - WARNING - Frame index 643 is out of range.
+app - WARNING - Frame index 644 is out of range.
+app - WARNING - Frame index 645 is out of range.
+app - WARNING - Frame index 646 is out of range.
+app - WARNING - Frame index 647 is out of range.
+app - INFO - Seeked to frame number: 589
+app - WARNING - Frame index 648 is out of range.
+app - WARNING - Frame index 649 is out of range.
+app - WARNING - Frame index 650 is out of range.
+app - WARNING - Frame index 651 is out of range.
+app - WARNING - Frame index 652 is out of range.
+app - WARNING - Frame index 653 is out of range.
+app - WARNING - Frame index 654 is out of range.
+app - WARNING - Frame index 655 is out of range.
+app - WARNING - Frame index 656 is out of range.
+app - WARNING - Frame index 657 is out of range.
+app - WARNING - Frame index 658 is out of range.
+app - WARNING - Frame index 659 is out of range.
+app - WARNING - Frame index 660 is out of range.
+app - WARNING - Frame index 661 is out of range.
+app - WARNING - Frame index 662 is out of range.
+app - WARNING - Frame index 663 is out of range.
+app - WARNING - Frame index 664 is out of range.
+app - WARNING - Frame index 665 is out of range.
+app - WARNING - Frame index 666 is out of range.
+app - WARNING - Frame index 667 is out of range.
+app - WARNING - Frame index 668 is out of range.
+app - WARNING - Frame index 669 is out of range.
+app - WARNING - Frame index 670 is out of range.
+app - WARNING - Frame index 671 is out of range.
+app - WARNING - Frame index 672 is out of range.
+app - WARNING - Frame index 673 is out of range.
+app - WARNING - Frame index 674 is out of range.
+app - WARNING - Frame index 675 is out of range.
+app - WARNING - Frame index 676 is out of range.
+app - WARNING - Frame index 677 is out of range.
+app - WARNING - Frame index 678 is out of range.
+app - WARNING - Frame index 679 is out of range.
+app - WARNING - Frame index 680 is out of range.
+app - WARNING - Frame index 681 is out of range.
+app - WARNING - Frame index 682 is out of range.
+app - WARNING - Frame index 683 is out of range.
+app - WARNING - Frame index 684 is out of range.
+app - WARNING - Frame index 685 is out of range.
+app - WARNING - Frame index 686 is out of range.
+app - WARNING - Frame index 687 is out of range.
+app - WARNING - Frame index 688 is out of range.
+app - WARNING - Frame index 689 is out of range.
+app - WARNING - Frame index 690 is out of range.
+app - WARNING - Frame index 691 is out of range.
+app - WARNING - Frame index 692 is out of range.
+app - WARNING - Frame index 693 is out of range.
+app - WARNING - Frame index 694 is out of range.
+app - WARNING - Frame index 695 is out of range.
+app - WARNING - Frame index 696 is out of range.
+app - WARNING - Frame index 697 is out of range.
+app - WARNING - Frame index 698 is out of range.
+app - WARNING - Frame index 699 is out of range.
+app - WARNING - Frame index 700 is out of range.
+app - WARNING - Frame index 701 is out of range.
+app - WARNING - Frame index 702 is out of range.
+app - WARNING - Frame index 703 is out of range.
+app - WARNING - Frame index 704 is out of range.
+app - WARNING - Frame index 705 is out of range.
+app - WARNING - Frame index 706 is out of range.
+app - WARNING - Frame index 707 is out of range.
+app - WARNING - Frame index 708 is out of range.
+app - WARNING - Frame index 709 is out of range.
+app - WARNING - Frame index 710 is out of range.
+app - WARNING - Frame index 711 is out of range.
+app - WARNING - Frame index 712 is out of range.
+app - WARNING - Frame index 713 is out of range.
+app - WARNING - Frame index 714 is out of range.
+app - WARNING - Frame index 715 is out of range.
+app - WARNING - Frame index 716 is out of range.
+app - WARNING - Frame index 717 is out of range.
+app - WARNING - Frame index 718 is out of range.
+app - WARNING - Frame index 719 is out of range.
+app - WARNING - Frame index 720 is out of range.
+app - WARNING - Frame index 721 is out of range.
+app - WARNING - Frame index 722 is out of range.
+app - WARNING - Frame index 723 is out of range.
+app - WARNING - Frame index 724 is out of range.
+app - WARNING - Frame index 725 is out of range.
+app - WARNING - Frame index 726 is out of range.
+app - WARNING - Frame index 727 is out of range.
+app - WARNING - Frame index 728 is out of range.
+app - WARNING - Frame index 729 is out of range.
+app - WARNING - Frame index 730 is out of range.
+app - WARNING - Frame index 731 is out of range.
+app - WARNING - Frame index 732 is out of range.
+app - WARNING - Frame index 733 is out of range.
+app - WARNING - Frame index 734 is out of range.
+app - WARNING - Frame index 735 is out of range.
+app - WARNING - Frame index 736 is out of range.
+app - WARNING - Frame index 737 is out of range.
+app - WARNING - Frame index 738 is out of range.
+app - WARNING - Frame index 739 is out of range.
+app - WARNING - Frame index 740 is out of range.
+app - WARNING - Frame index 741 is out of range.
+app - WARNING - Frame index 742 is out of range.
+app - WARNING - Frame index 743 is out of range.
+app - WARNING - Frame index 744 is out of range.
+app - WARNING - Frame index 745 is out of range.
+app - WARNING - Frame index 746 is out of range.
+app - WARNING - Frame index 747 is out of range.
+app - WARNING - Frame index 748 is out of range.
+app - WARNING - Frame index 749 is out of range.
+app - WARNING - Frame index 750 is out of range.
+app - WARNING - Frame index 751 is out of range.
+app - WARNING - Frame index 752 is out of range.
+app - WARNING - Frame index 753 is out of range.
+app - WARNING - Frame index 754 is out of range.
+app - WARNING - Frame index 755 is out of range.
+app - WARNING - Frame index 756 is out of range.
+app - WARNING - Frame index 757 is out of range.
+app - WARNING - Frame index 758 is out of range.
+app - WARNING - Frame index 759 is out of range.
+app - WARNING - Frame index 760 is out of range.
+app - WARNING - Frame index 761 is out of range.
+app - WARNING - Frame index 762 is out of range.
+app - WARNING - Frame index 763 is out of range.
+app - WARNING - Frame index 764 is out of range.
+app - WARNING - Frame index 765 is out of range.
+app - WARNING - Frame index 766 is out of range.
+app - WARNING - Frame index 767 is out of range.
+app - WARNING - Frame index 768 is out of range.
+app - WARNING - Frame index 769 is out of range.
+app - WARNING - Frame index 770 is out of range.
+app - WARNING - Frame index 771 is out of range.
+app - WARNING - Frame index 772 is out of range.
+app - WARNING - Frame index 773 is out of range.
+app - WARNING - Frame index 774 is out of range.
+app - WARNING - Frame index 775 is out of range.
+app - WARNING - Frame index 776 is out of range.
+app - WARNING - Frame index 777 is out of range.
+app - WARNING - Frame index 778 is out of range.
+app - WARNING - Frame index 779 is out of range.
+app - WARNING - Frame index 780 is out of range.
+app - WARNING - Frame index 781 is out of range.
+app - WARNING - Frame index 782 is out of range.
+app - WARNING - Frame index 783 is out of range.
+app - WARNING - Frame index 784 is out of range.
+app - WARNING - Frame index 785 is out of range.
+app - WARNING - Frame index 786 is out of range.
+app - WARNING - Frame index 787 is out of range.
+app - WARNING - Frame index 788 is out of range.
+app - WARNING - Frame index 789 is out of range.
+app - WARNING - Frame index 790 is out of range.
+app - WARNING - Frame index 791 is out of range.
+app - WARNING - Frame index 792 is out of range.
+app - INFO - Seeked to frame number: 120
+app - WARNING - Frame index 793 is out of range.
+app - WARNING - Frame index 794 is out of range.
+app - WARNING - Frame index 795 is out of range.
+app - WARNING - Frame index 796 is out of range.
+app - WARNING - Frame index 797 is out of range.
+app - WARNING - Frame index 798 is out of range.
+app - WARNING - Frame index 799 is out of range.
+app - WARNING - Frame index 800 is out of range.
+app - WARNING - Frame index 801 is out of range.
+app - WARNING - Frame index 802 is out of range.
+app - WARNING - Frame index 803 is out of range.
+app - WARNING - Frame index 804 is out of range.
+app - WARNING - Frame index 805 is out of range.
+app - WARNING - Frame index 806 is out of range.
+app - WARNING - Frame index 807 is out of range.
+app - WARNING - Frame index 808 is out of range.
+app - WARNING - Frame index 809 is out of range.
+app - WARNING - Frame index 810 is out of range.
+app - WARNING - Frame index 811 is out of range.
+app - WARNING - Frame index 812 is out of range.
+app - WARNING - Frame index 813 is out of range.
+app - WARNING - Frame index 814 is out of range.
+app - WARNING - Frame index 815 is out of range.
+app - WARNING - Frame index 816 is out of range.
+app - WARNING - Frame index 817 is out of range.
+app - WARNING - Frame index 818 is out of range.
+app - WARNING - Frame index 819 is out of range.
+app - WARNING - Frame index 820 is out of range.
+app - WARNING - Frame index 821 is out of range.
+app - WARNING - Frame index 822 is out of range.
+app - WARNING - Frame index 823 is out of range.
+app - WARNING - Frame index 824 is out of range.
+app - WARNING - Frame index 825 is out of range.
+app - WARNING - Frame index 826 is out of range.
+app - WARNING - Frame index 827 is out of range.
+app - WARNING - Frame index 828 is out of range.
+app - WARNING - Frame index 829 is out of range.
+app - WARNING - Frame index 830 is out of range.
+app - WARNING - Frame index 831 is out of range.
+app - WARNING - Frame index 832 is out of range.
+app - WARNING - Frame index 833 is out of range.
+app - WARNING - Frame index 834 is out of range.
+app - WARNING - Frame index 835 is out of range.
+app - WARNING - Frame index 836 is out of range.
+app - WARNING - Frame index 837 is out of range.
+app - WARNING - Frame index 838 is out of range.
+app - WARNING - Frame index 839 is out of range.
+app - WARNING - Frame index 840 is out of range.
+app - WARNING - Frame index 841 is out of range.
+app - WARNING - Frame index 842 is out of range.
+app - WARNING - Frame index 843 is out of range.
+app - WARNING - Frame index 844 is out of range.
+app - WARNING - Frame index 845 is out of range.
+app - WARNING - Frame index 846 is out of range.
+app - WARNING - Frame index 847 is out of range.
+app - WARNING - Frame index 848 is out of range.
+app - WARNING - Frame index 849 is out of range.
+app - WARNING - Frame index 850 is out of range.
+app - WARNING - Frame index 851 is out of range.
+app - WARNING - Frame index 852 is out of range.
+app - WARNING - Frame index 853 is out of range.
+app - WARNING - Frame index 854 is out of range.
+app - WARNING - Frame index 855 is out of range.
+app - WARNING - Frame index 856 is out of range.
+app - WARNING - Frame index 857 is out of range.
+app - WARNING - Frame index 858 is out of range.
+app - WARNING - Frame index 859 is out of range.
+app - WARNING - Frame index 860 is out of range.
+app - WARNING - Frame index 861 is out of range.
+app - WARNING - Frame index 862 is out of range.
+app - WARNING - Frame index 863 is out of range.
+app - WARNING - Frame index 864 is out of range.
+app - WARNING - Frame index 865 is out of range.
+app - WARNING - Frame index 866 is out of range.
+app - WARNING - Frame index 867 is out of range.
+app - WARNING - Frame index 868 is out of range.
+app - WARNING - Frame index 869 is out of range.
+app - WARNING - Frame index 870 is out of range.
+app - WARNING - Frame index 871 is out of range.
+app - WARNING - Frame index 872 is out of range.
+app - WARNING - Frame index 873 is out of range.
+app - WARNING - Frame index 874 is out of range.
+app - WARNING - Frame index 875 is out of range.
+app - WARNING - Frame index 876 is out of range.
+app - WARNING - Frame index 877 is out of range.
+app - WARNING - Frame index 878 is out of range.
+app - WARNING - Frame index 879 is out of range.
+app - WARNING - Frame index 880 is out of range.
+app - WARNING - Frame index 881 is out of range.
+app - WARNING - Frame index 882 is out of range.
+app - WARNING - Frame index 883 is out of range.
+app - WARNING - Frame index 884 is out of range.
+app - WARNING - Frame index 885 is out of range.
+app - WARNING - Frame index 886 is out of range.
+app - WARNING - Frame index 887 is out of range.
+app - WARNING - Frame index 888 is out of range.
+app - WARNING - Frame index 889 is out of range.
+app - WARNING - Frame index 890 is out of range.
+app - WARNING - Frame index 891 is out of range.
+app - WARNING - Frame index 892 is out of range.
+app - WARNING - Frame index 893 is out of range.
+app - WARNING - Frame index 894 is out of range.
+app - WARNING - Frame index 895 is out of range.
+app - WARNING - Frame index 896 is out of range.
+app - WARNING - Frame index 897 is out of range.
+app - WARNING - Frame index 898 is out of range.
+app - WARNING - Frame index 899 is out of range.
+app - WARNING - Frame index 900 is out of range.
+app - WARNING - Frame index 901 is out of range.
+app - WARNING - Frame index 902 is out of range.
+app - WARNING - Frame index 903 is out of range.
+app - WARNING - Frame index 904 is out of range.
+app - WARNING - Frame index 905 is out of range.
+app - WARNING - Frame index 906 is out of range.
+app - WARNING - Frame index 907 is out of range.
+app - WARNING - Frame index 908 is out of range.
+app - WARNING - Frame index 909 is out of range.
+app - WARNING - Frame index 910 is out of range.
+app - WARNING - Frame index 911 is out of range.
+app - WARNING - Frame index 912 is out of range.
+app - WARNING - Frame index 913 is out of range.
+app - WARNING - Frame index 914 is out of range.
+app - WARNING - Frame index 915 is out of range.
+app - WARNING - Frame index 916 is out of range.
+app - WARNING - Frame index 917 is out of range.
+app - WARNING - Frame index 918 is out of range.
+app - WARNING - Frame index 919 is out of range.
+app - WARNING - Frame index 920 is out of range.
+app - WARNING - Frame index 921 is out of range.
+app - WARNING - Frame index 922 is out of range.
+app - WARNING - Frame index 923 is out of range.
+app - WARNING - Frame index 924 is out of range.
+app - WARNING - Frame index 925 is out of range.
+app - WARNING - Frame index 926 is out of range.
+app - WARNING - Frame index 927 is out of range.
+app - WARNING - Frame index 928 is out of range.
+app - WARNING - Frame index 929 is out of range.
+app - WARNING - Frame index 930 is out of range.
+app - WARNING - Frame index 931 is out of range.
+app - WARNING - Frame index 932 is out of range.
+app - WARNING - Frame index 933 is out of range.
+app - WARNING - Frame index 934 is out of range.
+app - WARNING - Frame index 935 is out of range.
+app - WARNING - Frame index 936 is out of range.
+app - WARNING - Frame index 937 is out of range.
+app - WARNING - Frame index 938 is out of range.
+app - WARNING - Frame index 939 is out of range.
+app - WARNING - Frame index 940 is out of range.
+app - WARNING - Frame index 941 is out of range.
+app - WARNING - Frame index 942 is out of range.
+app - WARNING - Frame index 943 is out of range.
+app - WARNING - Frame index 944 is out of range.
+app - WARNING - Frame index 945 is out of range.
+app - WARNING - Frame index 946 is out of range.
+app - WARNING - Frame index 947 is out of range.
+app - WARNING - Frame index 948 is out of range.
+app - WARNING - Frame index 949 is out of range.
+app - WARNING - Frame index 950 is out of range.
+app - WARNING - Frame index 951 is out of range.
+app - WARNING - Frame index 952 is out of range.
+app - WARNING - Frame index 953 is out of range.
+app - WARNING - Frame index 954 is out of range.
+app - WARNING - Frame index 955 is out of range.
+app - WARNING - Frame index 956 is out of range.
+app - WARNING - Frame index 957 is out of range.
+app - WARNING - Frame index 958 is out of range.
+app - WARNING - Frame index 959 is out of range.
+app - WARNING - Frame index 960 is out of range.
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4']
+app - INFO - Annotation completed for file: timer.mp4
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 438) | position (right, top) : (741.0, 321.0)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Input directory selected: D:/Code/Annotater App
+app - INFO - Output directory selected: D:/Code/Annotater App
+app - INFO - Found 0 MP4 files in the input directory
+app - WARNING - No MP4 files found in the input directory
+app - INFO - Config updated with in_path=D:/Code/Annotater App, out_path=D:/Code/Annotater App
+app - INFO - Refetched files: []
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 3 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Starting annotation for file: timer.mp4, with long annotations: False
+app - INFO - Data object for timer.mp4 initialized
+app - INFO - 'Video Controls: timer.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: timer.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - Seeked to frame number: 326
+app - INFO - Seeked to frame number: 496
+app - INFO - Seeked to frame number: 154
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4']
+app - INFO - Annotation completed for file: timer.mp4
+app - INFO - Main application loop started
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 3 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 3 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 3 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 3 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 3 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Starting annotation for file: timer.mp4, with long annotations: False
+app - INFO - Data object for timer.mp4 initialized
+app - INFO - 'Video Controls: timer.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: timer.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4']
+app - INFO - Annotation completed for file: timer.mp4
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 3 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 375) | position (right, top) : (741.0, 352.5)
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 400) | position (right, top) : (741.0, 340.0)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 3 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['timer.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 400) | position (right, top) : (741.0, 340.0)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Input directory selected: D:/Code/Annotater App
+app - INFO - Output directory selected: D:/Code/Annotater App
+app - INFO - Found 0 MP4 files in the input directory
+app - WARNING - No MP4 files found in the input directory
+app - INFO - Config updated with in_path=D:/Code/Annotater App, out_path=D:/Code/Annotater App
+app - INFO - Refetched files: []
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 400) | position (right, top) : (741.0, 340.0)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Input directory selected: D:/Code/Annotater App
+app - INFO - Output directory selected: D:/Code/Annotater App
+app - INFO - Found 0 MP4 files in the input directory
+app - WARNING - No MP4 files found in the input directory
+app - INFO - Config updated with in_path=D:/Code/Annotater App, out_path=D:/Code/Annotater App
+app - INFO - Refetched files: []
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 400) | position (right, top) : (741.0, 340.0)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Input directory selected: D:/Code/Annotater App
+app - INFO - Output directory selected: D:/Code/Annotater App
+app - INFO - Found 0 MP4 files in the input directory
+app - WARNING - No MP4 files found in the input directory
+app - INFO - Config updated with in_path=D:/Code/Annotater App, out_path=D:/Code/Annotater App
+app - INFO - Refetched files: []
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Main application loop started
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 400) | position (right, top) : (741.0, 340.0)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Input directory selected: D:/Code/Annotater App
+app - INFO - Output directory selected: D:/Code/Annotater App
+app - INFO - Found 0 MP4 files in the input directory
+app - WARNING - No MP4 files found in the input directory
+app - INFO - Config updated with in_path=D:/Code/Annotater App, out_path=D:/Code/Annotater App
+app - INFO - Refetched files: []
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Main application loop started

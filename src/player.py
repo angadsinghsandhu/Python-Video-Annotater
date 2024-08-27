@@ -230,6 +230,7 @@ class VideoPlayer:
                 self.frame = self.last_frame.copy()
             self.curr_frame_idx = int(self.cap.get(cv2.CAP_PROP_POS_FRAMES))
             self.pause_frame = self.frame.copy()
+            self.control_window.seek_var.set(self.curr_frame_idx)
         else:
             self.frame = self.pause_frame.copy()
 

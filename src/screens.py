@@ -24,15 +24,16 @@ class Splash(ctk.CTkToplevel):
         root (ctk.Ctk): The root window of the application.
         counter (int): The countdown timer before closing the splash screen.
     """
-    def __init__(self, root, counter=4):
+    def __init__(self, root, counter=4, version="v1.0.0"):
         super().__init__(root)
         
         self.root = root
+        self.version = version
         self.protocol("WM_DELETE_WINDOW", self.root.deiconify)
         logger.debug("Initializing Splash screen")
 
         # Set the size of the splash screen
-        self.base_width, self.base_height = 350, 300
+        self.base_width, self.base_height = 350, 320
         
         self.create_splash()
         self.update_countdown(counter)
@@ -67,11 +68,16 @@ class Splash(ctk.CTkToplevel):
         self.grid_rowconfigure(0, weight=1)  # Image label row
         self.grid_rowconfigure(1, weight=0)  # Text label row
         self.grid_rowconfigure(2, weight=0)  # Countdown label row
+        self.grid_rowconfigure(3, weight=0)  # Version label row
 
         # Place widgets using grid
         self.image_label.grid(row=0, column=0, sticky="nsew", pady=20)
         self.label.grid(row=1, column=0, sticky="ew")
         self.countdown_label.grid(row=2, column=0, sticky="ew")
+
+        # place version number to the bottom right, make the text small and grey and dynamically get the version number from the app
+        self.version_label = ctk.CTkLabel(self, text=self.version, font=("Arial", 8), text_color="grey")
+        self.version_label.grid(row=3, column=0, sticky="se", padx=5, pady=0)
 
         logger.debug("Splash screen layout created with grid")
 
