@@ -18,15 +18,15 @@ Annotater is a sophisticated video annotation tool designed for detailed and pre
 
 ## Important Links
 
-- [Tutorial](https://livejohnshopkins-my.sharepoint.com/:f:/g/personal/asandhu9_jh_edu/EqDDvLH7cRdLtwuIQk6TABwB9nD0e7UoKNdjALV_RTnEtg?e=Nq0M4p)
-- [Application](https://livejohnshopkins-my.sharepoint.com/:f:/g/personal/asandhu9_jh_edu/Eh60kxJUMFZAgpDcLsQO2l0BQiqQNZ7frvEp0rdNiEJvBA?e=7hmr37)
+- [Tutorial Video](https://livejohnshopkins-my.sharepoint.com/:f:/g/personal/asandhu9_jh_edu/EqDDvLH7cRdLtwuIQk6TABwB9nD0e7UoKNdjALV_RTnEtg?e=Nq0M4p)
+- [Application Download](https://livejohnshopkins-my.sharepoint.com/:f:/g/personal/asandhu9_jh_edu/Eh60kxJUMFZAgpDcLsQO2l0BQiqQNZ7frvEp0rdNiEJvBA?e=7hmr37)
 
 ## Metadata
 
 | Attribute         | Value                                          |
 |-------------------|------------------------------------------------|
 | Name              | Annotater                                      |
-| Version           | 1.1.0                                          |
+| Version           | 1.1.1                                          |
 | Compatibility     | Windows 10, Ubuntu 20.04                       |
 | License           | MIT License                                    |
 | Release Date      | 2024-01-24                                     |
