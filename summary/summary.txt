@@ -61,7 +61,9 @@ exe = EXE(
 
 
 |||||||||||||		File: logging_config.yaml		|||||||||||||
-version: 1.1.0
+version: 1
+
+app-version: "v1.1.1"
 
 disable_existing_loggers: False
 
@@ -138,12 +140,12 @@ import customtkinter as ctk
 from src.screens import Splash
 from src.anno import create_annotater
 
-# v1.2.0
+# v1.1.1
 # TODO : update create documentation
-# TODO : rebuild the annotater and update the surface
 
-# TODO : add version label
-# FIXME: Seeker broken in player
+# BUG: when annotating, onece the video reaches the we start getting the error "list index out of range"
+# TODO : recursively search for videos in input folder
+# TODO : recursively save annotations in output folder in the same structure as input folder
 
 # Set DPI Awareness for Windows 10
 ctypes.windll.shcore.SetProcessDpiAwareness(2)
@@ -163,7 +165,7 @@ def setup_logging(config_path="logging_config.yaml"):
         config = yaml.safe_load(f.read())
     logging.config.dictConfig(config=config)
     logger = logging.getLogger('main')
-    return logger, str(config['version'])
+    return logger, str(config.get("app-version"))
 
 logger, version = setup_logging()
 
@@ -235,15 +237,15 @@ Annotater is a sophisticated video annotation tool designed for detailed and pre
 
 ## Important Links
 
-- [Tutorial](https://livejohnshopkins-my.sharepoint.com/:f:/g/personal/asandhu9_jh_edu/EqDDvLH7cRdLtwuIQk6TABwB9nD0e7UoKNdjALV_RTnEtg?e=Nq0M4p)
-- [Application](https://livejohnshopkins-my.sharepoint.com/:f:/g/personal/asandhu9_jh_edu/Eh60kxJUMFZAgpDcLsQO2l0BQiqQNZ7frvEp0rdNiEJvBA?e=7hmr37)
+- [Tutorial Video](https://livejohnshopkins-my.sharepoint.com/:f:/g/personal/asandhu9_jh_edu/EqDDvLH7cRdLtwuIQk6TABwB9nD0e7UoKNdjALV_RTnEtg?e=Nq0M4p)
+- [Application Download](https://livejohnshopkins-my.sharepoint.com/:f:/g/personal/asandhu9_jh_edu/Eh60kxJUMFZAgpDcLsQO2l0BQiqQNZ7frvEp0rdNiEJvBA?e=7hmr37)
 
 ## Metadata
 
 | Attribute         | Value                                          |
 |-------------------|------------------------------------------------|
 | Name              | Annotater                                      |
-| Version           | 1.1.0                                          |
+| Version           | 1.1.1                                          |
 | Compatibility     | Windows 10, Ubuntu 20.04                       |
 | License           | MIT License                                    |
 | Release Date      | 2024-01-24                                     |
@@ -1178,7 +1180,11 @@ class Data:
             processed_frame: The frame with annotations and timer drawn.
             time_str (str): The time string to be displayed on the frame.
         """
-        if frame_idx >= self.frame_count:
+        # print(f"Adding frame {frame_idx} to the frames list, current max frame is {self.max_frames}")
+        if frame_idx == self.max_frames:
+            self.increment_max_frame()
+        elif frame_idx > self.max_frames:
+            # print(f"-- Adding frame {frame_idx} to the frames list, current max frame is {self.max_frames}")
             logger.warning(f"Frame index {frame_idx} is out of range.")
         self.frames.append((timestamp, frame_idx, frame))
         new_frame_idx = self.get_frames_length - 1
@@ -1367,7 +1373,7 @@ class Data:
         # Write frames to the output video in the specified order
         last_index = len(self.frames) - 1
         for timestamp, index, processed_frame in self.frames:
-            if index < self.frame_count:
+            if index < self.max_frames:
                 out.write(processed_frame)
                 # out.write(vid[index])
                 if progress: progress.update_video_progress(index / last_index)
@@ -1717,6 +1723,7 @@ class VideoPlayer:
                 self.frame = self.last_frame.copy()
             self.curr_frame_idx = int(self.cap.get(cv2.CAP_PROP_POS_FRAMES))
             self.pause_frame = self.frame.copy()
+            self.control_window.seek_var.set(self.curr_frame_idx)
         else:
             self.frame = self.pause_frame.copy()
 
@@ -2018,13 +2025,12 @@ class Splash(ctk.CTkToplevel):
         super().__init__(root)
         
         self.root = root
-        if version.beginwith("v"): self.version = version
-        else: self.version = f"v{version}"
+        self.version = version
         self.protocol("WM_DELETE_WINDOW", self.root.deiconify)
         logger.debug("Initializing Splash screen")
 
         # Set the size of the splash screen
-        self.base_width, self.base_height = 350, 300
+        self.base_width, self.base_height = 350, 320
         
         self.create_splash()
         self.update_countdown(counter)
@@ -2059,6 +2065,7 @@ class Splash(ctk.CTkToplevel):
         self.grid_rowconfigure(0, weight=1)  # Image label row
         self.grid_rowconfigure(1, weight=0)  # Text label row
         self.grid_rowconfigure(2, weight=0)  # Countdown label row
+        self.grid_rowconfigure(3, weight=0)  # Version label row
 
         # Place widgets using grid
         self.image_label.grid(row=0, column=0, sticky="nsew", pady=20)
@@ -2066,8 +2073,8 @@ class Splash(ctk.CTkToplevel):
         self.countdown_label.grid(row=2, column=0, sticky="ew")
 
         # place version number to the bottom right, make the text small and grey and dynamically get the version number from the app
-        self.version_label = ctk.CTkLabel(self, text=self.version, font=("Arial", 8), fg="grey")
-        self.version_label.grid(row=2, column=0, sticky="se", padx=5, pady=5)
+        self.version_label = ctk.CTkLabel(self, text=self.version, font=("Arial", 8), text_color="grey")
+        self.version_label.grid(row=3, column=0, sticky="se", padx=5, pady=0)
 
         logger.debug("Splash screen layout created with grid")
 

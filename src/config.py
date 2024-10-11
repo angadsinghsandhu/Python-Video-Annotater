@@ -136,36 +136,50 @@ class Config:
         logger.info("Starting file setup")
 
         try:
-            if not self.cwd: self.cwd = filedialog.askdirectory(title="Select Root Directory", initialdir=self.convert_to_unix_style(os.path.join(os.path.expanduser('~'), 'Videos')))
+            if not self.cwd:
+                self.cwd = filedialog.askdirectory(title="Select Root Directory", initialdir=self.convert_to_unix_style(os.path.join(os.path.expanduser('~'), 'Videos')))
             logger.debug(f"Current working directory: {self.cwd}")
             
             # Select Input Video Directory
-            if not os.path.exists(f"{self.cwd}/data"):
+            data_dir = os.path.join(self.cwd, "data")
+            if not os.path.exists(data_dir):
                 self.in_path = "."
-                while len(self.in_path) == 1: self.in_path = filedialog.askdirectory(title="Select Input Directory", initialdir=self.cwd)
+                while len(self.in_path) == 1:
+                    self.in_path = filedialog.askdirectory(title="Select Input Directory", initialdir=self.cwd)
                 logger.info(f"Input directory selected: {self.in_path}")
-            else: 
-                self.in_path = f"{self.cwd}/data"
+            else:
+                self.in_path = data_dir
                 logger.debug(f"Default input directory used: {self.in_path}")
 
             # Select Output Directory
-            if not os.path.exists(f"{self.cwd}/out"): 
+            out_dir = os.path.join(self.cwd, "out")
+            if not os.path.exists(out_dir):
                 self.out_path = "."
-                while len(self.out_path) == 1: self.out_path = filedialog.askdirectory(title="Select Output Directory", initialdir=self.cwd)
+                while len(self.out_path) == 1:
+                    self.out_path = filedialog.askdirectory(title="Select Output Directory", initialdir=self.cwd)
                 logger.info(f"Output directory selected: {self.out_path}")
-            else: 
-                self.out_path = f"{self.cwd}/out"
+            else:
+                self.out_path = out_dir
                 logger.debug(f"Default output directory used: {self.out_path}")
 
-            # get list of names all mp4 files in self.file_path
-            in_files = [f for f in os.listdir(self.in_path) if f.endswith(".mp4")]
+            # Use os.walk to recursively find all .mp4 files
+            in_files = []
+            for root, dirs, files in os.walk(self.in_path):
+                for file in files:
+                    if file.endswith(self.extension):
+                        # Compute relative path
+                        file_path = os.path.join(root, file)
+                        rel_path = os.path.relpath(file_path, self.in_path)
+                        in_files.append(rel_path)
+            
             logger.info(f"Found {len(in_files)} MP4 files in the input directory")
 
             if not in_files:
                 logger.warning("No MP4 files found in the input directory")
                 messagebox.showerror("Error", "No MP4 files found in the input directory.")
-            
-            _ = config.refetch_files()
+
+            # Refetch files
+            self.files = self.refetch_files()
 
             return self.in_path, self.out_path, self.files
         except Exception as e:
@@ -203,35 +217,61 @@ class Config:
     def refetch_files(self, inp=None, out=None, extensions=[".mp4"]):
         """
         Refetches the list of files from the input and output directories.
-        
+
         Args:
             inp (str): Input directory path.
             out (str): Output directory path.
             extensions (list): List of file extensions.
-        
+
         Returns:
             (list): List of files to be processed.
         """
         try:
             # Check if input and output directories exist
-            if inp is not None: 
-                if not os.path.exists(inp): 
+            if inp is not None:
+                if not os.path.exists(inp):
                     logger.error(f"Input directory '{inp}' does not exist")
                     return []
-                else: self.in_path = inp
+                else:
+                    self.in_path = inp
 
             # Check if output directory exists
             if out is not None:
-                if not os.path.exists(out): 
+                if not os.path.exists(out):
                     logger.error(f"Output directory '{out}' does not exist")
                     return []
-                else: self.out_path = out
+                else:
+                    self.out_path = out
 
             logger.debug(f"Removing extensions from files and filtering")
-            in_files = [self.remove_extension(f, extensions) for f in os.listdir(self.in_path) if f.endswith(tuple(extensions))]
-            out_files = [self.remove_extension(f, extensions) for f in os.listdir(self.out_path) if f.endswith(tuple(extensions))]
-            
-            files = [f"{f}{self.extension}" for f in in_files if f"{f}_annotated" not in out_files]
+
+            # Use os.walk to collect all .mp4 files with relative paths
+            in_files = []
+            for root, dirs, files in os.walk(self.in_path):
+                for file in files:
+                    if file.endswith(tuple(extensions)):
+                        file_path = os.path.join(root, file)
+                        rel_path = os.path.relpath(file_path, self.in_path)
+                        in_files.append(rel_path)
+
+            out_files = []
+            for root, dirs, files in os.walk(self.out_path):
+                for file in files:
+                    if file.endswith(tuple(extensions)):
+                        file_path = os.path.join(root, file)
+                        rel_path = os.path.relpath(file_path, self.out_path)
+                        # Remove '_annotated' suffix to match input files
+                        if rel_path.endswith("_annotated.mp4"):
+                            rel_path = rel_path.replace("_annotated.mp4", ".mp4")
+                            out_files.append(rel_path)
+
+            # Remove extensions and check if _annotated already exists
+            files = []
+            for rel_path in in_files:
+                filename = self.remove_extension(rel_path, extensions)
+                annotated_rel_path = os.path.join(os.path.dirname(rel_path), f"{os.path.basename(filename)}_annotated.mp4")
+                if annotated_rel_path not in out_files:
+                    files.append(rel_path)
 
             self.update(self.in_path, self.out_path, files)
             logger.info(f"Refetched files: {files}")

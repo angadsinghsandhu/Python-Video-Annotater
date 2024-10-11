@@ -224,20 +224,28 @@ class VideoPlayer:
         start_time = t.time()
         self._handle_commands()
 
+        # check if the video is paused
         if not self.paused:
             ret, self.frame = self.cap.read()
+            # Check if video capture is at the last frame
             if not ret:
                 self.frame = self.last_frame.copy()
-            self.curr_frame_idx = int(self.cap.get(cv2.CAP_PROP_POS_FRAMES))
-            self.pause_frame = self.frame.copy()
-            self.control_window.seek_var.set(self.curr_frame_idx)
+                current_time = self.last_frame_time
+            else:
+                self.curr_frame_idx = int(self.cap.get(cv2.CAP_PROP_POS_FRAMES))
+                self.pause_frame = self.frame.copy()
+                self.control_window.seek_var.set(self.curr_frame_idx)
+
+                # Capture the current time, but cache it in case it's the last frame
+                current_time = self.cap.get(cv2.CAP_PROP_POS_MSEC)
+                self.last_frame_time = current_time  # Cache the last valid time
         else:
             self.frame = self.pause_frame.copy()
+            current_time = self.last_frame_time  # Use cached time when paused
 
         if self.drawing:
             self.draw_annotations()
 
-        current_time = self.cap.get(cv2.CAP_PROP_POS_MSEC)
         time_str = self.draw_timer(self.frame, current_time)
 
         cv2.imshow("Video Player", self.frame)

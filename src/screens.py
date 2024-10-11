@@ -24,7 +24,7 @@ class Splash(ctk.CTkToplevel):
         root (ctk.Ctk): The root window of the application.
         counter (int): The countdown timer before closing the splash screen.
     """
-    def __init__(self, root, counter=4, version="v1.0.0"):
+    def __init__(self, root, counter=4, version="v0.0.0"):
         super().__init__(root)
         
         self.root = root

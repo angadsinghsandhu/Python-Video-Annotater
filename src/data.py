@@ -41,7 +41,15 @@ class Data:
 
         # Full path to the selected video file
         self.in_file_path = os.path.join(in_path, name)
-        self.out_file_path = os.path.join(out_path, name)
+
+        # Compute output path by replacing .mp4 with _annotated.mp4 and preserving subdirectories
+        relative_dir = os.path.dirname(name)
+        self.annotated_dir = os.path.join(out_path, relative_dir)
+        self.annotated_name = os.path.basename(name).replace(".mp4", "_annotated.mp4")
+        self.out_file_path = os.path.join(self.annotated_dir, self.annotated_name)
+        
+        # Ensure the output directory exists
+        os.makedirs(self.annotated_dir, exist_ok=True)
 
         # Video properties
         self.frame_rate = fps               # Frames per second of the selected video
@@ -217,8 +225,9 @@ class Data:
             processed_frame: The frame with annotations and timer drawn.
             time_str (str): The time string to be displayed on the frame.
         """
-        if frame_idx >= self.frame_count:
-            logger.warning(f"Frame index {frame_idx} is out of range.")
+        if frame_idx == self.max_frames: self.increment_max_frame()
+        elif frame_idx > self.max_frames: logger.warning(f"Frame index {frame_idx} is out of range.")
+        
         self.frames.append((timestamp, frame_idx, frame))
         new_frame_idx = self.get_frames_length - 1
         
@@ -405,14 +414,14 @@ class Data:
 
         # Write frames to the output video in the specified order
         last_index = len(self.frames) - 1
-        for timestamp, index, processed_frame in self.frames:
-            if index < self.frame_count:
+        for idx, (timestamp, index, processed_frame) in enumerate(self.frames):
+            if index < self.max_frames:
                 out.write(processed_frame)
-                # out.write(vid[index])
-                if progress: progress.update_video_progress(index / last_index)
+                if progress: progress.update_video_progress(idx / last_index)
             else:
                 logger.warning(f"Frame index {index} is out of range.")
 
+        out.release()  # Release the VideoWriter
         logger.info(f"Video data processed and saved to {self.out_file_path}")
 
     def process_audio_data(self, progress: SaveProgress = None) -> None:
@@ -436,6 +445,9 @@ class Data:
         Args:
             progress (SaveProgress): Progress window to update the progress.
         """
+        # Ensure the annotated directory exists
+        os.makedirs(os.path.dirname(self.out_file_path), exist_ok=True)
+        
         subprocess.run([
             'ffmpeg',
             '-hide_banner',

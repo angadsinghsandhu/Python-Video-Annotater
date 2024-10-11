@@ -13,9 +13,11 @@ import customtkinter as ctk
 from src.screens import Splash
 from src.anno import create_annotater
 
-# v1.1.1
-# TODO : update create documentation
-# TODO : check for errors, annotating after video end is reached "list index out of range"
+# v1.2.0
+# TODO: add controls for video playback
+
+# v1.1.2
+# TODO : update documentation
 
 # Set DPI Awareness for Windows 10
 ctypes.windll.shcore.SetProcessDpiAwareness(2)
