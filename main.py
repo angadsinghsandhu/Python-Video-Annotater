@@ -2,7 +2,8 @@
 main.py
 
 Entry point for the video annotation tool. This script sets up the logging,
-initializes the main application window, and starts the annotation tool.
+creates the splash screen, initializes the main application window, 
+and starts the annotation tool.
 """
 
 # General Imports
@@ -15,9 +16,17 @@ from src.anno import create_annotater
 
 # v1.2.0
 # TODO: add controls for video playback
-
-# v1.1.2
-# TODO : update documentation
+# TODO: download updates automatically
+# TODO: make dynamic according to OS
+# switch case for different OS
+# if windows 10
+# ctypes.windll.shcore.SetProcessDpiAwareness(2)
+# if windows 11
+# ctypes.windll.shcore.SetProcessDpiAwareness(3)
+# if linux
+# os.environ["DISPLAY"] = ":0"
+# if mac
+# os.environ["DISPLAY"] = ":0"
 
 # Set DPI Awareness for Windows 10
 ctypes.windll.shcore.SetProcessDpiAwareness(2)
