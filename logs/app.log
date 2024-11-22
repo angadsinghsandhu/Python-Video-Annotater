@@ -11758,3 +11758,19 @@ ValueError: not enough values to unpack (expected 2, got 0)
 [2024-11-21 20:38:47,749]-(Line 241 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\screens.py)-{app:INFO} : Destroying SaveProgress window
 [2024-11-21 20:38:47,812]-(Line 244 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\screens.py)-{app:DEBUG} : Main window deiconified
 [2024-11-21 20:38:50,700]-(Line 209 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\anno.py)-{app:INFO} : Main application loop started
+[2024-11-21 20:58:35,894]-(Line 34 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\screens.py)-{app:DEBUG} : Initializing Splash screen
+[2024-11-21 20:58:36,607]-(Line 84 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\setup.py)-{app:INFO} : 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 400) | position (right, top) : (741.0, 340.0)
+[2024-11-21 20:58:36,669]-(Line 56 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\screens.py)-{app:DEBUG} : Splash screen centered at position: 732, 302
+[2024-11-21 20:58:37,233]-(Line 95 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\screens.py)-{app:DEBUG} : Original Image Size: 1330x855
+[2024-11-21 20:58:37,305]-(Line 100 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\screens.py)-{app:DEBUG} : Resized Image Size: 350x225
+[2024-11-21 20:58:37,436]-(Line 83 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\screens.py)-{app:DEBUG} : Splash screen layout created with grid
+[2024-11-21 20:58:37,437]-(Line 115 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\screens.py)-{app:DEBUG} : Countdown updated to 4 seconds
+[2024-11-21 20:58:37,438]-(Line 128 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\anno.py)-{app:INFO} : Creating annotater
+[2024-11-21 20:58:37,442]-(Line 133 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\anno.py)-{app:DEBUG} : Icon set from local file
+[2024-11-21 20:58:37,455]-(Line 144 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\anno.py)-{app:DEBUG} : Default styling options set
+[2024-11-21 20:58:38,477]-(Line 115 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\screens.py)-{app:DEBUG} : Countdown updated to 3 seconds
+[2024-11-21 20:58:39,494]-(Line 115 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\screens.py)-{app:DEBUG} : Countdown updated to 2 seconds
+[2024-11-21 20:58:40,511]-(Line 115 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\screens.py)-{app:DEBUG} : Countdown updated to 1 seconds
+[2024-11-21 20:58:41,575]-(Line 124 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\screens.py)-{app:INFO} : Countdown finished, destroying splash screen, showing main window
+[2024-11-21 20:58:41,709]-(Line 84 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\setup.py)-{app:INFO} : 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+[2024-11-21 20:58:41,788]-(Line 138 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:INFO} : Starting file setup

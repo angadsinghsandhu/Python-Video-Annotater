@@ -5132,3 +5132,8 @@ app - INFO - Refetched files: ['test\\zhusky.mp4']
 app - INFO - Annotation completed for file: test\timer.mp4
 app - INFO - Destroying SaveProgress window
 app - INFO - Main application loop started
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 400) | position (right, top) : (741.0, 340.0)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
