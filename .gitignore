@@ -1,3 +1,9 @@
 # PyInstaller Directories
 /build
 /dist
+
+# virtualenv
+.venv
+
+# python bytecode
+*.pyc
