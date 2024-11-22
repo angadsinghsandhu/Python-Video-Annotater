@@ -10,9 +10,7 @@ import sounddevice as sd
 import numpy as np
 from scipy.io.wavfile import write
 
-import subprocess, threading, time
-
-
+import subprocess, time
 
 # Global variables to store user input and media processing
 user_name = ""
@@ -98,9 +96,11 @@ def play_video(file_path):
         play_pause_button.configure(text="Play" if paused else "Pause")
         if not paused: 
             start_time = time.time()
-            if pause_time and start_time > pause_time: handle_pause_frames()  # Add frames while paused
+            if pause_time and start_time > pause_time: 
+                handle_pause_frames()  # Add frames while paused
             update_frame()  # Resume capturing new frames
-        else: paused_time = time.time()
+        else: 
+            paused_time = time.time()
 
     def close_window(video_window, cap, audio_stream):
         cap.release()

@@ -48,8 +48,10 @@ def align_window(app, window_width: float = DEFAULT_WINDOW_WIDTH, window_height:
         window_width, window_height = DEFAULT_WINDOW_WIDTH, DEFAULT_WINDOW_HEIGHT
 
     # Calculate window width and height
-    if window_width <= 1: window_width *= screen_width
-    if window_height <= 1: window_height *= screen_height
+    if window_width <= 1: 
+        window_width *= screen_width
+    if window_height <= 1: 
+        window_height *= screen_height
 
     # Set window size
     app.geometry(f"{window_width}x{window_height}")

@@ -15,3 +15,7 @@ dependencies = [
     "sounddevice>=0.5.1",
     "tqdm>=4.67.0",
 ]
+
+[tool.ruff.lint]
+# ignoring E701 (multiple statements in 1 line) and E401 (multiple imports in 1 line)
+ignore = ["E701", "E401"]

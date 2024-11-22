@@ -146,7 +146,8 @@ class SaveProgress(ctk.CTkToplevel):
         self.attributes("-topmost", True)
 
         # Layout Configuration
-        for i in range(5): self.grid_rowconfigure(i, weight=1)
+        for i in range(5): 
+            self.grid_rowconfigure(i, weight=1)
         self.grid_columnconfigure(0, weight=1)
         self.grid_columnconfigure(1, weight=6)
 
@@ -194,7 +195,8 @@ class SaveProgress(ctk.CTkToplevel):
         Args:
             value (float): Progress value between 0 and 1.
         """
-        if value == 1.0: self.video_progress_label.configure(text="Video Progress: Done ✅")
+        if value == 1.0: 
+            self.video_progress_label.configure(text="Video Progress: Done ✅")
         self.video_progress.set(value)
 
     def update_audio_progress(self, value):
@@ -204,7 +206,8 @@ class SaveProgress(ctk.CTkToplevel):
         Args:
             value (float): Progress value between 0 and 1.
         """
-        if value == 1.0: self.audio_progress_label.configure(text="Audio Progress: Done ✅")
+        if value == 1.0: 
+            self.audio_progress_label.configure(text="Audio Progress: Done ✅")
         self.audio_progress.set(value)
 
     def update_av_progress(self, value):
@@ -214,7 +217,8 @@ class SaveProgress(ctk.CTkToplevel):
         Args:
             value (float): Progress value between 0 and 1.
         """
-        if value == 1.0: self.av_progress_label.configure(text="Audio-Video Progress: Done ✅")
+        if value == 1.0: 
+            self.av_progress_label.configure(text="Audio-Video Progress: Done ✅")
         self.av_progress.set(value)
 
     def update_json_progress(self, value):

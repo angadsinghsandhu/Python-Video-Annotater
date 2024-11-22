@@ -121,7 +121,8 @@ class Config:
 
         try:
             new_dir = ""
-            while not new_dir: new_dir = filedialog.askdirectory(title="Select New Directory")
+            while not new_dir: 
+                new_dir = filedialog.askdirectory(title="Select New Directory")
             if new_dir:
                 os.chdir(new_dir)
                 logger.info(f"Current working directory changed to: {new_dir}")
@@ -245,7 +246,7 @@ class Config:
                 else:
                     self.out_path = out
 
-            logger.debug(f"Removing extensions from files and filtering")
+            logger.debug("Removing extensions from files and filtering")
 
             # Use os.walk to collect all .mp4 files with relative paths
             in_files = []

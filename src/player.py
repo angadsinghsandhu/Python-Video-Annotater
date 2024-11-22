@@ -183,17 +183,21 @@ class VideoPlayer:
         """Draw move annotations."""
         if self.long_annotations:
             self.annotation_chunk.append(point)
-            for i in range(len(self.annotation_chunk) - 1): cv2.line(self.frame, self.annotation_chunk[i], self.annotation_chunk[i + 1], (0, 0, 255), 3)
+            for i in range(len(self.annotation_chunk) - 1): 
+                cv2.line(self.frame, self.annotation_chunk[i], self.annotation_chunk[i + 1], (0, 0, 255), 3)
         else:
-            if self.start_point: cv2.line(self.frame, self.start_point, point, (0, 0, 255), 3)
+            if self.start_point: 
+                cv2.line(self.frame, self.start_point, point, (0, 0, 255), 3)
             self.start_point = point
 
     def _finalize_annotation_chunk(self, point):
         """Finalize the annotation chunk."""
         if self.long_annotations:
-            for i in range(len(self.annotation_chunk) - 1): cv2.line(self.frame, self.annotation_chunk[i], self.annotation_chunk[i + 1], (0, 0, 255), 3)
+            for i in range(len(self.annotation_chunk) - 1): 
+                cv2.line(self.frame, self.annotation_chunk[i], self.annotation_chunk[i + 1], (0, 0, 255), 3)
         else:
-            if self.start_point: cv2.line(self.frame, self.start_point, point, (0, 0, 255), 3)
+            if self.start_point: 
+                cv2.line(self.frame, self.start_point, point, (0, 0, 255), 3)
         self.annotation_chunk = []
         self.start_point = None
 
@@ -279,7 +283,8 @@ class VideoPlayer:
         """Manage the delay between frames."""
         elapsed_time = t.time() - start_time
         remaining_time = max(0, self.frame_delay / 1000 - elapsed_time)
-        if remaining_time > 0: t.sleep(remaining_time)
+        if remaining_time > 0: 
+            t.sleep(remaining_time)
 
     def toggle_pause(self):
         """Toggle the pause state of the video."""
@@ -328,7 +333,8 @@ class VideoPlayer:
         sd.stop()
 
         # save data if required
-        if save: self._data.save_data(self.app)
+        if save: 
+            self._data.save_data(self.app)
 
         # close windows and threads
         cv2.destroyAllWindows()
@@ -473,8 +479,10 @@ class AnnotatedPlayer:
     def _process_frame(self, frame, frame_number):
         if str(frame_number) in self.meta:
             frame_data = self.meta[str(frame_number)]
-            if frame_data["anno"]: self._draw_annotations(frame, frame_data["anno"])
-            if frame_data["time_str"]: self._draw_time(frame, frame_data["time_str"])
+            if frame_data["anno"]: 
+                self._draw_annotations(frame, frame_data["anno"])
+            if frame_data["time_str"]: 
+                self._draw_time(frame, frame_data["time_str"])
 
     def _draw_annotations(self, frame, anno):
         command, point = anno
