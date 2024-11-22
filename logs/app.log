@@ -11774,3 +11774,41 @@ ValueError: not enough values to unpack (expected 2, got 0)
 [2024-11-21 20:58:41,575]-(Line 124 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\screens.py)-{app:INFO} : Countdown finished, destroying splash screen, showing main window
 [2024-11-21 20:58:41,709]-(Line 84 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\setup.py)-{app:INFO} : 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
 [2024-11-21 20:58:41,788]-(Line 138 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:INFO} : Starting file setup
+[2024-11-21 21:00:25,163]-(Line 46 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:DEBUG} : Setting Current Working Directory: 
+[2024-11-21 21:00:25,164]-(Line 143 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:DEBUG} : Current working directory: .
+[2024-11-21 21:00:25,165]-(Line 55 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:DEBUG} : Setting input folder path to: .
+[2024-11-21 21:00:27,070]-(Line 55 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:DEBUG} : Setting input folder path to: D:/Code/Research/Trusted Datasets/Python-Video-Annotater
+[2024-11-21 21:00:27,071]-(Line 151 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:INFO} : Input directory selected: D:/Code/Research/Trusted Datasets/Python-Video-Annotater
+[2024-11-21 21:00:27,073]-(Line 64 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:DEBUG} : Setting output folder path to: .
+[2024-11-21 21:00:29,647]-(Line 64 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:DEBUG} : Setting output folder path to: D:/Code/Research/Trusted Datasets/Python-Video-Annotater
+[2024-11-21 21:00:29,649]-(Line 162 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:INFO} : Output directory selected: D:/Code/Research/Trusted Datasets/Python-Video-Annotater
+[2024-11-21 21:00:29,727]-(Line 177 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:INFO} : Found 0 MP4 files in the input directory
+[2024-11-21 21:00:29,728]-(Line 180 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:WARNING} : No MP4 files found in the input directory
+[2024-11-21 21:00:31,155]-(Line 248 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:DEBUG} : Removing extensions from files and filtering
+[2024-11-21 21:00:31,308]-(Line 116 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:INFO} : Config updated with in_path=D:/Code/Research/Trusted Datasets/Python-Video-Annotater, out_path=D:/Code/Research/Trusted Datasets/Python-Video-Annotater
+[2024-11-21 21:00:31,310]-(Line 279 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:INFO} : Refetched files: []
+[2024-11-21 21:00:31,311]-(Line 73 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:DEBUG} : Setting Files: []
+[2024-11-21 21:00:31,312]-(Line 153 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\anno.py)-{app:INFO} : File setup completed
+[2024-11-21 21:00:31,366]-(Line 207 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\anno.py)-{app:INFO} : Annotater UI setup completed
+[2024-11-21 21:00:31,367]-(Line 213 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\anno.py)-{app:ERROR} : An error occurred during annotater creation: [WinError 6] The handle is invalid
+Traceback (most recent call last):
+  File "C:\Users\angad\AppData\Roaming\uv\python\cpython-3.9.20-windows-x86_64-none\lib\tkinter\__init__.py", line 1889, in __call__
+    try:
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\anno.py", line 210, in create_annotater
+    app.mainloop()
+  File "D:\Code\Research\Trusted Datasets\Python-Video-Annotater\.venv\lib\site-packages\customtkinter\windows\ctk_tk.py", line 165, in mainloop
+    super().mainloop(*args, **kwargs)
+  File "C:\Users\angad\AppData\Roaming\uv\python\cpython-3.9.20-windows-x86_64-none\lib\tkinter\__init__.py", line 1429, in mainloop
+    self.tk.mainloop(n)
+  File "C:\Users\angad\AppData\Roaming\uv\python\cpython-3.9.20-windows-x86_64-none\lib\tkinter\__init__.py", line 1896, in __call__
+    self.widget._report_exception()
+  File "C:\Users\angad\AppData\Roaming\uv\python\cpython-3.9.20-windows-x86_64-none\lib\tkinter\__init__.py", line 1612, in _report_exception
+    root.report_callback_exception(exc, val, tb)
+  File "C:\Users\angad\AppData\Roaming\uv\python\cpython-3.9.20-windows-x86_64-none\lib\tkinter\__init__.py", line 2346, in report_callback_exception
+    print("Exception in Tkinter callback", file=sys.stderr)
+OSError: [WinError 6] The handle is invalid
