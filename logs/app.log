@@ -11812,3 +11812,33 @@ Traceback (most recent call last):
   File "C:\Users\angad\AppData\Roaming\uv\python\cpython-3.9.20-windows-x86_64-none\lib\tkinter\__init__.py", line 2346, in report_callback_exception
     print("Exception in Tkinter callback", file=sys.stderr)
 OSError: [WinError 6] The handle is invalid
+[2024-11-21 21:08:43,990]-(Line 34 at D:\Code\Annotater App\src\screens.py)-{app:DEBUG} : Initializing Splash screen
+[2024-11-21 21:08:44,297]-(Line 86 at D:\Code\Annotater App\src\setup.py)-{app:INFO} : 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 400) | position (right, top) : (741.0, 340.0)
+[2024-11-21 21:08:44,483]-(Line 56 at D:\Code\Annotater App\src\screens.py)-{app:DEBUG} : Splash screen centered at position: 732, 302
+[2024-11-21 21:08:44,566]-(Line 95 at D:\Code\Annotater App\src\screens.py)-{app:DEBUG} : Original Image Size: 1330x855
+[2024-11-21 21:08:44,609]-(Line 100 at D:\Code\Annotater App\src\screens.py)-{app:DEBUG} : Resized Image Size: 350x225
+[2024-11-21 21:08:44,694]-(Line 83 at D:\Code\Annotater App\src\screens.py)-{app:DEBUG} : Splash screen layout created with grid
+[2024-11-21 21:08:44,695]-(Line 115 at D:\Code\Annotater App\src\screens.py)-{app:DEBUG} : Countdown updated to 4 seconds
+[2024-11-21 21:08:44,696]-(Line 128 at D:\Code\Annotater App\src\anno.py)-{app:INFO} : Creating annotater
+[2024-11-21 21:08:44,701]-(Line 133 at D:\Code\Annotater App\src\anno.py)-{app:DEBUG} : Icon set from local file
+[2024-11-21 21:08:44,702]-(Line 144 at D:\Code\Annotater App\src\anno.py)-{app:DEBUG} : Default styling options set
+[2024-11-21 21:08:45,705]-(Line 115 at D:\Code\Annotater App\src\screens.py)-{app:DEBUG} : Countdown updated to 3 seconds
+[2024-11-21 21:08:46,724]-(Line 115 at D:\Code\Annotater App\src\screens.py)-{app:DEBUG} : Countdown updated to 2 seconds
+[2024-11-21 21:08:47,746]-(Line 115 at D:\Code\Annotater App\src\screens.py)-{app:DEBUG} : Countdown updated to 1 seconds
+[2024-11-21 21:08:48,907]-(Line 124 at D:\Code\Annotater App\src\screens.py)-{app:INFO} : Countdown finished, destroying splash screen, showing main window
+[2024-11-21 21:08:49,087]-(Line 86 at D:\Code\Annotater App\src\setup.py)-{app:INFO} : 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+[2024-11-21 21:08:49,313]-(Line 139 at D:\Code\Annotater App\src\config.py)-{app:INFO} : Starting file setup
+[2024-11-21 21:08:53,663]-(Line 46 at D:\Code\Annotater App\src\config.py)-{app:DEBUG} : Setting Current Working Directory: C:/Users/angad/Videos
+[2024-11-21 21:08:53,663]-(Line 144 at D:\Code\Annotater App\src\config.py)-{app:DEBUG} : Current working directory: C:/Users/angad/Videos
+[2024-11-21 21:08:53,664]-(Line 55 at D:\Code\Annotater App\src\config.py)-{app:DEBUG} : Setting input folder path to: C:/Users/angad/Videos\data
+[2024-11-21 21:08:53,665]-(Line 155 at D:\Code\Annotater App\src\config.py)-{app:DEBUG} : Default input directory used: C:/Users/angad/Videos/data
+[2024-11-21 21:08:53,666]-(Line 64 at D:\Code\Annotater App\src\config.py)-{app:DEBUG} : Setting output folder path to: C:/Users/angad/Videos\out
+[2024-11-21 21:08:53,667]-(Line 166 at D:\Code\Annotater App\src\config.py)-{app:DEBUG} : Default output directory used: C:/Users/angad/Videos/out
+[2024-11-21 21:08:53,668]-(Line 178 at D:\Code\Annotater App\src\config.py)-{app:INFO} : Found 3 MP4 files in the input directory
+[2024-11-21 21:08:53,669]-(Line 249 at D:\Code\Annotater App\src\config.py)-{app:DEBUG} : Removing extensions from files and filtering
+[2024-11-21 21:08:53,670]-(Line 116 at D:\Code\Annotater App\src\config.py)-{app:INFO} : Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+[2024-11-21 21:08:53,671]-(Line 280 at D:\Code\Annotater App\src\config.py)-{app:INFO} : Refetched files: ['test\\zhusky.mp4']
+[2024-11-21 21:08:53,672]-(Line 73 at D:\Code\Annotater App\src\config.py)-{app:DEBUG} : Setting Files: ['test\\zhusky.mp4']
+[2024-11-21 21:08:53,673]-(Line 153 at D:\Code\Annotater App\src\anno.py)-{app:INFO} : File setup completed
+[2024-11-21 21:08:53,723]-(Line 207 at D:\Code\Annotater App\src\anno.py)-{app:INFO} : Annotater UI setup completed
+[2024-11-21 21:08:55,463]-(Line 211 at D:\Code\Annotater App\src\anno.py)-{app:INFO} : Main application loop started

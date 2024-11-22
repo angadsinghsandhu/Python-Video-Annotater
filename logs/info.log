@@ -5167,3 +5167,14 @@ Traceback (most recent call last):
   File "C:\Users\angad\AppData\Roaming\uv\python\cpython-3.9.20-windows-x86_64-none\lib\tkinter\__init__.py", line 2346, in report_callback_exception
     print("Exception in Tkinter callback", file=sys.stderr)
 OSError: [WinError 6] The handle is invalid
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 400) | position (right, top) : (741.0, 340.0)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 3 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['test\\zhusky.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Main application loop started
