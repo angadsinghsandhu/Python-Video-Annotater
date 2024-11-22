@@ -5,7 +5,11 @@ This module defines the Data class used for storing and processing video, audio 
 """
 
 # General Imports
-import subprocess, cv2, json, os, logging
+import subprocess
+import cv2
+import json
+import os
+import logging
 import numpy as np
 from typing import List, Tuple, Dict, Union
 from functools import lru_cache, cached_property
