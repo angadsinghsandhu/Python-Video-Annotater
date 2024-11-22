@@ -5,7 +5,9 @@ This module manages the configuration settings for the video annotation tool app
 """
 
 # General Imports
-import os, time, logging
+import os
+import time
+import logging
 from tkinter import messagebox
 from customtkinter import filedialog
 from pathlib import Path

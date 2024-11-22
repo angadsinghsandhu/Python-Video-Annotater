@@ -1,0 +1,17 @@
+[project]
+name = "python-video-annotater"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "customtkinter>=5.2.2",
+    "moviepy>=1.0.3",
+    "opencv-python>=4.10.0.84",
+    "pillow>=11.0.0",
+    "pygame>=2.6.1",
+    "pyyaml>=6.0.2",
+    "scipy>=1.13.1",
+    "sounddevice>=0.5.1",
+    "tqdm>=4.67.0",
+]

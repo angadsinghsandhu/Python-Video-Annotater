@@ -11122,3 +11122,639 @@ ValueError: not enough values to unpack (expected 2, got 0)
 [2024-10-11 02:33:06,976]-(Line 448 at D:\Code\Annotater App\src\player.py)-{app:INFO} : Started Annotated Player for file: C:/Users/angad/Videos/out/test/timer_annotated_annotated.mp4
 [2024-10-11 02:33:18,934]-(Line 510 at D:\Code\Annotater App\src\player.py)-{app:INFO} : AnnotatedPlayer resources released and windows closed
 [2024-10-11 02:33:18,935]-(Line 464 at D:\Code\Annotater App\src\player.py)-{app:INFO} : Annotater Player closed
+[2024-11-21 20:37:46,897]-(Line 33 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\screens.py)-{app:DEBUG} : Initializing Splash screen
+[2024-11-21 20:37:47,141]-(Line 82 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\setup.py)-{app:INFO} : 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 400) | position (right, top) : (741.0, 340.0)
+[2024-11-21 20:37:47,340]-(Line 55 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\screens.py)-{app:DEBUG} : Splash screen centered at position: 732, 302
+[2024-11-21 20:37:47,387]-(Line 94 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\screens.py)-{app:DEBUG} : Original Image Size: 1330x855
+[2024-11-21 20:37:47,430]-(Line 99 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\screens.py)-{app:DEBUG} : Resized Image Size: 350x225
+[2024-11-21 20:37:47,539]-(Line 82 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\screens.py)-{app:DEBUG} : Splash screen layout created with grid
+[2024-11-21 20:37:47,540]-(Line 114 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\screens.py)-{app:DEBUG} : Countdown updated to 4 seconds
+[2024-11-21 20:37:47,540]-(Line 126 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\anno.py)-{app:INFO} : Creating annotater
+[2024-11-21 20:37:47,544]-(Line 131 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\anno.py)-{app:DEBUG} : Icon set from local file
+[2024-11-21 20:37:47,546]-(Line 142 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\anno.py)-{app:DEBUG} : Default styling options set
+[2024-11-21 20:37:48,578]-(Line 114 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\screens.py)-{app:DEBUG} : Countdown updated to 3 seconds
+[2024-11-21 20:37:49,596]-(Line 114 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\screens.py)-{app:DEBUG} : Countdown updated to 2 seconds
+[2024-11-21 20:37:50,611]-(Line 114 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\screens.py)-{app:DEBUG} : Countdown updated to 1 seconds
+[2024-11-21 20:37:51,790]-(Line 123 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\screens.py)-{app:INFO} : Countdown finished, destroying splash screen, showing main window
+[2024-11-21 20:37:52,423]-(Line 82 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\setup.py)-{app:INFO} : 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+[2024-11-21 20:37:52,707]-(Line 136 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:INFO} : Starting file setup
+[2024-11-21 20:37:56,976]-(Line 44 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:DEBUG} : Setting Current Working Directory: C:/Users/angad/Videos
+[2024-11-21 20:37:56,977]-(Line 141 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:DEBUG} : Current working directory: C:/Users/angad/Videos
+[2024-11-21 20:37:56,977]-(Line 53 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:DEBUG} : Setting input folder path to: C:/Users/angad/Videos\data
+[2024-11-21 20:37:56,978]-(Line 152 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:DEBUG} : Default input directory used: C:/Users/angad/Videos/data
+[2024-11-21 20:37:56,978]-(Line 62 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:DEBUG} : Setting output folder path to: C:/Users/angad/Videos\out
+[2024-11-21 20:37:56,979]-(Line 163 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:DEBUG} : Default output directory used: C:/Users/angad/Videos/out
+[2024-11-21 20:37:56,988]-(Line 175 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:INFO} : Found 3 MP4 files in the input directory
+[2024-11-21 20:37:56,990]-(Line 246 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:DEBUG} : Removing extensions from files and filtering
+[2024-11-21 20:37:56,991]-(Line 114 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:INFO} : Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+[2024-11-21 20:37:56,993]-(Line 277 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:INFO} : Refetched files: ['test\\timer.mp4', 'test\\zhusky.mp4']
+[2024-11-21 20:37:56,994]-(Line 71 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:DEBUG} : Setting Files: ['test\\timer.mp4', 'test\\zhusky.mp4']
+[2024-11-21 20:37:56,995]-(Line 151 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\anno.py)-{app:INFO} : File setup completed
+[2024-11-21 20:37:57,068]-(Line 205 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\anno.py)-{app:INFO} : Annotater UI setup completed
+[2024-11-21 20:37:59,945]-(Line 92 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\anno.py)-{app:INFO} : Starting annotation for file: test\timer.mp4, with long annotations: True
+[2024-11-21 20:38:00,199]-(Line 102 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : | Data Object Created for ==> test\timer.mp4 | Input Path ==> C:/Users/angad/Videos/data | Output Path ==> C:/Users/angad/Videos/out | Name ==> test\timer.mp4 | FPS ==> 30 | Frame Count ==> 630 | Frame Width ==> 1280 | Frame Height ==> 720 | Sample Rate ==> 44100 | Channels ==> 2 |
+[2024-11-21 20:38:00,200]-(Line 80 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:INFO} : Data object for test\timer.mp4 initialized
+[2024-11-21 20:38:00,697]-(Line 82 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\setup.py)-{app:INFO} : 'Video Controls: test\timer.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+[2024-11-21 20:38:00,699]-(Line 58 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\controller.py)-{app:INFO} : Control window configuration completed for file: test\timer.mp4
+[2024-11-21 20:38:00,701]-(Line 77 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\player.py)-{app:INFO} : VideoPlayer initialized with frame delay: 33 ms
+[2024-11-21 20:38:01,833]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 26 with command start
+[2024-11-21 20:38:01,834]-(Line 151 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\player.py)-{app:DEBUG} : Started drawing annotation at: (361, 317)
+[2024-11-21 20:38:01,835]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 26 with command move
+[2024-11-21 20:38:01,867]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 27 with command move
+[2024-11-21 20:38:01,870]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 27 with command move
+[2024-11-21 20:38:01,898]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 28 with command move
+[2024-11-21 20:38:01,901]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 28 with command move
+[2024-11-21 20:38:01,930]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 29 with command move
+[2024-11-21 20:38:01,933]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 29 with command move
+[2024-11-21 20:38:01,968]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 30 with command move
+[2024-11-21 20:38:01,971]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 30 with command move
+[2024-11-21 20:38:02,001]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 31 with command move
+[2024-11-21 20:38:02,004]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 31 with command move
+[2024-11-21 20:38:02,035]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 32 with command move
+[2024-11-21 20:38:02,069]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 33 with command move
+[2024-11-21 20:38:02,074]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 33 with command move
+[2024-11-21 20:38:02,113]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 34 with command move
+[2024-11-21 20:38:02,134]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 35 with command move
+[2024-11-21 20:38:02,135]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 35 with command move
+[2024-11-21 20:38:02,170]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 36 with command move
+[2024-11-21 20:38:02,200]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 37 with command move
+[2024-11-21 20:38:02,238]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 38 with command move
+[2024-11-21 20:38:02,268]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 39 with command move
+[2024-11-21 20:38:02,269]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 39 with command move
+[2024-11-21 20:38:02,304]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 40 with command move
+[2024-11-21 20:38:02,336]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 41 with command move
+[2024-11-21 20:38:02,338]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 41 with command move
+[2024-11-21 20:38:02,369]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 42 with command move
+[2024-11-21 20:38:02,373]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 42 with command move
+[2024-11-21 20:38:02,406]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 43 with command move
+[2024-11-21 20:38:02,409]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 43 with command move
+[2024-11-21 20:38:02,441]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 44 with command move
+[2024-11-21 20:38:02,472]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 45 with command move
+[2024-11-21 20:38:02,473]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 45 with command move
+[2024-11-21 20:38:02,508]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 46 with command move
+[2024-11-21 20:38:02,513]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 46 with command move
+[2024-11-21 20:38:02,540]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 47 with command move
+[2024-11-21 20:38:02,544]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 47 with command move
+[2024-11-21 20:38:02,574]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 48 with command move
+[2024-11-21 20:38:02,575]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 48 with command move
+[2024-11-21 20:38:02,609]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 49 with command move
+[2024-11-21 20:38:02,613]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 49 with command move
+[2024-11-21 20:38:02,643]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 50 with command move
+[2024-11-21 20:38:02,646]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 50 with command move
+[2024-11-21 20:38:02,674]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 51 with command move
+[2024-11-21 20:38:02,676]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 51 with command move
+[2024-11-21 20:38:02,709]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 52 with command move
+[2024-11-21 20:38:02,742]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 53 with command move
+[2024-11-21 20:38:02,746]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 53 with command move
+[2024-11-21 20:38:02,777]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 54 with command move
+[2024-11-21 20:38:02,778]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 54 with command move
+[2024-11-21 20:38:02,813]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 55 with command move
+[2024-11-21 20:38:02,926]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 55 with command move
+[2024-11-21 20:38:02,928]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 55 with command move
+[2024-11-21 20:38:02,937]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 56 with command move
+[2024-11-21 20:38:02,971]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 57 with command move
+[2024-11-21 20:38:02,985]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 57 with command move
+[2024-11-21 20:38:03,005]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 58 with command move
+[2024-11-21 20:38:03,038]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 59 with command move
+[2024-11-21 20:38:03,075]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 60 with command move
+[2024-11-21 20:38:03,110]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 61 with command move
+[2024-11-21 20:38:03,140]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 62 with command move
+[2024-11-21 20:38:03,173]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 63 with command move
+[2024-11-21 20:38:03,180]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 63 with command move
+[2024-11-21 20:38:03,208]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 64 with command move
+[2024-11-21 20:38:03,210]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 64 with command move
+[2024-11-21 20:38:03,242]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 65 with command move
+[2024-11-21 20:38:03,277]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 66 with command move
+[2024-11-21 20:38:03,280]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 66 with command move
+[2024-11-21 20:38:03,311]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 67 with command move
+[2024-11-21 20:38:03,344]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 68 with command move
+[2024-11-21 20:38:03,381]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 69 with command move
+[2024-11-21 20:38:03,415]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 70 with command move
+[2024-11-21 20:38:03,447]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 71 with command move
+[2024-11-21 20:38:03,483]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 72 with command move
+[2024-11-21 20:38:03,485]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 72 with command move
+[2024-11-21 20:38:03,515]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 73 with command move
+[2024-11-21 20:38:03,550]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 74 with command move
+[2024-11-21 20:38:03,553]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 74 with command move
+[2024-11-21 20:38:03,583]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 75 with command move
+[2024-11-21 20:38:03,615]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 76 with command move
+[2024-11-21 20:38:03,649]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 77 with command move
+[2024-11-21 20:38:03,683]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 78 with command move
+[2024-11-21 20:38:03,686]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 78 with command move
+[2024-11-21 20:38:03,719]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 79 with command move
+[2024-11-21 20:38:03,753]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 80 with command move
+[2024-11-21 20:38:03,757]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 80 with command move
+[2024-11-21 20:38:03,784]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 81 with command move
+[2024-11-21 20:38:03,787]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 81 with command move
+[2024-11-21 20:38:03,832]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 82 with command move
+[2024-11-21 20:38:03,835]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 82 with command move
+[2024-11-21 20:38:03,852]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 83 with command move
+[2024-11-21 20:38:03,886]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 84 with command move
+[2024-11-21 20:38:03,889]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 84 with command move
+[2024-11-21 20:38:03,920]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 85 with command move
+[2024-11-21 20:38:03,922]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 85 with command move
+[2024-11-21 20:38:03,954]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 86 with command move
+[2024-11-21 20:38:03,987]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 87 with command move
+[2024-11-21 20:38:04,020]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 88 with command move
+[2024-11-21 20:38:04,024]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 88 with command move
+[2024-11-21 20:38:04,053]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 89 with command move
+[2024-11-21 20:38:04,088]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 90 with command move
+[2024-11-21 20:38:04,121]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 91 with command move
+[2024-11-21 20:38:04,123]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 91 with command move
+[2024-11-21 20:38:04,156]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 92 with command move
+[2024-11-21 20:38:04,163]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 92 with command move
+[2024-11-21 20:38:04,189]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 93 with command move
+[2024-11-21 20:38:04,224]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 94 with command move
+[2024-11-21 20:38:04,227]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 94 with command move
+[2024-11-21 20:38:04,260]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 95 with command move
+[2024-11-21 20:38:04,292]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 96 with command move
+[2024-11-21 20:38:04,327]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 97 with command move
+[2024-11-21 20:38:04,329]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 97 with command move
+[2024-11-21 20:38:04,358]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 98 with command move
+[2024-11-21 20:38:04,359]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 98 with command move
+[2024-11-21 20:38:04,394]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 99 with command move
+[2024-11-21 20:38:04,398]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 99 with command move
+[2024-11-21 20:38:04,428]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 100 with command move
+[2024-11-21 20:38:04,429]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 100 with command move
+[2024-11-21 20:38:04,460]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 101 with command move
+[2024-11-21 20:38:04,461]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 101 with command move
+[2024-11-21 20:38:04,495]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 102 with command move
+[2024-11-21 20:38:04,530]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 103 with command move
+[2024-11-21 20:38:04,533]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 103 with command move
+[2024-11-21 20:38:04,567]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 104 with command move
+[2024-11-21 20:38:04,572]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 104 with command move
+[2024-11-21 20:38:04,606]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 105 with command move
+[2024-11-21 20:38:04,610]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 105 with command move
+[2024-11-21 20:38:04,636]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 106 with command move
+[2024-11-21 20:38:04,665]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 107 with command move
+[2024-11-21 20:38:04,702]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 108 with command move
+[2024-11-21 20:38:04,703]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 108 with command move
+[2024-11-21 20:38:04,735]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 109 with command move
+[2024-11-21 20:38:04,768]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 110 with command move
+[2024-11-21 20:38:04,802]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 111 with command move
+[2024-11-21 20:38:04,866]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 113 with command end
+[2024-11-21 20:38:04,867]-(Line 157 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\player.py)-{app:DEBUG} : Ended drawing annotation at: (709, 223)
+[2024-11-21 20:38:05,611]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 135 with command start
+[2024-11-21 20:38:05,613]-(Line 151 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\player.py)-{app:DEBUG} : Started drawing annotation at: (321, 74)
+[2024-11-21 20:38:05,614]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 135 with command move
+[2024-11-21 20:38:05,647]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 136 with command move
+[2024-11-21 20:38:05,679]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 137 with command move
+[2024-11-21 20:38:05,681]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 137 with command move
+[2024-11-21 20:38:05,713]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 138 with command move
+[2024-11-21 20:38:05,748]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 139 with command move
+[2024-11-21 20:38:05,783]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 140 with command move
+[2024-11-21 20:38:05,881]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 143 with command move
+[2024-11-21 20:38:05,914]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 144 with command move
+[2024-11-21 20:38:05,918]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 144 with command move
+[2024-11-21 20:38:05,951]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 145 with command move
+[2024-11-21 20:38:06,054]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 148 with command move
+[2024-11-21 20:38:06,058]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 148 with command move
+[2024-11-21 20:38:06,081]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 149 with command move
+[2024-11-21 20:38:06,120]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 150 with command move
+[2024-11-21 20:38:06,154]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 151 with command move
+[2024-11-21 20:38:06,186]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 152 with command move
+[2024-11-21 20:38:06,219]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 153 with command move
+[2024-11-21 20:38:06,255]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 154 with command move
+[2024-11-21 20:38:06,284]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 155 with command move
+[2024-11-21 20:38:06,287]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 155 with command move
+[2024-11-21 20:38:06,317]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 156 with command move
+[2024-11-21 20:38:06,353]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 157 with command move
+[2024-11-21 20:38:06,453]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 160 with command move
+[2024-11-21 20:38:06,458]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 160 with command move
+[2024-11-21 20:38:06,485]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 161 with command move
+[2024-11-21 20:38:06,488]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 161 with command move
+[2024-11-21 20:38:06,926]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 174 with command end
+[2024-11-21 20:38:06,927]-(Line 157 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\player.py)-{app:DEBUG} : Ended drawing annotation at: (441, 243)
+[2024-11-21 20:38:07,605]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 194 with command start
+[2024-11-21 20:38:07,607]-(Line 151 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\player.py)-{app:DEBUG} : Started drawing annotation at: (859, 122)
+[2024-11-21 20:38:07,607]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 194 with command move
+[2024-11-21 20:38:07,637]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 195 with command move
+[2024-11-21 20:38:07,643]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 195 with command move
+[2024-11-21 20:38:07,672]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 196 with command move
+[2024-11-21 20:38:07,706]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 197 with command move
+[2024-11-21 20:38:07,710]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 197 with command move
+[2024-11-21 20:38:07,741]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 198 with command move
+[2024-11-21 20:38:07,773]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 199 with command move
+[2024-11-21 20:38:07,808]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 200 with command move
+[2024-11-21 20:38:07,812]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 200 with command move
+[2024-11-21 20:38:07,844]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 201 with command move
+[2024-11-21 20:38:07,880]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 202 with command move
+[2024-11-21 20:38:07,884]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 202 with command move
+[2024-11-21 20:38:07,913]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 203 with command move
+[2024-11-21 20:38:07,945]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 204 with command move
+[2024-11-21 20:38:07,976]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 205 with command move
+[2024-11-21 20:38:08,009]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 206 with command move
+[2024-11-21 20:38:08,044]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 207 with command move
+[2024-11-21 20:38:08,047]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 207 with command move
+[2024-11-21 20:38:08,076]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 208 with command move
+[2024-11-21 20:38:08,077]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 208 with command move
+[2024-11-21 20:38:08,109]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 209 with command move
+[2024-11-21 20:38:08,145]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 210 with command move
+[2024-11-21 20:38:08,156]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 210 with command move
+[2024-11-21 20:38:08,180]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 211 with command move
+[2024-11-21 20:38:08,216]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 212 with command move
+[2024-11-21 20:38:08,416]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 218 with command end
+[2024-11-21 20:38:08,417]-(Line 157 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\player.py)-{app:DEBUG} : Ended drawing annotation at: (483, 0)
+[2024-11-21 20:38:10,884]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 291 with command start
+[2024-11-21 20:38:10,885]-(Line 151 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\player.py)-{app:DEBUG} : Started drawing annotation at: (372, 97)
+[2024-11-21 20:38:10,947]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 293 with command move
+[2024-11-21 20:38:10,949]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 293 with command move
+[2024-11-21 20:38:10,981]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 294 with command move
+[2024-11-21 20:38:11,016]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 295 with command move
+[2024-11-21 20:38:11,019]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 295 with command move
+[2024-11-21 20:38:11,049]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 296 with command move
+[2024-11-21 20:38:11,051]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 296 with command move
+[2024-11-21 20:38:11,082]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 297 with command move
+[2024-11-21 20:38:11,318]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 304 with command move
+[2024-11-21 20:38:11,352]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 305 with command move
+[2024-11-21 20:38:11,422]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 307 with command move
+[2024-11-21 20:38:11,461]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 308 with command move
+[2024-11-21 20:38:11,489]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 309 with command move
+[2024-11-21 20:38:11,594]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 312 with command move
+[2024-11-21 20:38:11,626]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 313 with command move
+[2024-11-21 20:38:11,660]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 314 with command move
+[2024-11-21 20:38:11,661]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 314 with command move
+[2024-11-21 20:38:11,693]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 315 with command move
+[2024-11-21 20:38:11,727]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 316 with command move
+[2024-11-21 20:38:11,762]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 317 with command move
+[2024-11-21 20:38:11,795]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 318 with command move
+[2024-11-21 20:38:11,828]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 319 with command move
+[2024-11-21 20:38:11,864]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 320 with command move
+[2024-11-21 20:38:11,866]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 320 with command move
+[2024-11-21 20:38:11,896]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 321 with command move
+[2024-11-21 20:38:12,212]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 330 with command end
+[2024-11-21 20:38:12,213]-(Line 157 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\player.py)-{app:DEBUG} : Ended drawing annotation at: (612, 335)
+[2024-11-21 20:38:12,842]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 349 with command start
+[2024-11-21 20:38:12,843]-(Line 151 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\player.py)-{app:DEBUG} : Started drawing annotation at: (349, 63)
+[2024-11-21 20:38:12,877]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 350 with command move
+[2024-11-21 20:38:12,913]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 351 with command move
+[2024-11-21 20:38:13,030]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 351 with command move
+[2024-11-21 20:38:13,031]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 351 with command move
+[2024-11-21 20:38:13,044]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 352 with command move
+[2024-11-21 20:38:13,162]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 355 with command move
+[2024-11-21 20:38:13,198]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 355 with command move
+[2024-11-21 20:38:13,213]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 356 with command move
+[2024-11-21 20:38:13,248]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 357 with command move
+[2024-11-21 20:38:13,348]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 360 with command move
+[2024-11-21 20:38:13,352]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 360 with command move
+[2024-11-21 20:38:13,381]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 361 with command move
+[2024-11-21 20:38:13,384]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 361 with command move
+[2024-11-21 20:38:13,414]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 362 with command move
+[2024-11-21 20:38:13,451]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 363 with command move
+[2024-11-21 20:38:13,455]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 363 with command move
+[2024-11-21 20:38:13,486]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 364 with command move
+[2024-11-21 20:38:13,518]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 365 with command move
+[2024-11-21 20:38:13,552]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 366 with command move
+[2024-11-21 20:38:13,855]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 375 with command end
+[2024-11-21 20:38:13,889]-(Line 157 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\player.py)-{app:DEBUG} : Ended drawing annotation at: (527, 371)
+[2024-11-21 20:38:14,585]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 396 with command start
+[2024-11-21 20:38:14,587]-(Line 151 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\player.py)-{app:DEBUG} : Started drawing annotation at: (805, 188)
+[2024-11-21 20:38:14,588]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 396 with command move
+[2024-11-21 20:38:14,612]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 397 with command move
+[2024-11-21 20:38:14,648]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 398 with command move
+[2024-11-21 20:38:14,651]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 398 with command move
+[2024-11-21 20:38:14,683]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 399 with command move
+[2024-11-21 20:38:14,716]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 400 with command move
+[2024-11-21 20:38:14,749]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 401 with command move
+[2024-11-21 20:38:14,753]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 401 with command move
+[2024-11-21 20:38:14,783]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 402 with command move
+[2024-11-21 20:38:14,784]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 402 with command move
+[2024-11-21 20:38:14,815]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 403 with command move
+[2024-11-21 20:38:14,848]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 404 with command move
+[2024-11-21 20:38:14,884]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 405 with command move
+[2024-11-21 20:38:14,885]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 405 with command move
+[2024-11-21 20:38:14,917]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 406 with command move
+[2024-11-21 20:38:14,951]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 407 with command move
+[2024-11-21 20:38:14,983]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 408 with command move
+[2024-11-21 20:38:15,017]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 409 with command move
+[2024-11-21 20:38:15,021]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 409 with command move
+[2024-11-21 20:38:15,050]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 410 with command move
+[2024-11-21 20:38:15,087]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 411 with command move
+[2024-11-21 20:38:15,091]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 411 with command move
+[2024-11-21 20:38:15,120]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 412 with command move
+[2024-11-21 20:38:15,123]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 412 with command move
+[2024-11-21 20:38:15,157]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 413 with command move
+[2024-11-21 20:38:15,162]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 413 with command move
+[2024-11-21 20:38:15,189]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 414 with command move
+[2024-11-21 20:38:15,192]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 414 with command move
+[2024-11-21 20:38:15,223]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 415 with command move
+[2024-11-21 20:38:15,259]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 416 with command move
+[2024-11-21 20:38:15,660]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 428 with command end
+[2024-11-21 20:38:15,661]-(Line 157 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\player.py)-{app:DEBUG} : Ended drawing annotation at: (538, 149)
+[2024-11-21 20:38:16,205]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 444 with command start
+[2024-11-21 20:38:16,206]-(Line 151 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\player.py)-{app:DEBUG} : Started drawing annotation at: (749, 50)
+[2024-11-21 20:38:16,232]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 445 with command move
+[2024-11-21 20:38:16,267]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 446 with command move
+[2024-11-21 20:38:16,299]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 447 with command move
+[2024-11-21 20:38:16,303]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 447 with command move
+[2024-11-21 20:38:16,332]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 448 with command move
+[2024-11-21 20:38:16,333]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 448 with command move
+[2024-11-21 20:38:16,367]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 449 with command move
+[2024-11-21 20:38:16,403]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 450 with command move
+[2024-11-21 20:38:16,433]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 451 with command move
+[2024-11-21 20:38:16,437]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 451 with command move
+[2024-11-21 20:38:16,467]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 452 with command move
+[2024-11-21 20:38:16,500]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 453 with command move
+[2024-11-21 20:38:16,537]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 454 with command move
+[2024-11-21 20:38:16,567]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 455 with command move
+[2024-11-21 20:38:16,603]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 456 with command move
+[2024-11-21 20:38:16,635]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 457 with command move
+[2024-11-21 20:38:16,669]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 458 with command move
+[2024-11-21 20:38:16,670]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 458 with command move
+[2024-11-21 20:38:16,703]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 459 with command move
+[2024-11-21 20:38:16,736]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 460 with command move
+[2024-11-21 20:38:16,769]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 461 with command move
+[2024-11-21 20:38:16,772]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 461 with command move
+[2024-11-21 20:38:16,803]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 462 with command move
+[2024-11-21 20:38:16,836]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 463 with command move
+[2024-11-21 20:38:16,870]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 464 with command move
+[2024-11-21 20:38:16,873]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 464 with command move
+[2024-11-21 20:38:16,887]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 464 with command move
+[2024-11-21 20:38:16,906]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 465 with command move
+[2024-11-21 20:38:16,939]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 466 with command move
+[2024-11-21 20:38:16,971]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 467 with command move
+[2024-11-21 20:38:17,005]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 468 with command move
+[2024-11-21 20:38:17,008]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 468 with command move
+[2024-11-21 20:38:17,409]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 480 with command end
+[2024-11-21 20:38:17,410]-(Line 157 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\player.py)-{app:DEBUG} : Ended drawing annotation at: (574, 64)
+[2024-11-21 20:38:17,922]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 495 with command start
+[2024-11-21 20:38:17,923]-(Line 151 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\player.py)-{app:DEBUG} : Started drawing annotation at: (730, 54)
+[2024-11-21 20:38:17,924]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 495 with command move
+[2024-11-21 20:38:17,949]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 496 with command move
+[2024-11-21 20:38:17,953]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 496 with command move
+[2024-11-21 20:38:17,983]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 497 with command move
+[2024-11-21 20:38:17,986]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 497 with command move
+[2024-11-21 20:38:18,019]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 498 with command move
+[2024-11-21 20:38:18,051]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 499 with command move
+[2024-11-21 20:38:18,055]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 499 with command move
+[2024-11-21 20:38:18,086]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 500 with command move
+[2024-11-21 20:38:18,088]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 500 with command move
+[2024-11-21 20:38:18,119]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 501 with command move
+[2024-11-21 20:38:18,159]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 502 with command move
+[2024-11-21 20:38:18,195]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 503 with command move
+[2024-11-21 20:38:18,226]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 504 with command move
+[2024-11-21 20:38:18,254]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 505 with command move
+[2024-11-21 20:38:18,290]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 506 with command move
+[2024-11-21 20:38:18,323]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 507 with command move
+[2024-11-21 20:38:18,356]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 508 with command move
+[2024-11-21 20:38:18,390]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 509 with command move
+[2024-11-21 20:38:18,391]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 509 with command move
+[2024-11-21 20:38:18,424]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 510 with command move
+[2024-11-21 20:38:18,458]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 511 with command move
+[2024-11-21 20:38:18,463]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 511 with command move
+[2024-11-21 20:38:18,491]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 512 with command move
+[2024-11-21 20:38:18,495]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 512 with command move
+[2024-11-21 20:38:18,524]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 513 with command move
+[2024-11-21 20:38:18,525]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 513 with command move
+[2024-11-21 20:38:18,560]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 514 with command move
+[2024-11-21 20:38:18,593]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 515 with command move
+[2024-11-21 20:38:18,595]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 515 with command move
+[2024-11-21 20:38:18,626]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 516 with command move
+[2024-11-21 20:38:18,627]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 516 with command move
+[2024-11-21 20:38:18,668]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 517 with command move
+[2024-11-21 20:38:18,692]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 518 with command move
+[2024-11-21 20:38:18,727]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 519 with command move
+[2024-11-21 20:38:18,762]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 520 with command move
+[2024-11-21 20:38:18,796]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 521 with command move
+[2024-11-21 20:38:18,828]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 522 with command move
+[2024-11-21 20:38:18,829]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 522 with command move
+[2024-11-21 20:38:18,864]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 523 with command move
+[2024-11-21 20:38:18,898]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 524 with command move
+[2024-11-21 20:38:18,899]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 524 with command move
+[2024-11-21 20:38:18,932]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 525 with command move
+[2024-11-21 20:38:18,963]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 526 with command move
+[2024-11-21 20:38:18,998]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 527 with command move
+[2024-11-21 20:38:19,003]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 527 with command move
+[2024-11-21 20:38:19,029]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 528 with command move
+[2024-11-21 20:38:19,201]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 533 with command end
+[2024-11-21 20:38:19,203]-(Line 157 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\player.py)-{app:DEBUG} : Ended drawing annotation at: (642, 18)
+[2024-11-21 20:38:19,813]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 551 with command start
+[2024-11-21 20:38:19,814]-(Line 151 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\player.py)-{app:DEBUG} : Started drawing annotation at: (763, 88)
+[2024-11-21 20:38:19,815]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 551 with command move
+[2024-11-21 20:38:19,842]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 552 with command move
+[2024-11-21 20:38:19,876]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 553 with command move
+[2024-11-21 20:38:19,893]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 553 with command move
+[2024-11-21 20:38:19,897]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 553 with command move
+[2024-11-21 20:38:19,910]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 554 with command move
+[2024-11-21 20:38:19,946]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 555 with command move
+[2024-11-21 20:38:19,949]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 555 with command move
+[2024-11-21 20:38:19,979]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 556 with command move
+[2024-11-21 20:38:19,982]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 556 with command move
+[2024-11-21 20:38:20,012]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 557 with command move
+[2024-11-21 20:38:20,045]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 558 with command move
+[2024-11-21 20:38:20,080]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 559 with command move
+[2024-11-21 20:38:20,083]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 559 with command move
+[2024-11-21 20:38:20,113]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 560 with command move
+[2024-11-21 20:38:20,147]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 561 with command move
+[2024-11-21 20:38:20,182]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 562 with command move
+[2024-11-21 20:38:20,183]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 562 with command move
+[2024-11-21 20:38:20,217]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 563 with command move
+[2024-11-21 20:38:20,249]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 564 with command move
+[2024-11-21 20:38:20,282]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 565 with command move
+[2024-11-21 20:38:20,317]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 566 with command move
+[2024-11-21 20:38:20,348]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 567 with command move
+[2024-11-21 20:38:20,382]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 568 with command move
+[2024-11-21 20:38:20,419]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 569 with command move
+[2024-11-21 20:38:20,518]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 572 with command end
+[2024-11-21 20:38:20,520]-(Line 157 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\player.py)-{app:DEBUG} : Ended drawing annotation at: (588, 65)
+[2024-11-21 20:38:24,976]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 704 with command start
+[2024-11-21 20:38:24,977]-(Line 151 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\player.py)-{app:DEBUG} : Started drawing annotation at: (730, 303)
+[2024-11-21 20:38:24,977]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 704 with command move
+[2024-11-21 20:38:25,008]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 705 with command move
+[2024-11-21 20:38:25,043]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 706 with command move
+[2024-11-21 20:38:25,047]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 706 with command move
+[2024-11-21 20:38:25,078]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 707 with command move
+[2024-11-21 20:38:25,111]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 708 with command move
+[2024-11-21 20:38:25,144]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 709 with command move
+[2024-11-21 20:38:25,178]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 710 with command move
+[2024-11-21 20:38:25,178]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 710 with command move
+[2024-11-21 20:38:25,213]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 711 with command move
+[2024-11-21 20:38:25,217]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 711 with command move
+[2024-11-21 20:38:25,245]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 712 with command move
+[2024-11-21 20:38:25,251]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 712 with command move
+[2024-11-21 20:38:25,279]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 713 with command move
+[2024-11-21 20:38:25,283]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 713 with command move
+[2024-11-21 20:38:25,313]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 714 with command move
+[2024-11-21 20:38:25,340]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 714 with command move
+[2024-11-21 20:38:25,353]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 714 with command move
+[2024-11-21 20:38:25,360]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 715 with command move
+[2024-11-21 20:38:25,394]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 716 with command move
+[2024-11-21 20:38:25,427]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 717 with command move
+[2024-11-21 20:38:25,462]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 718 with command move
+[2024-11-21 20:38:25,496]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 719 with command move
+[2024-11-21 20:38:25,500]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 719 with command move
+[2024-11-21 20:38:25,530]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 720 with command move
+[2024-11-21 20:38:25,564]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 721 with command move
+[2024-11-21 20:38:25,596]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 722 with command move
+[2024-11-21 20:38:25,602]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 722 with command move
+[2024-11-21 20:38:25,633]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 723 with command move
+[2024-11-21 20:38:25,666]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 724 with command move
+[2024-11-21 20:38:25,700]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 725 with command move
+[2024-11-21 20:38:25,734]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 726 with command move
+[2024-11-21 20:38:25,768]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 727 with command move
+[2024-11-21 20:38:25,800]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 728 with command move
+[2024-11-21 20:38:25,903]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 731 with command move
+[2024-11-21 20:38:25,936]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 732 with command move
+[2024-11-21 20:38:25,938]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 732 with command move
+[2024-11-21 20:38:25,969]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 733 with command move
+[2024-11-21 20:38:25,970]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 733 with command move
+[2024-11-21 20:38:26,002]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 734 with command move
+[2024-11-21 20:38:26,035]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 735 with command move
+[2024-11-21 20:38:26,068]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 736 with command move
+[2024-11-21 20:38:26,073]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 736 with command move
+[2024-11-21 20:38:26,103]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 737 with command move
+[2024-11-21 20:38:26,135]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 738 with command move
+[2024-11-21 20:38:26,169]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 739 with command move
+[2024-11-21 20:38:26,202]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 740 with command move
+[2024-11-21 20:38:26,203]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 740 with command move
+[2024-11-21 20:38:26,236]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 741 with command move
+[2024-11-21 20:38:26,270]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 742 with command move
+[2024-11-21 20:38:26,304]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 743 with command move
+[2024-11-21 20:38:26,305]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 743 with command move
+[2024-11-21 20:38:26,338]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 744 with command move
+[2024-11-21 20:38:26,371]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 745 with command move
+[2024-11-21 20:38:26,405]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 746 with command move
+[2024-11-21 20:38:26,408]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 746 with command move
+[2024-11-21 20:38:26,440]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 747 with command move
+[2024-11-21 20:38:26,473]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 748 with command move
+[2024-11-21 20:38:26,507]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 749 with command move
+[2024-11-21 20:38:26,509]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 749 with command move
+[2024-11-21 20:38:26,540]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 750 with command move
+[2024-11-21 20:38:26,575]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 751 with command move
+[2024-11-21 20:38:26,579]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 751 with command move
+[2024-11-21 20:38:26,607]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 752 with command move
+[2024-11-21 20:38:26,639]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 753 with command move
+[2024-11-21 20:38:26,640]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 753 with command move
+[2024-11-21 20:38:26,673]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 754 with command move
+[2024-11-21 20:38:26,707]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 755 with command move
+[2024-11-21 20:38:26,740]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 756 with command move
+[2024-11-21 20:38:26,743]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 756 with command move
+[2024-11-21 20:38:26,774]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 757 with command move
+[2024-11-21 20:38:26,777]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 757 with command move
+[2024-11-21 20:38:26,808]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 758 with command move
+[2024-11-21 20:38:26,840]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 759 with command move
+[2024-11-21 20:38:26,874]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 760 with command move
+[2024-11-21 20:38:26,908]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 761 with command move
+[2024-11-21 20:38:26,942]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 762 with command move
+[2024-11-21 20:38:26,976]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 762 with command move
+[2024-11-21 20:38:26,980]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 762 with command move
+[2024-11-21 20:38:27,017]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 764 with command move
+[2024-11-21 20:38:27,052]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 765 with command move
+[2024-11-21 20:38:27,085]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 766 with command move
+[2024-11-21 20:38:27,088]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 766 with command move
+[2024-11-21 20:38:27,118]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 767 with command move
+[2024-11-21 20:38:27,152]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 768 with command move
+[2024-11-21 20:38:27,222]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 770 with command end
+[2024-11-21 20:38:27,223]-(Line 157 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\player.py)-{app:DEBUG} : Ended drawing annotation at: (531, 285)
+[2024-11-21 20:38:28,070]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 795 with command start
+[2024-11-21 20:38:28,071]-(Line 151 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\player.py)-{app:DEBUG} : Started drawing annotation at: (555, 162)
+[2024-11-21 20:38:28,104]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 796 with command move
+[2024-11-21 20:38:28,107]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 796 with command move
+[2024-11-21 20:38:28,136]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 797 with command move
+[2024-11-21 20:38:28,138]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 797 with command move
+[2024-11-21 20:38:28,171]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 798 with command move
+[2024-11-21 20:38:28,204]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 799 with command move
+[2024-11-21 20:38:28,207]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 799 with command move
+[2024-11-21 20:38:28,242]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 800 with command move
+[2024-11-21 20:38:28,274]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 801 with command move
+[2024-11-21 20:38:28,303]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 802 with command move
+[2024-11-21 20:38:28,338]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 803 with command move
+[2024-11-21 20:38:28,341]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 803 with command move
+[2024-11-21 20:38:28,372]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 804 with command move
+[2024-11-21 20:38:28,405]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 805 with command move
+[2024-11-21 20:38:28,440]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 806 with command move
+[2024-11-21 20:38:28,474]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 807 with command move
+[2024-11-21 20:38:28,476]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 807 with command move
+[2024-11-21 20:38:28,507]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 808 with command move
+[2024-11-21 20:38:28,542]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 809 with command move
+[2024-11-21 20:38:28,543]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 809 with command move
+[2024-11-21 20:38:28,576]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 810 with command move
+[2024-11-21 20:38:28,578]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 810 with command move
+[2024-11-21 20:38:28,612]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 811 with command move
+[2024-11-21 20:38:28,618]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 811 with command move
+[2024-11-21 20:38:28,645]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 812 with command move
+[2024-11-21 20:38:28,650]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 812 with command move
+[2024-11-21 20:38:28,676]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 813 with command move
+[2024-11-21 20:38:28,680]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 813 with command move
+[2024-11-21 20:38:28,710]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 814 with command move
+[2024-11-21 20:38:28,744]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 815 with command move
+[2024-11-21 20:38:28,747]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 815 with command move
+[2024-11-21 20:38:28,776]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 816 with command move
+[2024-11-21 20:38:28,811]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 817 with command move
+[2024-11-21 20:38:28,844]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 818 with command move
+[2024-11-21 20:38:28,879]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 819 with command move
+[2024-11-21 20:38:28,946]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 821 with command move
+[2024-11-21 20:38:28,980]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 822 with command move
+[2024-11-21 20:38:29,013]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 823 with command move
+[2024-11-21 20:38:29,150]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 827 with command end
+[2024-11-21 20:38:29,151]-(Line 157 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\player.py)-{app:DEBUG} : Ended drawing annotation at: (788, 392)
+[2024-11-21 20:38:30,495]-(Line 68 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\controller.py)-{app:DEBUG} : Added command to queue: ('seek', 605)
+[2024-11-21 20:38:30,505]-(Line 86 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\controller.py)-{app:INFO} : Seeked to frame number: 605
+[2024-11-21 20:38:30,560]-(Line 68 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\controller.py)-{app:DEBUG} : Added command to queue: ('seek', 603)
+[2024-11-21 20:38:30,573]-(Line 86 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\controller.py)-{app:INFO} : Seeked to frame number: 603
+[2024-11-21 20:38:30,600]-(Line 68 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\controller.py)-{app:DEBUG} : Added command to queue: ('seek', 588)
+[2024-11-21 20:38:30,609]-(Line 86 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\controller.py)-{app:INFO} : Seeked to frame number: 588
+[2024-11-21 20:38:30,640]-(Line 68 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\controller.py)-{app:DEBUG} : Added command to queue: ('seek', 562)
+[2024-11-21 20:38:30,650]-(Line 86 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\controller.py)-{app:INFO} : Seeked to frame number: 562
+[2024-11-21 20:38:30,674]-(Line 68 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\controller.py)-{app:DEBUG} : Added command to queue: ('seek', 541)
+[2024-11-21 20:38:30,683]-(Line 86 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\controller.py)-{app:INFO} : Seeked to frame number: 541
+[2024-11-21 20:38:30,700]-(Line 68 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\controller.py)-{app:DEBUG} : Added command to queue: ('seek', 538)
+[2024-11-21 20:38:30,711]-(Line 86 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\controller.py)-{app:INFO} : Seeked to frame number: 538
+[2024-11-21 20:38:30,729]-(Line 68 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\controller.py)-{app:DEBUG} : Added command to queue: ('seek', 536)
+[2024-11-21 20:38:30,736]-(Line 86 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\controller.py)-{app:INFO} : Seeked to frame number: 536
+[2024-11-21 20:38:30,765]-(Line 68 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\controller.py)-{app:DEBUG} : Added command to queue: ('seek', 532)
+[2024-11-21 20:38:30,775]-(Line 86 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\controller.py)-{app:INFO} : Seeked to frame number: 532
+[2024-11-21 20:38:30,854]-(Line 68 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\controller.py)-{app:DEBUG} : Added command to queue: ('seek', 526)
+[2024-11-21 20:38:30,863]-(Line 86 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\controller.py)-{app:INFO} : Seeked to frame number: 526
+[2024-11-21 20:38:30,882]-(Line 68 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\controller.py)-{app:DEBUG} : Added command to queue: ('seek', 525)
+[2024-11-21 20:38:30,898]-(Line 86 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\controller.py)-{app:INFO} : Seeked to frame number: 525
+[2024-11-21 20:38:30,931]-(Line 68 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\controller.py)-{app:DEBUG} : Added command to queue: ('seek', 524)
+[2024-11-21 20:38:30,941]-(Line 86 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\controller.py)-{app:INFO} : Seeked to frame number: 524
+[2024-11-21 20:38:32,481]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 913 with command start
+[2024-11-21 20:38:32,482]-(Line 151 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\player.py)-{app:DEBUG} : Started drawing annotation at: (800, 200)
+[2024-11-21 20:38:32,482]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 913 with command move
+[2024-11-21 20:38:32,483]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 913 with command move
+[2024-11-21 20:38:32,515]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 914 with command move
+[2024-11-21 20:38:32,537]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 915 with command move
+[2024-11-21 20:38:32,571]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 916 with command move
+[2024-11-21 20:38:32,603]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 917 with command move
+[2024-11-21 20:38:32,638]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 918 with command move
+[2024-11-21 20:38:32,673]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 919 with command move
+[2024-11-21 20:38:32,705]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 920 with command move
+[2024-11-21 20:38:32,737]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 921 with command move
+[2024-11-21 20:38:32,738]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 921 with command move
+[2024-11-21 20:38:32,772]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 922 with command move
+[2024-11-21 20:38:32,774]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 922 with command move
+[2024-11-21 20:38:32,804]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 923 with command move
+[2024-11-21 20:38:32,838]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 924 with command move
+[2024-11-21 20:38:32,840]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 924 with command move
+[2024-11-21 20:38:32,873]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 925 with command move
+[2024-11-21 20:38:32,876]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 925 with command move
+[2024-11-21 20:38:32,908]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 926 with command move
+[2024-11-21 20:38:32,940]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 927 with command move
+[2024-11-21 20:38:32,943]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 927 with command move
+[2024-11-21 20:38:32,974]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 928 with command move
+[2024-11-21 20:38:33,009]-(Line 286 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Added annotation at frame 929 with command end
+[2024-11-21 20:38:33,022]-(Line 157 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\player.py)-{app:DEBUG} : Ended drawing annotation at: (655, 289)
+[2024-11-21 20:38:33,788]-(Line 516 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:INFO} : Saving data for test\timer.mp4 to C:/Users/angad/Videos/out
+[2024-11-21 20:38:33,856]-(Line 137 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\screens.py)-{app:DEBUG} : Initializing SaveProgress window for test\timer.mp4
+[2024-11-21 20:38:33,950]-(Line 237 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\screens.py)-{app:DEBUG} : Progress bars reset for test\timer.mp4
+[2024-11-21 20:38:33,950]-(Line 182 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\screens.py)-{app:DEBUG} : SaveProgress window layout created
+[2024-11-21 20:38:43,085]-(Line 429 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:INFO} : Video data processed and saved to C:/Users/angad/Videos/out\test\timer_annotated.mp4
+[2024-11-21 20:38:43,216]-(Line 395 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Combined audio data successfully
+[2024-11-21 20:38:43,281]-(Line 441 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:INFO} : Audio data saved to C:/Users/angad/Videos/out\test\timer.wav
+[2024-11-21 20:38:44,595]-(Line 470 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:INFO} : Audio and video merged and saved to C:/Users/angad/Videos/out\test\timer_annotated_annotated.mp4
+[2024-11-21 20:38:44,598]-(Line 475 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Deleted temporary video file C:/Users/angad/Videos/out\test\timer_annotated.mp4
+[2024-11-21 20:38:44,601]-(Line 478 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:DEBUG} : Deleted temporary audio file C:/Users/angad/Videos/out\test\timer.wav
+[2024-11-21 20:38:44,667]-(Line 503 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:INFO} : Annotations saved to C:/Users/angad/Videos/out\test\timer_annotated_annotated.json
+[2024-11-21 20:38:44,668]-(Line 187 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\screens.py)-{app:INFO} : Annotations saved for test\timer.mp4
+[2024-11-21 20:38:44,670]-(Line 529 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\data.py)-{app:INFO} : Data for test\timer.mp4 saved successfully
+[2024-11-21 20:38:44,752]-(Line 333 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\player.py)-{app:INFO} : VideoPlayer closed
+[2024-11-21 20:38:44,753]-(Line 99 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\controller.py)-{app:INFO} : Saved and closed the video player
+[2024-11-21 20:38:44,755]-(Line 246 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:DEBUG} : Removing extensions from files and filtering
+[2024-11-21 20:38:44,757]-(Line 114 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:INFO} : Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+[2024-11-21 20:38:44,757]-(Line 277 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\config.py)-{app:INFO} : Refetched files: ['test\\zhusky.mp4']
+[2024-11-21 20:38:44,759]-(Line 100 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\anno.py)-{app:INFO} : Annotation completed for file: test\timer.mp4
+[2024-11-21 20:38:47,749]-(Line 241 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\screens.py)-{app:INFO} : Destroying SaveProgress window
+[2024-11-21 20:38:47,812]-(Line 244 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\screens.py)-{app:DEBUG} : Main window deiconified
+[2024-11-21 20:38:50,700]-(Line 209 at D:\Code\Research\Trusted Datasets\Python-Video-Annotater\src\anno.py)-{app:INFO} : Main application loop started

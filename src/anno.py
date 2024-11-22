@@ -6,8 +6,10 @@ annotating videos, and watching annotated videos in the video annotation tool ap
 """
 
 # General Imports
-import threading, logging
-import customtkinter as ctk, os
+import threading
+import logging
+import customtkinter as ctk
+import os
 from tkinter import filedialog
 
 # Local Imports

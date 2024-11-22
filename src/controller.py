@@ -7,7 +7,8 @@ seek, restart, and stop functionalities.
 """
 
 # General imports
-import cv2, logging
+import cv2
+import logging
 import customtkinter as ctk
 from tkinter import DoubleVar
 

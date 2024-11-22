@@ -5092,3 +5092,43 @@ app - INFO - Initializing AnnotatedPlayer for file: C:/Users/angad/Videos/out/te
 app - INFO - Started Annotated Player for file: C:/Users/angad/Videos/out/test/timer_annotated_annotated.mp4
 app - INFO - AnnotatedPlayer resources released and windows closed
 app - INFO - Annotater Player closed
+app - INFO - 'Loading...' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (438, 400) | position (right, top) : (741.0, 340.0)
+app - INFO - Creating annotater
+app - INFO - Countdown finished, destroying splash screen, showing main window
+app - INFO - 'Annotater' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (875, 312) | position (right, top) : (522.5, 384.0)
+app - INFO - Starting file setup
+app - INFO - Found 3 MP4 files in the input directory
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['test\\timer.mp4', 'test\\zhusky.mp4']
+app - INFO - File setup completed
+app - INFO - Annotater UI setup completed
+app - INFO - Starting annotation for file: test\timer.mp4, with long annotations: True
+app - INFO - Data object for test\timer.mp4 initialized
+app - INFO - 'Video Controls: test\timer.mp4' App Dimentions ==> Screen (Width, Height) : (1920, 1080) | Window (Width, Height) : (1212, 62) | position (right, top) : (0, 1018)
+app - INFO - Control window configuration completed for file: test\timer.mp4
+app - INFO - VideoPlayer initialized with frame delay: 33 ms
+app - INFO - Seeked to frame number: 605
+app - INFO - Seeked to frame number: 603
+app - INFO - Seeked to frame number: 588
+app - INFO - Seeked to frame number: 562
+app - INFO - Seeked to frame number: 541
+app - INFO - Seeked to frame number: 538
+app - INFO - Seeked to frame number: 536
+app - INFO - Seeked to frame number: 532
+app - INFO - Seeked to frame number: 526
+app - INFO - Seeked to frame number: 525
+app - INFO - Seeked to frame number: 524
+app - INFO - Saving data for test\timer.mp4 to C:/Users/angad/Videos/out
+app - INFO - Video data processed and saved to C:/Users/angad/Videos/out\test\timer_annotated.mp4
+app - INFO - Audio data saved to C:/Users/angad/Videos/out\test\timer.wav
+app - INFO - Audio and video merged and saved to C:/Users/angad/Videos/out\test\timer_annotated_annotated.mp4
+app - INFO - Annotations saved to C:/Users/angad/Videos/out\test\timer_annotated_annotated.json
+app - INFO - Annotations saved for test\timer.mp4
+app - INFO - Data for test\timer.mp4 saved successfully
+app - INFO - VideoPlayer closed
+app - INFO - Saved and closed the video player
+app - INFO - Config updated with in_path=C:/Users/angad/Videos/data, out_path=C:/Users/angad/Videos/out
+app - INFO - Refetched files: ['test\\zhusky.mp4']
+app - INFO - Annotation completed for file: test\timer.mp4
+app - INFO - Destroying SaveProgress window
+app - INFO - Main application loop started

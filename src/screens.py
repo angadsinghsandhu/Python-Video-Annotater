@@ -7,7 +7,8 @@ used in the Annotater application.
 
 # General Imports
 import logging
-import os, customtkinter as ctk
+import os
+import customtkinter as ctk
 from PIL import Image
 
 # Custom Imports

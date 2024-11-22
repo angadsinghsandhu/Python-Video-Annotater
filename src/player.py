@@ -6,8 +6,15 @@ for both annotating and watching annotated videos.
 """
 
 # General Imports
-import cv2, os, threading, queue, json, logging, datetime
-import sounddevice as sd, time as t
+import cv2
+import os
+import threading
+import queue
+import json
+import logging
+import datetime
+import sounddevice as sd
+import time as t
 from tqdm import tqdm
 from tkinter import messagebox
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'  # Hide pygame support prompt

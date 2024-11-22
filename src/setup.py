@@ -6,7 +6,9 @@ based on the screen dimensions.
 """
 
 # General Imports
-import logging, sys, os
+import logging
+import sys
+import os
 
 # Set up logging
 logger = logging.getLogger('app')
